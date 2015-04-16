@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
+source 'http://gems.github.com'
 
+gem 'mongo'
+gem 'mongoid', github: "mongoid/mongoid"
+gem 'bson_ext'
+gem 'devise'
+
+gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -20,6 +23,17 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+gem 'coveralls', require: false
+
+group :assets do
+
+  gem 'uglifier', '>= 1.3.0'
+  gem 'sass-rails', '~> 5.0'
+  gem 'bootstrap-sass', '~> 3.2.0'
+  gem 'autoprefixer-rails'
+
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
