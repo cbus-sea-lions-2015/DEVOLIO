@@ -1,12 +1,14 @@
 # DEVOLIO
-Build yo dev portfolio! Brought to you by The Architects.
-
+Build yo dev portfolio! Brought to you by The Architects, DevBootcamp students in the Columbus, Ohio Localhost pilot program.
 
 [Jonathan Roger](https://github.com/jroger2908) | [Mary Baylis](https://github.com/MaryCBaylis) | [Chris Singer](https://github.com/secade) | [Jan Dennison](https://github.com/jannypie)
 
+--- 
 The dev community often focuses less on traditional resumes and more on GitHub activity and project experience. However, HR departments and recruiters are still oriented towards the formal resume model. And look, searching for a job is a hard ass thing in general - juggling different information and audiences shouldn't be part of it. 
 
-*DevRes Builder* merges LinkedIn resume information with your GitHub account activity to quickly and easily produce an attractive, informative job search profile. Additionally, the dev community is centralized around Twitter, so you can also show your Twitter stream and have it curated to only bring in specific keywords. Check it out!
+*DEVOLIO* merges LinkedIn resume information with your GitHub account activity to quickly and easily produce an attractive, informative job search profile. Additionally, the dev community is centralized around Twitter, so you can also show your Twitter stream and have it curated to only bring in specific keywords. Check it out!
+
+--- 
 
 ## Project Goals
 - Complete MVP is important
@@ -75,3 +77,8 @@ Technologies to research for the project:
   - Devise
   - D3
   - Octokit
+
+## Visual Guide
+
+## Wireframes
+
