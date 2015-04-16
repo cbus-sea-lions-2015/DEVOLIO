@@ -3,12 +3,12 @@ Build yo dev portfolio! Brought to you by The Architects, DevBootcamp students i
 
 [Jonathan Roger](https://github.com/jroger2908) | [Mary Baylis](https://github.com/MaryCBaylis) | [Chris Singer](https://github.com/secade) | [Jan Dennison](https://github.com/jannypie)
 
---- 
-The dev community often focuses less on traditional resumes and more on GitHub activity and project experience. However, HR departments and recruiters are still oriented towards the formal resume model. And look, searching for a job is a hard ass thing in general - juggling different information and audiences shouldn't be part of it. 
+---
+The dev community often focuses less on traditional resumes and more on GitHub activity and project experience. However, HR departments and recruiters are still oriented towards the formal resume model. And look, searching for a job is a hard ass thing in general - juggling different information and audiences shouldn't be part of it.
 
 *DEVOLIO* merges LinkedIn resume information with your GitHub account activity to quickly and easily produce an attractive, informative job search profile. Additionally, the dev community is centralized around Twitter, so you can also show your Twitter stream and have it curated to only bring in specific keywords. Check it out!
 
---- 
+---
 
 ## Project Goals
 - Complete MVP is important
@@ -25,7 +25,7 @@ Group goals
 - Sunday afternoon off, Team Retro #1 on Sunday evening
 
 ## User Stories
-As a DevRes Builder user, I want to: 
+As a DevRes Builder user, I want to:
 - Create an account, Edit, Delete
 - Sign in / sign out
 - Connect my GitHub account
@@ -34,7 +34,7 @@ As a DevRes Builder user, I want to:
 - Have a public-facing profile resume built (/username)
 - Import/Display my (curated) recent Tweets
 - Import/Display my (curated) Github/LinkedIn information
-  
+
 ## MVP Goals
 - Meet user story features
 
@@ -79,6 +79,23 @@ Technologies to research for the project:
   - Octokit
 
 ## Visual Guide
+Colors, fonts, general idea gathering.
+![Visual Guide](visual-guides/devolio-visual-guide.jpg)
 
 ## Wireframes
+Overall direction of UI design.
 
+Index
+![Wireframe](visual-guides/devolio-wireframe-home.jpg)
+
+User Dashboard: Option 1
+![Wireframe](visual-guides/devolio-wireframe-dashboard.jpg)
+
+User Dashboard: Option 2
+![Wireframe](visual-guides/devolio-wireframe-dashboard-1.jpg)
+
+User public profile
+![Wireframe](visual-guides/devolio-wireframe-profile.jpg)
+
+User public profile mockup
+![mockup](visual-guides/devolio-public-page-wireframe.jpg)
