@@ -54,7 +54,8 @@ As a DevRes Builder user, I want to:
 - Email integration
 
 ## <a name="tech"></a>Technologies
-- Ruby on Rails with Postgres
+- Ruby on Rails with ~~Postgres~~ MongoDB
+- Backbone.JS for front-end MVC
 - RSpec testing on Ruby
 - Jasmine testing on front end
 - Responsive Bootstrap framework, customized
@@ -81,6 +82,8 @@ Technologies to research for the project:
   - Devise
   - D3
   - Octokit
+- Added
+  - MongoDB, MongoID
 
 ## <a name="visual"></a>Visual Guide
 Colors, fonts, general idea gathering.
