@@ -10,13 +10,17 @@ The dev community often focuses less on traditional resumes and more on GitHub a
 
 ---
 
-## Project Goals
+[Project Goals](#goals) | [Technologies](#tech) | [Visual Guide](#visual) | [Wireframes](#wireframes)
+
+---
+
+## <a name="goals"></a>Project Goals
 - Complete MVP is important
 - 80% minimum test coverage, attempt TDD for portions
 - Responsive front end for sharing on mobile devices
 - Continuous integration and automated deployment
 
-Group goals
+### Group goals
 - Honest and timely feedback and communication among group members
 - Ask for help when stuck (err on the side of asking)
 - Flexible workflows: pairing and individual, mix it up
@@ -24,7 +28,7 @@ Group goals
 - Flexible on working early vs working late (asyncronously)
 - Sunday afternoon off, Team Retro #1 on Sunday evening
 
-## User Stories
+### User Stories
 As a DevRes Builder user, I want to:
 - Create an account, Edit, Delete
 - Sign in / sign out
@@ -35,10 +39,10 @@ As a DevRes Builder user, I want to:
 - Import/Display my (curated) recent Tweets
 - Import/Display my (curated) Github/LinkedIn information
 
-## MVP Goals
+### MVP Goals
 - Meet user story features
 
-## Stretch Goals
+### Stretch Goals
 - See Google Analytics statistics on my public profile
 - Multiple Resumes
 - Additional service API integration
@@ -49,7 +53,7 @@ As a DevRes Builder user, I want to:
 - Printable CSS
 - Email integration
 
-## Technologies
+## <a name="tech"></a>Technologies
 - Ruby on Rails with Postgres
 - RSpec testing on Ruby
 - Jasmine testing on front end
@@ -58,7 +62,7 @@ As a DevRes Builder user, I want to:
 - Team communication through Slack
 - Project management through Trello
 
-## Tech Spikes
+### Tech Spikes
 Technologies to research for the project:
 - APIs
   - Google Analytics
@@ -78,11 +82,11 @@ Technologies to research for the project:
   - D3
   - Octokit
 
-## Visual Guide
+## <a name="visual"></a>Visual Guide
 Colors, fonts, general idea gathering.
 ![Visual Guide](visual-guides/devolio-visual-guide.jpg)
 
-## Wireframes
+## <a name="wireframes"></a>Wireframes
 Overall direction of UI design.
 
 Index
