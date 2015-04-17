@@ -22,6 +22,13 @@ class User
   field :last_sign_in_at,    type: Time
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
+  field :name,               type: String
+  field :twitter_handle,     type: String
+  field :description,        type: String
+  field :interests
+  field :blog_link,          type: String
+  field :RSS_feed,           type: String
+  field :skills
 
   ## Confirmable
   # field :confirmation_token,   type: String
