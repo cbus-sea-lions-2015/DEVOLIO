@@ -2,3 +2,8 @@
   <h1 class="logo">Devolio</h1>
   <span class="subtitle">Build your <span>development</span> portfolio</span>
 </header>
+
+
+<% if current_user %>
+<%= link_to 'Show', user_path(current_user) %>
+<% end %>
