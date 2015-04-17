@@ -7,6 +7,9 @@ gem 'mongo'
 gem 'bson_ext'
 gem 'devise'
 
+# api readers
+gem 'twitter'
+
 gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
