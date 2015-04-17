@@ -1,0 +1,262 @@
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/* Colors */
+$deep-orange:  #E64A19; /*Deep orange*/
+$orange:       #FF5722; /*Orange*/
+$peach:        #FFCCBC; /*Peach*/
+$white:        #FFFFFF; /*White*/
+$green:        #8BC34A; /*Green*/
+$black:        #212121; /*Black*/
+$dark-gray:    #292B2E; /*Shark Gray*/
+$gray:         #727272; /*Dark Gray*/
+$light-gray:   #B6B6B6; /*Gray*/
+
+/* Font-Weight */
+$font-weight--light:  300;
+$font-weight--medium: 400;
+$font-weight--bold:   900;
+
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  box-sizing: inherit;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: $font-weight--medium;
+  line-height: 1.5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+a {
+  color: $orange;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* Icons */
+a[class*="entypo-"] {
+  background: $black;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.5em;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1em;
+  padding: 0.35em 0.3em 0.25em 0.3em;
+  width: 1em;
+  height: 1em;
+  transition:
+    background 0.2s ease-in-out,
+    color 0.2s linear;
+}
+a[class*="entypo-"]:before, span[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+a[class*="entypo-"]:hover {
+  background: $green;
+  color: $black;
+}
+
+h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+h3 {
+  color: $orange;
+  margin: 2em auto 1em;
+}
+h4, h5 {
+  margin: 0;
+}
+h5 {
+  color: $gray;
+}
+
+/* Layout */
+.main-container {
+  padding: 2em;
+}
+.dark-container {
+  background: $dark-gray;
+  color: #fff;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-bottom: 1px solid $light-gray;
+}
+
+/* Reset list styles */
+.icons, .contact-info, .skills-list, .interests {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.icons {
+  text-align: center;
+  margin: 1.5em auto;
+}
+.icons li, .contact-info li {
+  display: inline-block;
+  margin: 0.2em 0.5em;
+}
+
+/* Header */
+header {
+  padding-bottom: 3em;
+}
+h1.logo {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+header h1.logo {
+  font-size: 4.2em;
+  letter-spacing: 3px;
+  padding: 1em 0 0.5em 0;
+  margin: 0 auto;
+}
+h1.logo.small {
+  color: $light-gray;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+h2, header .subtitle {
+  font-family: 'Montserrat';
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+header .subtitle span {
+  color: $orange;
+}
+.profile h2 {
+  line-height: 1;
+}
+.profile p {
+  color: $gray;
+}
+.position {
+  margin-bottom: 3em;
+}
+.time-span {
+  margin: 0;
+  color: $light-gray;
+  font-size: 0.8em;
+}
+
+
+
+
+.profile {
+  display: inline-block;
+  padding: 1em;
+  width: 30%; /* Replace with bootstrap */
+  vertical-align: top;
+}
+.avatar, .name {
+  display: inline-block;
+  vertical-align: middle;
+}
+.avatar img {
+  border-radius: 50%;
+  width: 5em;
+  vertical-align: middle;
+}
+.avatar h2 {
+  display: inline;
+  font-size: 2em;
+  vertical-align: middle;
+}
+.contact-info {
+  overflow: auto;
+}
+.contact-info li {
+  float: left;
+}
+.contact-info .label {
+  clear: both;
+  font-weight: $font-weight--bold;
+  width: 25%;
+}
+.contact-info .info {
+  color: $gray;
+}
+.details {
+  display: inline-block;
+  width: 60%; /* Replace with bootstrap */
+  vertical-align: top;
+  padding: 1em;
+  height: 100em; /* Replace with Bootstrap */
+}
+.column {
+  width: 45%;
+  margin-right: 3%;
+  display: inline-block;
+  vertical-align: top;
+}
+.skill-percentage {
+  margin-bottom: 10px;
+  position: relative;
+}
+.skill-percentage:before {
+  width: 80%;
+  -webkit-animation: skill_1 0.6s ease;
+  animation: skill_1 0.6s ease;
+}
+.skill-percentage::before {
+  content: "";
+  height: 6px;
+  background: $green;
+  position: absolute;
+  margin-top: 3px;
+  bottom: 0;
+}
+.skill-percentage:after {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background: $gray;
+  display: block;
+  margin-top: 3px;
+}
+
+.interests li {
+  color: $gray;
+  display: inline-block;
+  text-align: center;
+  background: $black;
+  width: 5em;
+  height: 5em;
+  margin: 0.2em 0.05em;
+}
+.interests li span[class*="entypo-"] {
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.interests li span[class*="entypo-"]:before {
+  color: #fff;
+  display: block;
+  font-size: 4em;
+  font-weight: $font-weight--light;
+  width: 100%;
+  text-align: center;
+}

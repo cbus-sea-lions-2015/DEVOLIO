@@ -1,0 +1,11 @@
+This is the users show page!
+
+Your name is <%= @user.name %>.  
+
+<%= link_to "This is a link to this page", user_path(@user) %>
+<%= @user.twitter_handle %>
+<%= @user.skills %>
+<%= @user.description %>
+<%= @user.interests %>
+
+<h3><%= current_user._id %> </h3>

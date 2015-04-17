@@ -1,8 +1,6 @@
 # DEVOLIO
 
-[![Build Status](https://travis-ci.org/cbus-sea-lions-2015/DEVOLIO.svg?branch=master)](https://travis-ci.org/cbus-sea-lions-2015/DEVOLIO)
-
-[![Coverage Status](https://coveralls.io/repos/cbus-sea-lions-2015/DEVOLIO/badge.svg)](https://coveralls.io/r/cbus-sea-lions-2015/DEVOLIO)
+[![Build Status](https://travis-ci.org/cbus-sea-lions-2015/DEVOLIO.svg?branch=master)](https://travis-ci.org/cbus-sea-lions-2015/DEVOLIO) | [![Coverage Status](https://coveralls.io/repos/cbus-sea-lions-2015/DEVOLIO/badge.svg)](https://coveralls.io/r/cbus-sea-lions-2015/DEVOLIO)
 
 Build yo dev portfolio! Brought to you by The Architects, DevBootcamp students in the Columbus, Ohio Localhost pilot program.
 
@@ -60,6 +58,7 @@ As a DevRes Builder user, I want to:
 
 ## <a name="tech"></a>Technologies
 - Ruby on Rails with ~~Postgres~~ MongoDB
+- MongoDB, managed through Mongoid ODM library
 - Backbone.JS for front-end MVC
 - RSpec testing on Ruby
 - Jasmine testing on front end
@@ -104,7 +103,7 @@ User Dashboard: Option 1
 ![Wireframe](visual-guides/devolio-wireframe-dashboard.jpg)
 
 User Dashboard: Option 2
-![Wireframe](visual-guides/devolio-wireframe-dashboard-1.jpg)
+![Wireframe](visual-guides/devolio-wireframe-dashboard-2.jpg)
 
 User public profile
 ![Wireframe](visual-guides/devolio-wireframe-profile.jpg)

@@ -1,8 +1,9 @@
-source 'https://rubygems.org'
-source 'http://gems.github.com'
+source 'http://gems.github.com' do
+  gem 'mongoid', github: "mongoid/mongoid"
+end
 
+source 'https://rubygems.org'
 gem 'mongo'
-gem 'mongoid', github: "mongoid/mongoid"
 gem 'bson_ext'
 gem 'devise'
 
@@ -20,8 +21,9 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'ejs'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -29,14 +31,15 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'coveralls', require: false
 
-group :assets do
 
-  gem 'uglifier', '>= 1.3.0'
-  gem 'sass-rails', '~> 5.0'
-  gem 'bootstrap-sass', '~> 3.2.0'
-  gem 'autoprefixer-rails'
+gem 'rails-backbone'
 
-end
+# assets
+gem 'uglifier', '>= 1.3.0'
+gem 'autoprefixer-rails'
+gem "font-awesome-rails"
+gem 'bootstrap-sass', '~> 3.3.4.1'
+gem 'sass-rails', '>= 3.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -54,7 +57,9 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'rspec-rails'
-
+  gem 'factory_girl_rails'
+  gem 'faker'
+  gem 'jasmine-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
