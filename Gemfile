@@ -28,12 +28,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'coveralls', require: false
 
-group :assets do
+# assets
+gem 'uglifier', '>= 1.3.0'
+gem 'autoprefixer-rails'
+gem "font-awesome-rails"
+gem 'bootstrap-sass', '~> 3.3.4.1'
+gem 'sass-rails', '>= 3.2'
 
-  gem 'uglifier', '>= 1.3.0'
-  gem 'autoprefixer-rails'
-
-end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
