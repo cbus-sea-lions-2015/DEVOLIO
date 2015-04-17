@@ -8,13 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="main-container">
-    <div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="main-container dark-container">
+    <div class="nav">
     <% if user_signed_in? %>
         Welcome <%=  current_user.email %>
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "button" %>
     <% else %>
-        <%= link_to "Sign in", new_user_session_path%> or <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Sign in", new_user_session_path, class: "button" %> or <%= link_to "Sign up", new_user_registration_path, class: "button"  %>
     <% end %>
     </div>
     <%= yield %>
