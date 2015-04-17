@@ -4,6 +4,11 @@
   <%= devise_error_messages! %>
 
   <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
@@ -20,6 +25,32 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+  <div class="field">
+    <%= f.label :twitter_handle %>
+    <%= f.text_field :twitter_handle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interests %>
+    <%= f.text_field :interests %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skills %>
+    <%= f.text_field :skills %>
+  </div>
+
+
+
+
+
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
