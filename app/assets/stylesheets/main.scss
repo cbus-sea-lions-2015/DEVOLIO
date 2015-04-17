@@ -142,15 +142,23 @@ hr {
 
 /* Layout */
 .main-container {
-  padding: 2em;
   min-height: 100vw;
+  background: $dark-gray;
+  color: #fff;
+}
+.light-container {
+  background: #fff;
+  color: $black;
+  padding: 2em;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
+  padding: 2em;
 }
 .nav {
   text-align: right;
+  padding: 2em;
 }
 
 /* Reset list styles */
