@@ -7,7 +7,6 @@
 # a.search(includes).each {|tweet| puts tweet["text"] }
 
 class TwitterAPI
-
   def initialize(user)
     @user = user
     @client = make_client
