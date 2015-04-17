@@ -235,7 +235,7 @@ GEM
       json (>= 1.8.0)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.7)
+    unf_ext (0.0.6)
     warden (1.2.3)
       rack (>= 1.0)
     web-console (2.1.2)
