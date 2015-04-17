@@ -85,19 +85,72 @@ h5 {
   color: $gray;
 }
 
-/* Layout */
-.main-container {
-  padding: 2em;
+.button, button, input[type="submit"] {
+  border: 3px solid #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  text-transform: uppercase;
+  background: transparent;
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  margin: 0 0.5em;
+  transition: background 0.1s ease,color 0.1s linear, border-color 0.1s ease;
 }
-.dark-container {
-  background: $dark-gray;
+
+.button.active, button.active, .button:hover, button:hover, input[type="submit"]:hover {
+  background: $green;
   color: #fff;
+  border-color: $green;
+  text-decoration: none;
+}
+.button.active, button.active {
+  border: 1px solid $orange;
+}
+input[type="submit"] {
+  display: block;
+  margin: 1em 0;
+}
+.button.small, input[type="submit"].small {
+  font-size: 12px;
+  padding: 0.5em 0.75em;
+}
+
+.error {
+  color: $deep-orange !important;
+}
+
+.success {
+  color: $green !important;
+}
+
+.meta {
+  color: #266DA1;
+  text-transform: lowercase;
+  font-size: 0.8em;
+  display: block;
+  margin-bottom: 1em;
 }
 
 hr {
   border: 0;
   height: 0;
   border-bottom: 1px solid $light-gray;
+}
+
+/* Layout */
+.main-container {
+  padding: 2em;
+  min-height: 100vw;
+}
+.dark-container {
+  background: $dark-gray;
+  color: #fff;
+}
+.nav {
+  text-align: right;
 }
 
 /* Reset list styles */
@@ -161,9 +214,6 @@ header .subtitle span {
   color: $light-gray;
   font-size: 0.8em;
 }
-
-
-
 
 .profile {
   display: inline-block;
