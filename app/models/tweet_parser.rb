@@ -1,8 +1,8 @@
 class TweetParser
   attr_reader :tweets
 
-  def initialize(user_name)
-    @tweets = UserTweet.find_by(user_name: user_name).tweets
+  def initialize(current_user)
+    @tweets = UserTweet.find_by(user_name: current_user["email"]).tweets
   end
 
   def parse

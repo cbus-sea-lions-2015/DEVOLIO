@@ -1,12 +1,22 @@
-This is the users show page!
+<h1>This is the users show page!</h1><br>
 
-Your name is <%= @user.name %>.  
+<h2><%= @user.name %></h2><br>
+<p><%= @user.description %></p>
 
-<%= link_to "This is a link to this page", user_path(@user) %>
-<%= @user.twitter_handle %>
-<%= @user.skills %>
-<%= @user.description %>
-<%= @user.interests %>
+<h4>Twitter: <%= @user.twitter_handle %></h4>
+<h4>My skills: <%= @user.skills %></h4>
+<h4>My interests: <%= @user.interests %></h4>
+
+
+<% if @tweets %>
+<% @tweets.each do |tweet| %>
+<%= tweet %>
+<% end %>
+<% end %>
+
+<%= link_to "Home", root_path %> <br>
+
+<%= link_to "Run API", run_api_path %> 
 
 <h3><%= current_user._id %> </h3>
 
