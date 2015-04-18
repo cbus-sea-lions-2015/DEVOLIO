@@ -5,6 +5,7 @@ class UserController < ApplicationController
       resumerunner = ResumeRunner.new(current_user)
       @tweets = resumerunner.tweets
     end
+    render 'users/show'
   end
 
   def edit
