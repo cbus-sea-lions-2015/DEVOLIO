@@ -22,7 +22,7 @@ var ResumeView = Backbone.View.extend({
   render: function() {
     this.setElement(this.template(this.model));
     this.container.append(this.$el);
-    this.buildResume();
+    // this.buildResume();
     return this;
   }
 });

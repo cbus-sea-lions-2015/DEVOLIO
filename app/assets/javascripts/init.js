@@ -1,9 +1,13 @@
-
 $(document).ready(function() {
 
   App = Backbone.Model.extend({
     url: "/"
   });
+
+  var resume = new Resume();
+  resume.fetch();
+  var resumeView = new ResumeView({model: resume});
+  resumeView.render();
 
   $('#buildResume').on('click', function(e){
     e.preventDefault();
