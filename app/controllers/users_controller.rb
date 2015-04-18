@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
+class UserController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find_by(username: params[:username])
   end
 
   def edit 

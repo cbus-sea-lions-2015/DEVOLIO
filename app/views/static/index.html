@@ -1,7 +1,7 @@
 <header>
   <h1 class="logo">Devolio</h1>
   <span class="subtitle">Build your <span>development</span> portfolio</span>
-  <input type="text" name="ghusername" id="ghusername" placeholder="Github username..." value="jannypie">
+  <input type="text" name="ghusername" id="ghusername" placeholder="Github username...">
   <a href="#" id="ghsubmitbtn">Pull User Data</a>
   <div id="ghapidata" class="clearfix"></div>
 
@@ -9,3 +9,7 @@
   <input type="text" id="tw_handle" placeholder="tw handle.." value="jannypie2">
   <button id="buildResume"></button>
 </header>
+
+<%= link_to "Resume", "/#{current_user.username}" %>
+
+<%= current_user.inspect %>
