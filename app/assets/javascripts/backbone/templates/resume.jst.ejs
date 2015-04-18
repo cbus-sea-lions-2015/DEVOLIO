@@ -1,14 +1,3 @@
-<header>
-  <h1 class="logo">Devolio</h1>
-  <span class="subtitle">Build your <span>development</span> portfolio</span>
-</header>
-
-
-<% if current_user %>
-<%= link_to 'Show', user_path(current_user) %> <br>
-<%= link_to 'Edit', edit_user_registration_path(current_user) %>
-<% end %>
-
 
 <!-- small left column, wider right column -->
 <div class="col-xs-12 col-sm-4 light-container">
@@ -75,21 +64,12 @@
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <h3>Interests</h3>
     <ul class="interests">
-      <li><i class="fa fa-fw fa-2x fa-fighter-jet"></i><span>Military</span></li>
-      <li><i class="fa fa-fw fa-2x fa-paw"></i><span>Animals</span></li>
-      <li><i class="fa fa-fw fa-2x fa-plane"></i><span>Travel</span></li>
-      <li><i class="fa fa-fw fa-2x fa-pencil"></i><span>Writing</span></li>
-      <li><i class="fa fa-fw fa-2x fa-paint-brush"></i><span>Art</span></li>
-      <li><i class="fa fa-fw fa-2x fa-leaf"></i><span>Nature</span></li>
-      <li><i class="fa fa-fw fa-2x fa-futbol-o"></i><span>Sports</span></li>
-      <li><i class="fa fa-fw fa-2x fa-camera-retro"></i><span>Photography</span></li>
-      <li><i class="fa fa-fw fa-2x fa-beer"></i><span>Beer</span></li>
-      <li><i class="fa fa-fw fa-2x fa-briefcase"></i><span>Briefcase</span></li>
-      <li><i class="fa fa-fw fa-2x fa-bicycle"></i><span>Cycling</span></li>
-      <li><i class="fa fa-fw fa-2x fa-gamepad"></i><span>Games</span></li>
-      <li><i class="fa fa-fw fa-2x fa-music"></i><span>Music</span></li>
-      <li><i class="fa fa-fw fa-2x fa-film"></i><span>TV/Movies</span></li>
-      <li><i class="fa fa-fw fa-2x fa-book"></i><span>Reading</span></li>
+      <li><span class="entypo-mobile">Tech</span></li>
+      <li><span class="entypo-paper-plane">Travel</span></li>
+      <li><span class="entypo-palette">Art</span></li>
+      <li><span class="entypo-book">Reading</span></li>
+      <li><span class="entypo-ticket">Movies</span></li>
+      <li><span class="entypo-pencil">Writing</span></li>
     </ul>
   </div>
 </div>
