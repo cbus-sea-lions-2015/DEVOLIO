@@ -1,9 +1,9 @@
 class UserController < ApplicationController
   def show
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username]).to_json
   end
 
-  def edit 
+  def edit
     @user = current_user
   end
 
