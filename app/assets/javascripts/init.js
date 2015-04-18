@@ -11,6 +11,16 @@ $(document).ready(function() {
 
     callGithubApi(gh_handle);
 
+
+
+
+    $.ajax({
+      url: '/resume/twitter',
+      data: username
+    }).done(function(data){
+      console.log(data)
+    })
+
     // var resume = new Resume(gh_handle,tw_handle);
     // resume.fetch();
     // console.log(resume)

@@ -1,5 +1,5 @@
 var Resume = Backbone.Model.extend({
-  url: '/',
+  url: '/:username',
 
   initialize: function(gh,tw) {
     this.github_handle = gh;
