@@ -35,10 +35,10 @@ class TwitterAPI
     # includes.each_with_index do |term, i|
     #   if i == 0
     #     result += " #{term}"
-    #   else  
+    #   else
     #     result += " OR #{term}"
     #   end
-    end
+    # end
 
     puts "query string: #{result}"
     result
