@@ -3,6 +3,8 @@ cache: bundler
 bundler_args: --without development
 rvm:
   - 2.1.2
+services:
+ - mongodb
 script: bundle exec rspec
 notifications:
   slack: cbus-sea-lions-2015:G1qbUhgnQUs2vtWqe8Wk9uNc
