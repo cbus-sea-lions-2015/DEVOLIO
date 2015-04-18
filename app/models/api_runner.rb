@@ -1,12 +1,12 @@
 class ApiRunner
-  def initialize(user)
-    twitter(user)
+  def initialize(current_user)
+    twitter(current_user)
   end
 
-  def twitter(user)
-    twitter = TwitterAPI.new(user["twitter_handle"])
-    tweets = twitter.search(user["twitter_includes"])
-    t = UserTweet.new(user_name: user["username"], tweets: tweets)
+  def twitter(current_user)
+    twitter = TwitterAPI.new(current_user["twitter_handle"])
+    tweets = twitter.search(current_user["twitter_includes"] || [])
+    t = UserTweet.new(user_name: current_user["email"], tweets: tweets)
     if t.save 
       puts "saved!"
     else
