@@ -22,22 +22,22 @@ class TwitterAPI
     client
   end
 
-  def search#(includes) #expect an array of strings
+  def search(includes) #expect an array of strings
     results = []
-    @client.search(query, result_type: "recent", count: 100).each do |tweet|
+    @client.search(query(includes), result_type: "recent", count: 100).each do |tweet|
       results << JSON.parse(tweet.to_h.to_json)
     end
     results
   end
 
-  def query#(includes)
+  def query(includes)
     result = "from:#{@user}"
-    # includes.each_with_index do |term, i|
-    #   if i == 0
-    #     result += " #{term}"
-    #   else  
-    #     result += " OR #{term}"
-    #   end
+    includes.each_with_index do |term, i|
+      if i == 0
+        result += " #{term}"
+      else  
+        result += " OR #{term}"
+      end
     end
 
     puts "query string: #{result}"

@@ -3,8 +3,10 @@
 <h2><%= @user.name %></h2><br>
 <p><%= @user.description %></p>
 
-<h3><%= @user.twitter_handle %></h3>
-<h3><%= @user.skills %></h3>
-<h3><%= @user.interests %></h3>
+<h4>Twitter: <%= @user.twitter_handle %></h4>
+<h4>My skills: <%= @user.skills %></h4>
+<h4>My interests: <%= @user.interests %></h4>
 
-<h2><%= current_user._id %> </h2>
+<%= link_to "Home", root_path %>
+
+<%= link_to "Run API", run_api_path %> 
