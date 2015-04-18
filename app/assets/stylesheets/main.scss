@@ -1,5 +1,5 @@
-@import url("bootstrap-sprockets");
-@import url("bootstrap");
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
@@ -151,6 +151,10 @@ hr {
 .dark-container {
   background: $dark-gray;
   color: #fff;
+}
+.light-container {
+  background: #fff;
+  color: $black;
 }
 .nav {
   text-align: right;
