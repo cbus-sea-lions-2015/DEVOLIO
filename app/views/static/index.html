@@ -4,8 +4,8 @@
   <input type="text" name="ghusername" id="ghusername" placeholder="Github username...">
   <a href="#" id="ghsubmitbtn">Pull User Data</a>
   <div id="ghapidata" class="clearfix"></div>
+
+  <input type="text" id="gh_handle" placeholder="gh handle..">
+  <input type="text" id="tw_handle" placeholder="tw handle..">
+  <button id="buildResume"></button>
 </header>
-
-<%= link_to "Resume", "/#{current_user.username}" %>
-
-<%= current_user.inspect %>

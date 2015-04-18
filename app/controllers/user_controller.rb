@@ -5,9 +5,10 @@ class UserController < ApplicationController
       resumerunner = ResumeRunner.new(current_user)
       @tweets = resumerunner.tweets
     end
+    render 'users/show'
   end
 
-  def edit 
+  def edit
     @user = current_user
   end
 
@@ -19,7 +20,7 @@ class UserController < ApplicationController
       render 'Edit'
     end
   end
-  
+
   private
 
   def user_params
@@ -27,4 +28,4 @@ class UserController < ApplicationController
   end
 end
 
- 
+
