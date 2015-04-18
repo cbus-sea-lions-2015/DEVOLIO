@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
+class UserController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find_by(username: params[:username])
     if UserTweet.find_by(user_name: current_user["email"])
       resumerunner = ResumeRunner.new(current_user)
       @tweets = resumerunner.tweets

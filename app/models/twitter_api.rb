@@ -32,6 +32,7 @@ class TwitterAPI
 
   def query(includes)
     result = "from:#{@user}"
+
     includes.each_with_index do |term, i|
       if i == 0
         result += " #{term}"
