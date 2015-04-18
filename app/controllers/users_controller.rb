@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:username])
     if UserTweet.find_by(user_name: current_user["email"])
