@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   
   get 'run_api', to: 'api#run'
 
+  post 'store_github', to: 'api#github'
+
   root to: 'static#index'
 end
