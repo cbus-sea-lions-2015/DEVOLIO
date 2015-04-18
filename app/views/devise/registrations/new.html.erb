@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
 
@@ -17,40 +17,34 @@
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %><br>
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :twitter_handle %>
+    <%= f.label :twitter_handle %><br>
     <%= f.text_field :twitter_handle %>
   </div>
 
   <div class="field">
-    <%= f.label :description %>
+    <%= f.label :description %><i>(a short 2-3 sentence description on why you decided to become a developer)</i><br>
     <%= f.text_field :description %>
   </div>
 
   <div class="field">
-    <%= f.label :interests %>
+    <%= f.label :interests %><br>
     <%= f.text_field :interests %>
   </div>
 
   <div class="field">
-    <%= f.label :skills %>
+    <%= f.label :skills %><br>
     <%= f.text_field :skills %>
   </div>
-
-
-
-
-
-
 
   <div class="actions">
     <%= f.submit "Sign up" %>
