@@ -145,15 +145,23 @@ hr {
 
 /* Layout */
 .main-container {
-  padding: 2em;
   min-height: 100vw;
+  background: $dark-gray;
+  color: #fff;
+}
+.light-container {
+  background: #fff;
+  color: $black;
+  padding: 2em;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
+  padding: 2em;
 }
 .nav {
   text-align: right;
+  padding: 2em;
 }
 
 /* Reset list styles */
@@ -166,7 +174,7 @@ hr {
   text-align: center;
   margin: 1.5em auto;
 }
-.icons li, .contact-info li {
+.icons li {
   display: inline-block;
   margin: 0.2em 0.5em;
 }
@@ -217,35 +225,30 @@ header .subtitle span {
   color: $light-gray;
   font-size: 0.8em;
 }
-
-.profile {
-  display: inline-block;
-  padding: 1em;
-  width: 30%; /* Replace with bootstrap */
-  vertical-align: top;
-}
 .avatar, .name {
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 2em;
 }
 .avatar img {
   border-radius: 50%;
-  width: 5em;
   vertical-align: middle;
 }
-.avatar h2 {
-  display: inline;
+.name h2 {
   font-size: 2em;
   vertical-align: middle;
+  text-align: left;
 }
 .contact-info {
   overflow: auto;
 }
 .contact-info li {
+  display: inline-block;
   float: left;
+  padding: 0;
+  margin: 0.25em 0;
 }
-.contact-info .label {
-  clear: both;
+.contact-info li:nth-child(odd) {
   font-weight: $font-weight--bold;
   width: 25%;
 }
