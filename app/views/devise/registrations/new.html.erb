@@ -1,38 +1,37 @@
-<h2>Sign up</h2>
-
+<h2>Register with Devolio</h2>
+<div class="col-md-4"></div>
+<div class="col-md-4 light-container">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :username %><br>
+  <fieldset>
+    <%= f.label :username, class: "col-sm-3" %>
     <%= f.text_field :username, required: true, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %><br>
+  </fieldset>
+  <fieldset>
+    <%= f.label :name, class: "col-sm-3" %>
     <%= f.text_field :name, required: true %>
-  </div>
+  </fieldset>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <fieldset>
+    <%= f.label :email, class: "col-sm-3" %>
     <%= f.email_field :email, required:true %>
-  </div>
+  </fieldset>
 
-  <div class="field">
-    <%= f.label :password %>
+  <fieldset>
+    <%= f.label :password, class: "col-sm-3" %>
     <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br>
+    <em class="col-sm-12">(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
     <%= f.password_field :password, required: true, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
+  </fieldset>
+  <fieldset>
+    <%= f.label :password_confirmation, class: "col-sm-3" %>
     <%= f.password_field :password_confirmation, required: true, autocomplete: "off" %>
-  </div>
+  </fieldset>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<div class="col-md-4"></div>
