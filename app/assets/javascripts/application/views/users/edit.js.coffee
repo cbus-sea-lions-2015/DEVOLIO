@@ -25,3 +25,4 @@ class App.Views.Users.Edit extends App.View
       formData[n['name']] = n['value']
     formData
 
+  

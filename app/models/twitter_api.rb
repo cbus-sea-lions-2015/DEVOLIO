@@ -24,7 +24,7 @@ class TwitterAPI
 
   def search(includes) #expect an array of strings
     results = []
-    @client.search(query(includes), result_type: "recent", count: 100).each do |tweet|
+    @client.search(query(includes), result_type: "recent", count: 100).take(5).each do |tweet|
       results << JSON.parse(tweet.to_h.to_json)
     end
     results

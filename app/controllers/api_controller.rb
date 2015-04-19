@@ -1,8 +1,4 @@
 class ApiController < ApplicationController
-  def run
-    ApiRunner.new(current_user)
-    redirect_to root_path
-  end
 
   def github
     if current_user.github_info != nil

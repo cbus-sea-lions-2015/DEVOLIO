@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
+    run_twitter_api(current_user)
     saved = @user.update(user_params)
 
     respond_to do |wants|
@@ -46,8 +47,13 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :email, :twitter_handle, :description, :interests, :skills)
+    params.require(:user).permit(:username, :name, :email, :twitter_handle, :description, :interests, :skills, :github_handle)
+  end
+
+  def run_twitter_api(current_user)
+    current_user.user_tweet.destroy if current_user.user_tweet
+    twitter = TwitterAPI.new(current_user["twitter_handle"])
+    tweets = twitter.search(current_user["twitter_includes"] || [])
+    current_user.user_tweet = UserTweet.new(user_name: current_user["email"], tweets: tweets)
   end
 end
-
-
