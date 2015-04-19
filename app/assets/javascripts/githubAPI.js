@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-  $('#ghsubmitbtn').on('click', function(e){
+  $('#get_api').on('click', function(e){
     e.preventDefault();
-    var username = $('#ghusername').val();    
+    var username = $('#gh_username').val();    
     getGitHubData(username);
     debugger;
   });
@@ -18,10 +18,9 @@ var getGitHubData = function(username){
 
   var test;
   requestJSON(user_uri, function(json){
-    if(json.message == "Not Found" || username == '') {
-      $('#ghapidata').html("<h2>No User Info Found</h2>");
+    if(json.message != "Not Found" && username != '') {
+      $('.message').html("<h2>No User Info Found</h2>");
     }
-
     else {
       // else we have a user and we display their info
       githubResults.username = json.login;
@@ -105,10 +104,9 @@ function requestJSON(url, callback) {
   var otherTest = $.getJSON(url, {
     format: "json",
   }).error(function(error) {
-    $('#ghapidata').html("<h2>"+ error +"</h2>");
+    $('.message').html("<h2>"+ error +"</h2>");
   }).done(function(data) {
     callback.call(null, data);
-    // return data;
   });
   debugger;
 return otherTest;
@@ -122,6 +120,5 @@ function saveGithubResults(githubResults) {
     type: 'POST',
     data: githubResults
   }).done(function(data){
-    //DO SOMETHING!
   })
 }
