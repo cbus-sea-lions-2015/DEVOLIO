@@ -15,15 +15,20 @@
 <body>
 <% end %>
   <div class="main-container">
+    <%= yield %>
+  </div>
+  <footer class="dark-container">
     <div class="nav">
     <% if user_signed_in? %>
         Welcome <%=  current_user.email %>
         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "button" %>
+        <%= link_to "Dashboard", '/dashboard', class: "button" %>
+        <%= link_to "My DEVOLIO", "/#{current_user.username}", class: "button" %>
     <% else %>
         <%= link_to "Sign in", new_user_session_path, class: "button" %> or <%= link_to "Sign up", new_user_registration_path, class: "button"  %>
     <% end %>
     </div>
-    <%= yield %>
-  </div>
+  </footer>
+
 </body>
 </html>

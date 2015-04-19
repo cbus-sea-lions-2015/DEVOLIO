@@ -4,4 +4,8 @@ class App.Views.Users.Show extends App.View
   render: ->
     # console.log(@model)
     # console.log("Attrs:",@model.attributes)
+    intList = @model.attributes.interests.split(",")
+    skillsList = @model.attributes.skills.split(",")
+    @model.attributes.interests = intList
+    @model.attributes.skills = skillsList
     @$el.html(@template(@model.attributes))

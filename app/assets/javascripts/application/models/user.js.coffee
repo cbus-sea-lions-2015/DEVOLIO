@@ -1,6 +1,7 @@
 class App.Models.User extends App.Model
   urlRoot: 'users'
   defaults:
+    avatar: 'super_mario.jpg',
     username: '',
     blog_link: '',
     email: '',

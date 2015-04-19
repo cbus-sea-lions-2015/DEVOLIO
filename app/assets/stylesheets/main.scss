@@ -41,7 +41,7 @@ a:hover {
   text-decoration: underline;
 }
 /* Icons */
-a[class*="entypo-"] {
+a .fa {
   background: $black;
   border-radius: 50%;
   color: #fff;
@@ -50,17 +50,14 @@ a[class*="entypo-"] {
   text-decoration: none;
   text-align: center;
   line-height: 1em;
-  padding: 0.35em 0.3em 0.25em 0.3em;
-  width: 1em;
-  height: 1em;
+  padding: 0.5em 0.3em 0.25em 0.3em;
+  width: 2em;
+  height: 2em;
   transition:
     background 0.2s ease-in-out,
     color 0.2s linear;
 }
-a[class*="entypo-"]:before, span[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
-a[class*="entypo-"]:hover {
+a .fa:hover {
   background: $green;
   color: $black;
 }
@@ -171,6 +168,10 @@ hr {
   background: $dark-gray;
   color: #fff;
   padding: 2em;
+}
+.light-container {
+  background: #fff;
+  color: $black;
 }
 .nav {
   text-align: right;
@@ -318,17 +319,21 @@ header .subtitle span {
   width: 5em;
   height: 5em;
   margin: 0.2em 0.05em;
+  vertical-align: middle;
 }
-.interests li span[class*="entypo-"] {
-  font-size: 0.6rem;
+.interests li span {
+  display: inline-block;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
+  vertical-align: bottom;
 }
-.interests li span[class*="entypo-"]:before {
+.interests li .fa {
+  display: inline;
+  vertical-align: middle;
+}
+.interests li .fa:before {
   color: #fff;
-  display: block;
-  font-size: 4em;
-  font-weight: $font-weight--light;
-  width: 100%;
+  font-size: 3em;
   text-align: center;
 }

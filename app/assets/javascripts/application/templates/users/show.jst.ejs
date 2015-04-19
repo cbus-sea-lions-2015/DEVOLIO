@@ -3,7 +3,7 @@
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
       <div class="avatar col-xs-3">
-        <img src="" alt="avatar" />
+        <!-- <img src="/assets/images/<%= avatar %>" alt="avatar" /> -->
       </div>
       <div class="name col-xs-9">
         <h2><%= name %></h2>
@@ -15,16 +15,21 @@
         <li><a href="#" class="entypo-linkedin"></a></li>
       </ul>
       <ul class="contact-info">
-        <li class="label">Call</li>
-        <li class="info"></li>
-        <li class="label">Email</li>
-        <li class="info"><%= email %></li>
-        <li class="label">Website</li>
-        <li class="info"><a href=""></a></li>
+        <li class="col-xs-3">Username</li>
+        <li class="col-xs-9"><%= username %></li>
+        <li class="col-xs-3">Email</li>
+        <li class="col-xs-9"><%= email %></li>
+        <li class="col-xs-3">Blog</li>
+        <li class="col-xs-9"><%= blog_link %></li>
+        <li class="col-xs-3">GitHub</li>
+        <li class="col-xs-9"><%= github_handle %></li>
+        <li class="col-xs-3">Twitter</li>
+        <li class="col-xs-9"><%= twitter_handle %></li>
+
       </ul>
     </section>
     <section id="user_linkedin">
-      <h3>Experience</h3>
+      <!-- <h3>Experience</h3> -->
       <div class="position">
         <!-- position title -->
         <h4></h4>
@@ -33,7 +38,7 @@
         <!-- time span -->
         <p class="time-span"></p>
       </div>
-      <h3>Recommendations</h3>
+      <!-- <h3>Recommendations</h3> -->
       <p></p>
     </section>
 </section>
@@ -47,7 +52,9 @@
     <section id="user_skills">
       <h3>Skills</h3>
       <ul class="skills-list">
-        <li class="skill-percentage"></li>
+        <% for(var i=0; i< skills.length; i++) { %>
+          <li class="skill-percentage"><%= skills[i] %></li>
+        <% } %>
       </ul>
     </section>
   </section>
@@ -59,6 +66,9 @@
     <section id="user_interests">
       <h3>Interests</h3>
       <ul class="interests">
+        <% for(var i=0; i< interests.length; i++) { %>
+          <li><%= interests[i] %></li>
+        <% } %>
       </ul>
     </section>
   </section>

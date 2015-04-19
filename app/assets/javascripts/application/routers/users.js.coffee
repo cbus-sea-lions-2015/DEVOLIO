@@ -15,6 +15,7 @@ class App.Routers.Users extends App.Router
     username = $('body').attr('id');
     user = new App.Models.User id: username
     user.fetch().done ->
+      console.log(user.attributes)
       view = new App.Views.Users.Edit(model: user)
       $('.main-container').html(view.el)
       view.render()
