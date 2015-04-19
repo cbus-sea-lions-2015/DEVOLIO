@@ -8,6 +8,15 @@ GIT
       origin (~> 2.1)
       tzinfo (>= 0.3.37)
 
+GIT
+  remote: git://github.com/mongoid/moped.git
+  revision: 10abbf3eac3739368d52d6ae344f5713333a7f24
+  specs:
+    moped (2.0.4)
+      bson (~> 2.2)
+      connection_pool (~> 2.0)
+      optionable (~> 0.2.0)
+
 GEM
   remote: https://rubygems.org/
   remote: http://gems.github.com/
@@ -140,10 +149,6 @@ GEM
     minitest (5.6.0)
     mongo (1.3.1)
       bson (>= 1.3.1)
-    moped (2.0.4)
-      bson (~> 2.2)
-      connection_pool (~> 2.0)
-      optionable (~> 0.2.0)
     multi_json (1.11.0)
     multipart-post (2.0.0)
     naught (1.0.0)
@@ -298,6 +303,7 @@ DEPENDENCIES
   jquery-rails
   mongo
   mongoid!
+  moped!
   pry
   rails (= 4.2.1)
   rails-backbone
