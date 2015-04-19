@@ -25,10 +25,7 @@
         <li class="col-xs-9"><%= github_handle %></li>
         <li class="col-xs-3">Twitter</li>
         <li class="col-xs-9"><%= twitter_handle %></li>
-        <li class="col-xs-3">Skills</li>
-        <li class="col-xs-9"><%= skills %></li>
-        <li class="col-xs-3">Interests</li>
-        <li class="col-xs-9"><%= interests %></li>
+
       </ul>
     </section>
     <section id="user_linkedin">
@@ -55,7 +52,9 @@
     <section id="user_skills">
       <h3>Skills</h3>
       <ul class="skills-list">
-        <li class="skill-percentage"></li>
+        <% for(var i=0; i< skills.length; i++) { %>
+          <li class="skill-percentage"><%= skills[i] %></li>
+        <% } %>
       </ul>
     </section>
   </section>
@@ -67,6 +66,9 @@
     <section id="user_interests">
       <h3>Interests</h3>
       <ul class="interests">
+        <% for(var i=0; i< interests.length; i++) { %>
+          <li><%= interests[i] %></li>
+        <% } %>
       </ul>
     </section>
   </section>
