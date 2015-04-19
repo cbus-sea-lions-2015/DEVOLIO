@@ -1,15 +1,11 @@
-$(document).ready(function() {
+function processGithubApi() {
 
-  $('#get_api').on('click', function(e){
+  $(document).on('click', '#get_api', function(e){
     e.preventDefault();
     var username = $('#gh_username').val();    
     getGitHubData(username);
-    debugger;
-  });
-
-
-  
-});
+  })  
+};
 
 var getGitHubData = function(username){
   var githubResults = {test: "test"}
@@ -18,7 +14,7 @@ var getGitHubData = function(username){
 
   var test;
   requestJSON(user_uri, function(json){
-    if(json.message != "Not Found" && username != '') {
+    if(json.message == "Not Found" || username == '') {
       $('.message').html("<h2>No User Info Found</h2>");
     }
     else {
@@ -47,8 +43,6 @@ var getGitHubData = function(username){
       var commitMessages = [];
       
       $.getJSON(events_uri, function(json){
-        console.log("Checking inside JSON")
-        console.log(githubResults);
         events = json;
         for (var i = 0; i < events.length; i++) {
           if (events[i].type === "PushEvent") {
@@ -93,12 +87,12 @@ var getGitHubData = function(username){
         githubResults.lineDeletions = deletions;
         githubResults.commitMessages = commitMessages; 
         githubResults.languages = languages;
-        console.log(githubResults);
         saveGithubResults(githubResults);
       })
-    } // end else statement
-  }); // end requestJSON Ajax call
-}; // end click event handler
+    }
+  }); 
+}
+window.getGitHubData = getGitHubData;
 
 function requestJSON(url, callback) {
   var otherTest = $.getJSON(url, {
@@ -113,12 +107,10 @@ return otherTest;
 }
 
 function saveGithubResults(githubResults) {
-  console.log("inside save");
-  console.log(githubResults);
   $.ajax({
     url: '/store_github',
     type: 'POST',
-    data: githubResults
+    data: {github_profile: githubResults}
   }).done(function(data){
   })
 }
