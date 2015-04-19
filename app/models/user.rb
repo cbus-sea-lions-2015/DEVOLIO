@@ -30,14 +30,14 @@ class User
   field :blog_link,          type: String
   field :RSS_feed,           type: String
   field :skills
-  field :github_handle       type: String
+  field :github_handle,       type: String
 
   has_one :github_info
+  has_one :user_tweet
 
   validates_uniqueness_of :username, :email
   validates_format_of :username, with: /\w+/
 
-  has_one :user_tweet
 
   ## Confirmable
   # field :confirmation_token,   type: String
