@@ -6,9 +6,9 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
-  field :username,           type: String, default: ""
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :username,           type: String
+  field :email,              type: String
+  field :encrypted_password, type: String
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -30,8 +30,12 @@ class User
   field :blog_link,          type: String
   field :RSS_feed,           type: String
   field :skills
+  field :github_handle       type: String
 
   has_one :github_info
+
+  validates_uniqueness_of :username, :email
+  validates_format_of :username, with: /\w+/
 
   ## Confirmable
   # field :confirmation_token,   type: String
