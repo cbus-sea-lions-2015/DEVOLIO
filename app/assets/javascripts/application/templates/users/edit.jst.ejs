@@ -34,46 +34,48 @@
 </section>
 <section class="light-container col-xs-12 col-sm-8">
   <h3>Edit Your Portfolio Information</h3>
-  <form id="user_form" action="users" method="POST">
-    <input type="hidden" name="_method" value="PUT">
+  <form id="user_form">
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Name</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[name]" value="<%= name %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="name" value="<%= name %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Short Description</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[description]" value="<%= description %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="description" value="<%= description %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">email</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[email]" value="<%= email %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="email" value="<%= email %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">GitHub Username</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[github_handle]" value="<%= github_handle %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="github_handle" value="<%= github_handle %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Twitter Username</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[twitter_handle]" value="<%= twitter_handle %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="twitter_handle" value="<%= twitter_handle %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Blog</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[blog_link]" value="<%= blog_link %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="blog_link" value="<%= blog_link %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Technical Skills</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[skills]" value="<%= skills %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="skills" value="<%= skills %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="user[interests]" value="<%= interests %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="interests" value="<%= interests %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Confirm Password</label>
-      <input class="col-xs-12 col-sm-6" type="password" name="user[current_password]" required>
+      <input class="col-xs-12 col-sm-6" type="password" name="current_password" required>
       <p class="col-xs-12"><i>(we need your current password to confirm your changes)</i></p>
     </fieldset>
-    <input type="submit">
+    <fieldset>
+      <input type="submit">
+      <p class="message"></p>
+    </fieldset>
   </form>
 </section>
 </div>
