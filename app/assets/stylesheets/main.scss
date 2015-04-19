@@ -23,7 +23,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 body {
   box-sizing: inherit;
@@ -113,6 +112,27 @@ input[type="submit"] {
   display: block;
   margin: 1em 0;
 }
+form input {
+  line-height: 2em;
+  color: $black;
+}
+input[type="submit"] {
+  border-color: $green;
+  color: $green;
+  line-height: 1em;
+}
+:required {
+  border-color: $deep-orange;
+  border-width: 1px;
+}
+form label {
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 2em;
+}
+form fieldset {
+  margin: 1em 0;
+}
 .button.small, input[type="submit"].small {
   font-size: 12px;
   padding: 0.5em 0.75em;
@@ -160,6 +180,9 @@ hr {
 .nav {
   text-align: right;
   padding: 2em;
+}
+.dashboard {
+  overflow: auto;
 }
 
 /* Reset list styles */
@@ -245,20 +268,20 @@ header .subtitle span {
   float: left;
   padding: 0;
   margin: 0.25em 0;
+  vertical-align: middle;
+  line-height: 2em;
 }
 .contact-info li:nth-child(odd) {
   font-weight: $font-weight--bold;
-  width: 25%;
+  clear: both;
 }
-.contact-info .info {
+.contact-info li:nth-child(even) {
   color: $gray;
 }
 .details {
   display: inline-block;
-  width: 60%; /* Replace with bootstrap */
   vertical-align: top;
   padding: 1em;
-  height: 100em; /* Replace with Bootstrap */
 }
 .column {
   width: 45%;

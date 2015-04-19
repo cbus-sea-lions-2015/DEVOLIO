@@ -10,39 +10,68 @@
       </div>
       <p><%= description %></p>
       <ul class="icons">
-        <li><a href="#" class="entypo-github"></a></li>
-        <li><a href="#" class="entypo-twitter"></a></li>
-        <li><a href="#" class="entypo-linkedin"></a></li>
+        <li><a href="http://github.com/<%= github_handle %>" class="entypo-github"></a></li>
+        <li><a href="http://twitter.com/<%= twitter_handle %>" class="entypo-twitter"></a></li>
+        <!--li><a href="#" class="entypo-linkedin"></a></li-->
       </ul>
       <ul class="contact-info">
-        <li class="label">Call</li>
-        <li class="info"></li>
-        <li class="label">Email</li>
-        <li class="info"><%= email %></li>
-        <li class="label">Website</li>
-        <li class="info"><a href=""></a></li>
+        <li class="col-xs-3">Username</li>
+        <li class="col-xs-9"><%= username %></li>
+        <li class="col-xs-3">Email</li>
+        <li class="col-xs-9"><%= email %></li>
+        <li class="col-xs-3">Blog</li>
+        <li class="col-xs-9"><%= blog_link %></li>
+        <li class="col-xs-3">GitHub</li>
+        <li class="col-xs-9"><%= github_handle %></li>
+        <li class="col-xs-3">Twitter</li>
+        <li class="col-xs-9"><%= twitter_handle %></li>
+        <li class="col-xs-3">Skills</li>
+        <li class="col-xs-9"><%= skills %></li>
+        <li class="col-xs-3">Interests</li>
+        <li class="col-xs-9"><%= interests %></li>
       </ul>
     </section>
 </section>
 <section class="light-container col-xs-12 col-sm-8">
-  <h2>Edit <%= name %></h2>
+  <h3>Edit Your Portfolio Information</h3>
   <form id="user_form" action="users" method="POST">
     <input type="hidden" name="_method" value="PUT">
     <fieldset>
-      <label for="">Username</label>
-      <input type="text" name="user[username]">
+      <label for="" class="col-xs-12 col-sm-3">Name</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[name]" value="<%= name %>">
     </fieldset>
     <fieldset>
-      <label for="">email</label>
-      <input type="text" name="user[email]">
+      <label for="" class="col-xs-12 col-sm-3">Short Description</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[description]" value="<%= description %>">
     </fieldset>
     <fieldset>
-      <label for="">github_handle</label>
-      <input type="text" name="user[github_handle]">
+      <label for="" class="col-xs-12 col-sm-3">email</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[email]" value="<%= email %>">
     </fieldset>
     <fieldset>
-      <label for="">twitter_handle</label>
-      <input type="text" name="user[twitter_handle]">
+      <label for="" class="col-xs-12 col-sm-3">GitHub Username</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[github_handle]" value="<%= github_handle %>">
+    </fieldset>
+    <fieldset>
+      <label for="" class="col-xs-12 col-sm-3">Twitter Username</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[twitter_handle]" value="<%= twitter_handle %>">
+    </fieldset>
+    <fieldset>
+      <label for="" class="col-xs-12 col-sm-3">Blog</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[blog_link]" value="<%= blog_link %>">
+    </fieldset>
+    <fieldset>
+      <label for="" class="col-xs-12 col-sm-3">Technical Skills</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[skills]" value="<%= skills %>">
+    </fieldset>
+    <fieldset>
+      <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>
+      <input class="col-xs-12 col-sm-6" type="text" name="user[interests]" value="<%= interests %>">
+    </fieldset>
+    <fieldset>
+      <label for="" class="col-xs-12 col-sm-3">Confirm Password</label>
+      <input class="col-xs-12 col-sm-6" type="password" name="user[current_password]" required>
+      <p class="col-xs-12"><i>(we need your current password to confirm your changes)</i></p>
     </fieldset>
     <input type="submit">
   </form>

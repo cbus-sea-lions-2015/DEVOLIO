@@ -4,17 +4,17 @@
   <%= devise_error_messages! %>
   <div class="field">
     <%= f.label :username %><br>
-    <%= f.text_field :username %>
+    <%= f.text_field :username, required: true, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, required:true %>
   </div>
 
   <div class="field">
@@ -22,32 +22,12 @@
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, required: true, autocomplete: "off" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :twitter_handle %><br>
-    <%= f.text_field :twitter_handle %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><i>(a short 2-3 sentence description on why you decided to become a developer)</i><br>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interests %><br>
-    <%= f.text_field :interests %>
-  </div>
-
-  <div class="field">
-    <%= f.label :skills %><br>
-    <%= f.text_field :skills %>
+    <%= f.password_field :password_confirmation, required: true, autocomplete: "off" %>
   </div>
 
   <div class="actions">
