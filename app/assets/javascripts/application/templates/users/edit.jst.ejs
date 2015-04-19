@@ -25,77 +25,26 @@
     </section>
 </section>
 <section class="light-container col-xs-12 col-sm-8">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
-  </div>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br>
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :twitter_handle %><br>
-    <%= f.text_field :twitter_handle %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><i>(a short 2-3 sentence description on why you decided to become a developer)</i><br>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :interests %><br>
-    <%= f.text_field :interests %>
-  </div>
-
-  <div class="field">
-    <%= f.label :skills %><br>
-    <%= f.text_field :skills %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-  <% end %>
-
-
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
+  <h2>Edit <%= name %></h2>
+  <form id="user_form" action="users" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <fieldset>
+      <label for="">Username</label>
+      <input type="text" name="user[username]">
+    </fieldset>
+    <fieldset>
+      <label for="">email</label>
+      <input type="text" name="user[email]">
+    </fieldset>
+    <fieldset>
+      <label for="">github_handle</label>
+      <input type="text" name="user[github_handle]">
+    </fieldset>
+    <fieldset>
+      <label for="">twitter_handle</label>
+      <input type="text" name="user[twitter_handle]">
+    </fieldset>
+    <input type="submit">
+  </form>
 </section>
 </div>
