@@ -1,30 +1,40 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
+  # respond_to :html,:json
+
+  def index
+
+  end
+
   def show
-    @user = User.find_by(username: params[:username])
-    if UserTweet.find_by(user_name: current_user["email"])
-      resumerunner = ResumeRunner.new(current_user)
-      @tweets = resumerunner.tweets
+    @user = User.find_by(username: params[:id])
+    # if UserTweet.find_by(user_name: current_user["email"])
+    #   resumerunner = ResumeRunner.new(current_user)
+    #   @tweets = resumerunner.tweets
+    # end
+    respond_to do |wants|
+      wants.js { render json: @user }
+      wants.html
     end
   end
 
-  def edit 
+  def edit
     @user = current_user
   end
 
   def update
-      @user = current_user
+    @user = current_user
     if @user.update(user_params)
       redirect_to @user
     else
       render 'Edit'
     end
   end
-  
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :twitter_handle, :description, :interests, :skills)
+    params.require(:user).permit(:username, :name, :email, :twitter_handle, :description, :interests, :skills)
   end
 end
 
- 
+

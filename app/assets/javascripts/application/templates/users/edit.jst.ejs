@@ -1,0 +1,50 @@
+<div class="dashboard">
+  <section class="dark-container col-xs-12 col-sm-4">
+    <h1 class="logo small">Devolio</h1>
+    <section id="user_profile">
+      <div class="avatar col-xs-3">
+        <img src="" alt="avatar" />
+      </div>
+      <div class="name col-xs-9">
+        <h2><%= name %></h2>
+      </div>
+      <p><%= description %></p>
+      <ul class="icons">
+        <li><a href="#" class="entypo-github"></a></li>
+        <li><a href="#" class="entypo-twitter"></a></li>
+        <li><a href="#" class="entypo-linkedin"></a></li>
+      </ul>
+      <ul class="contact-info">
+        <li class="label">Call</li>
+        <li class="info"></li>
+        <li class="label">Email</li>
+        <li class="info"><%= email %></li>
+        <li class="label">Website</li>
+        <li class="info"><a href=""></a></li>
+      </ul>
+    </section>
+</section>
+<section class="light-container col-xs-12 col-sm-8">
+  <h2>Edit <%= name %></h2>
+  <form id="user_form" action="users" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <fieldset>
+      <label for="">Username</label>
+      <input type="text" name="user[username]">
+    </fieldset>
+    <fieldset>
+      <label for="">email</label>
+      <input type="text" name="user[email]">
+    </fieldset>
+    <fieldset>
+      <label for="">github_handle</label>
+      <input type="text" name="user[github_handle]">
+    </fieldset>
+    <fieldset>
+      <label for="">twitter_handle</label>
+      <input type="text" name="user[twitter_handle]">
+    </fieldset>
+    <input type="submit">
+  </form>
+</section>
+</div>
