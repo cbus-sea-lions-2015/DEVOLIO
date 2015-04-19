@@ -128,8 +128,9 @@ production:
        # See our example for long-running queries in the blog
        # post referenced above.
        timeout: 15
-       raise_not_found_error: false
 
        # refresh_interval specifies the number of seconds to cache server information.
        # Lowering this number will help the driver recover more quickly from changes to replica set reconfiguration
        refresh_interval: 10
+ options:
+   raise_not_found_error: false
