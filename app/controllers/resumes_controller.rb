@@ -1,8 +1,9 @@
 class ResumesController < ApplicationController
   def twitter
-    tweet_collection = UserTweet.find_by(user_name: params[:username])
+    user = User.find_by(username: params[:username])
+    tweets = user.user_tweet.tweets
 
-    tweet_collection.tweets.map {|t| t.to_json} #should return an array
+    tweets.map {|t| t.to_json} #should return an array
   end
 
   def github
