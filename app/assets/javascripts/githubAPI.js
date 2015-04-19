@@ -5,10 +5,7 @@ $(document).ready(function() {
     var username = $('#ghusername').val();    
     getGitHubData(username);
     debugger;
-  });
-
-
-  
+  });  
 });
 
 var getGitHubData = function(username){
@@ -48,8 +45,6 @@ var getGitHubData = function(username){
       var commitMessages = [];
       
       $.getJSON(events_uri, function(json){
-        console.log("Checking inside JSON")
-        console.log(githubResults);
         events = json;
         for (var i = 0; i < events.length; i++) {
           if (events[i].type === "PushEvent") {
@@ -94,7 +89,6 @@ var getGitHubData = function(username){
         githubResults.lineDeletions = deletions;
         githubResults.commitMessages = commitMessages; 
         githubResults.languages = languages;
-        console.log(githubResults);
         saveGithubResults(githubResults);
       })
     } // end else statement
@@ -108,20 +102,15 @@ function requestJSON(url, callback) {
     $('#ghapidata').html("<h2>"+ error +"</h2>");
   }).done(function(data) {
     callback.call(null, data);
-    // return data;
   });
   debugger;
 return otherTest;
 }
 
 function saveGithubResults(githubResults) {
-  console.log("inside save");
-  console.log(githubResults);
   $.ajax({
     url: '/store_github',
     type: 'POST',
-    data: githubResults
-  }).done(function(data){
-    //DO SOMETHING!
-  })
+    data: {github_profile: githubResults}
+  });
 }
