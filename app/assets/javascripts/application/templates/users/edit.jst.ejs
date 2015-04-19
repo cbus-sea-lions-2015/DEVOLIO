@@ -25,28 +25,77 @@
     </section>
 </section>
 <section class="light-container col-xs-12 col-sm-8">
-  <section class="user_github">
-    <h3>GitHub Activity</h3>
-    <div class="data-graphs">
-    </div>
-  </section>
-  <section class="col-xs-6">
-    <section id="user_skills">
-      <h3>Skills</h3>
-      <ul class="skills-list">
-        <li class="skill-percentage"></li>
-      </ul>
-    </section>
-  </section>
-  <section class="col-xs-6">
-    <section id="user_tweets">
-      <h3>Tweets</h3>
-    </section>
-    <section id="user_interests">
-      <h3>Interests</h3>
-      <ul class="interests">
-      </ul>
-    </section>
-  </section>
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br>
+    <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twitter_handle %><br>
+    <%= f.text_field :twitter_handle %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><i>(a short 2-3 sentence description on why you decided to become a developer)</i><br>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interests %><br>
+    <%= f.text_field :interests %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skills %><br>
+    <%= f.text_field :skills %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+  <% end %>
+
+
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
+
 </section>
 </div>
