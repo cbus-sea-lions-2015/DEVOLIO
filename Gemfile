@@ -33,7 +33,8 @@ gem 'coveralls', require: false
 
 gem 'pry'
 
-gem 'rails-backbone'
+# gem 'rails-backbone'
+gem 'backbone-on-rails'
 
 # assets
 gem 'uglifier', '>= 1.3.0'
