@@ -7,7 +7,11 @@
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+<% if user_signed_in? %>
+<body id="<%= current_user.username %>">
+<% else %>
 <body>
+<% end %>
   <div class="main-container">
     <div class="nav">
     <% if user_signed_in? %>
