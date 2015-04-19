@@ -102,7 +102,6 @@ function requestJSON(url, callback) {
   }).done(function(data) {
     callback.call(null, data);
   });
-  debugger;
 return otherTest;
 }
 
