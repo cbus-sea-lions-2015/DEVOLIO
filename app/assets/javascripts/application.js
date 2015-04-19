@@ -16,3 +16,4 @@
 //= require underscore
 //= require backbone
 //= require application/app
+//= require githubAPI
