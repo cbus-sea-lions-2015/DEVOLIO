@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  def index
+  end
+
   def show
     @user = User.find_by(username: params[:username])
     if UserTweet.find_by(user_name: current_user["email"])
@@ -12,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def update
-      @user = current_user
+    @user = current_user
     if @user.update(user_params)
       redirect_to @user
     else
@@ -23,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :twitter_handle, :description, :interests, :skills)
+    params.require(:user).permit(:username, :name, :email, :twitter_handle, :description, :interests, :skills)
   end
 end
 

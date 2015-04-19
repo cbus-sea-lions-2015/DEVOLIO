@@ -1,7 +1,7 @@
 var User = Backbone.Model.extend({
-  urlRoot: '/users'
+  urlRoot: '/',
   defaults: {
-
+    username: ''
   },
 
   initialize: function() {
