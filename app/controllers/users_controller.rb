@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:username])
     if UserTweet.find_by(user_name: current_user["email"])
@@ -7,7 +7,7 @@ class UserController < ApplicationController
     end
   end
 
-  def edit 
+  def edit
     @user = current_user
   end
 
@@ -19,7 +19,7 @@ class UserController < ApplicationController
       render 'Edit'
     end
   end
-  
+
   private
 
   def user_params
@@ -27,4 +27,4 @@ class UserController < ApplicationController
   end
 end
 
- 
+
