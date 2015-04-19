@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/:username', to: 'user#show'
   get 'run_api', to: 'api#run'
 
-  post 'store_github', to: 'api#github'
+  post '/store_github', to: 'api#github'
 
   root to: 'static#index'
 end
