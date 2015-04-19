@@ -19,7 +19,7 @@ var getGitHubData = function(username){
     }
     else {
       // else we have a user and we display their info
-      githubResults.username = json.login;
+      githubResults.github_handle = json.login;
       githubResults.fullName = json.name || githubResults.username;
       githubResults.aviurl = json.avatar_url;
       githubResults.profileurl = json.html_url;
