@@ -1,10 +1,11 @@
 class ResumeRunner
-  def initialize(user)
-    @tweets = twitter(user)
+  attr_accessor :tweets
+  def initialize(current_user)
+    @tweets = twitter(current_user)
   end
 
-  def twitter(user)
-    tp = TweetParser.new(user)
+  def twitter(current_user)
+    tp = TweetParser.new(current_user)
     tp.parse
   end
 end

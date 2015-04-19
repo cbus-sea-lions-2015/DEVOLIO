@@ -15,4 +15,4 @@
 //= require bootstrap-sprockets
 //= require underscore
 //= require backbone
-//= require_tree .
+//= require application/app

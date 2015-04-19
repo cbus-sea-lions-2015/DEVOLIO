@@ -1,10 +1,3 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-/* Fonts */
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,900);
-@import url(http://fonts.googleapis.com/css?family=Montserrat);
-
 /* Colors */
 $deep-orange:  #E64A19; /*Deep orange*/
 $orange:       #FF5722; /*Orange*/
@@ -26,7 +19,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 body {
   box-sizing: inherit;
@@ -113,6 +105,27 @@ input[type="submit"] {
   display: block;
   margin: 1em 0;
 }
+form input {
+  line-height: 2em;
+  color: $black;
+}
+input[type="submit"] {
+  border-color: $green;
+  color: $green;
+  line-height: 1em;
+}
+:required {
+  border-color: $deep-orange;
+  border-width: 1px;
+}
+form label {
+  text-transform: uppercase;
+  vertical-align: middle;
+  line-height: 2em;
+}
+form fieldset {
+  margin: 1em 0;
+}
 .button.small, input[type="submit"].small {
   font-size: 12px;
   padding: 0.5em 0.75em;
@@ -142,12 +155,19 @@ hr {
 
 /* Layout */
 .main-container {
+  background: $dark-gray;
+  color: #fff;
+  overflow: auto;
+}
+.light-container {
+  background: #fff;
+  color: $black;
   padding: 2em;
-  min-height: 100vw;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
+  padding: 2em;
 }
 .light-container {
   background: #fff;
@@ -155,6 +175,10 @@ hr {
 }
 .nav {
   text-align: right;
+  padding: 2em;
+}
+.dashboard {
+  overflow: auto;
 }
 
 /* Reset list styles */
@@ -167,7 +191,7 @@ hr {
   text-align: center;
   margin: 1.5em auto;
 }
-.icons li, .contact-info li {
+.icons li {
   display: inline-block;
   margin: 0.2em 0.5em;
 }
@@ -218,47 +242,42 @@ header .subtitle span {
   color: $light-gray;
   font-size: 0.8em;
 }
-
-.profile {
-  display: inline-block;
-  padding: 1em;
-  width: 30%; /* Replace with bootstrap */
-  vertical-align: top;
-}
 .avatar, .name {
   display: inline-block;
   vertical-align: middle;
+  margin-bottom: 2em;
 }
 .avatar img {
   border-radius: 50%;
-  width: 5em;
   vertical-align: middle;
 }
-.avatar h2 {
-  display: inline;
+.name h2 {
   font-size: 2em;
   vertical-align: middle;
+  text-align: left;
 }
 .contact-info {
   overflow: auto;
 }
 .contact-info li {
+  display: inline-block;
   float: left;
+  padding: 0;
+  margin: 0.25em 0;
+  vertical-align: middle;
+  line-height: 2em;
 }
-.contact-info .label {
-  clear: both;
+.contact-info li:nth-child(odd) {
   font-weight: $font-weight--bold;
-  width: 25%;
+  clear: both;
 }
-.contact-info .info {
+.contact-info li:nth-child(even) {
   color: $gray;
 }
 .details {
   display: inline-block;
-  width: 60%; /* Replace with bootstrap */
   vertical-align: top;
   padding: 1em;
-  height: 100em; /* Replace with Bootstrap */
 }
 .column {
   width: 45%;

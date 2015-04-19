@@ -14,7 +14,7 @@ development:
         # Change the default write concern. (default = { w: 1 })
         # write:
         # w: 1
-
+        
         # Change the default consistency model to primary, secondary.
         # 'secondary' will send reads to secondaries, 'primary' sends everything
         # to master. (default: primary)
@@ -76,7 +76,7 @@ development:
 
     # Raise an error when performing a #find and the document is not found.
     # (default: true)
-    # raise_not_found_error: true
+    raise_not_found_error: false
 
     # Raise an error when defining a scope with the same name as an
     # existing method. (default: false)
@@ -132,3 +132,5 @@ production:
        # refresh_interval specifies the number of seconds to cache server information.
        # Lowering this number will help the driver recover more quickly from changes to replica set reconfiguration
        refresh_interval: 10
+ options:
+   raise_not_found_error: false
