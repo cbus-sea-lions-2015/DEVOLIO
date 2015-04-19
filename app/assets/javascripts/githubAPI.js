@@ -1,15 +1,11 @@
-$(document).ready(function() {
+function processGithubApi() {
 
-  $('#ghsubmitbtn').on('click', function(e){
+  $(document).on('click', '#get_api', function(e){
     e.preventDefault();
-    var username = $('#ghusername').val();    
+    var username = $('#gh_username').val();    
     getGitHubData(username);
-    debugger;
-  });
-
-
-  
-});
+  })  
+};
 
 var getGitHubData = function(username){
   var githubResults = {test: "test"}
@@ -19,9 +15,8 @@ var getGitHubData = function(username){
   var test;
   requestJSON(user_uri, function(json){
     if(json.message == "Not Found" || username == '') {
-      $('#ghapidata').html("<h2>No User Info Found</h2>");
+      $('.message').html("<h2>No User Info Found</h2>");
     }
-
     else {
       // else we have a user and we display their info
       githubResults.username = json.login;
@@ -48,8 +43,6 @@ var getGitHubData = function(username){
       var commitMessages = [];
       
       $.getJSON(events_uri, function(json){
-        console.log("Checking inside JSON")
-        console.log(githubResults);
         events = json;
         for (var i = 0; i < events.length; i++) {
           if (events[i].type === "PushEvent") {
@@ -94,34 +87,30 @@ var getGitHubData = function(username){
         githubResults.lineDeletions = deletions;
         githubResults.commitMessages = commitMessages; 
         githubResults.languages = languages;
-        console.log(githubResults);
         saveGithubResults(githubResults);
       })
-    } // end else statement
-  }); // end requestJSON Ajax call
-}; // end click event handler
+    }
+  }); 
+}
+window.getGitHubData = getGitHubData;
 
 function requestJSON(url, callback) {
   var otherTest = $.getJSON(url, {
     format: "json",
   }).error(function(error) {
-    $('#ghapidata').html("<h2>"+ error +"</h2>");
+    $('.message').html("<h2>"+ error +"</h2>");
   }).done(function(data) {
     callback.call(null, data);
-    // return data;
   });
   debugger;
 return otherTest;
 }
 
 function saveGithubResults(githubResults) {
-  console.log("inside save");
-  console.log(githubResults);
   $.ajax({
     url: '/store_github',
     type: 'POST',
-    data: githubResults
+    data: {github_profile: githubResults}
   }).done(function(data){
-    //DO SOMETHING!
   })
 }
