@@ -11,6 +11,7 @@ class App.Views.Users.Edit extends App.View
     form = @$el.find "form"
     newAttrs = @updateModelFromForm(form)
     success = =>
+      window.getGitHubData(@model.get('github_handle'))
       App.router.navigate("/#{@model.get('username')}", {trigger: true});
       # $('.message').html("<span class="">Saved</span>")
     error = -> $('.message').html("<span class='error'>There was an issue saving your updates</span>")
