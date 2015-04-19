@@ -31,7 +31,7 @@ class User
   field :RSS_feed,           type: String
   field :skills
 
-  has_one :user_github
+  has_one :github_info
 
   ## Confirmable
   # field :confirmation_token,   type: String
