@@ -31,6 +31,8 @@ class User
   field :RSS_feed,           type: String
   field :skills
 
+  has_one :user_tweet
+
   ## Confirmable
   # field :confirmation_token,   type: String
   # field :confirmed_at,         type: Time
