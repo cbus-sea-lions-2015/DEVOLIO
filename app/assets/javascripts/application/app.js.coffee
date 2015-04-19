@@ -35,5 +35,5 @@
 _.extend App, Backbone.Events
 
 $ ->
-  new App.Routers.Users()
+  App.router = new App.Routers.Users()
   Backbone.history.start pushState: true

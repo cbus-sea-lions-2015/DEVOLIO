@@ -23,10 +23,23 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update(user_params)
-      redirect_to @user
-    else
-      render 'Edit'
+    saved = @user.update(user_params)
+
+    respond_to do |wants|
+      wants.js do
+        if saved
+          render json: @user
+        else
+          render json: @user, status: 422
+        end
+      end
+      wants.html do
+        if saved
+          redirect_to @user
+        else
+          render 'Edit'
+        end
+      end
     end
   end
 
