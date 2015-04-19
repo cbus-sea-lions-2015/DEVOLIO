@@ -49,7 +49,7 @@
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">GitHub Username</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="github_handle" value="<%= github_handle %>">
+      <input class="col-xs-12 col-sm-6" id="gh_username" type="text" name="github_handle" value="<%= github_handle %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Twitter Username</label>
@@ -73,7 +73,7 @@
       <p class="col-xs-12"><i>(we need your current password to confirm your changes)</i></p>
     </fieldset>
     <fieldset>
-      <input type="submit">
+      <input type="submit" id="get_api">
       <p class="message"></p>
     </fieldset>
   </form>
