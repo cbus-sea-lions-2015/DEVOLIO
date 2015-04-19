@@ -1,3 +1,5 @@
+require 'bundler/setup'
+
 source 'http://gems.github.com' do
   gem 'mongoid', github: "mongoid/mongoid"
   gem 'moped', github: "mongoid/moped"
