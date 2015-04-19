@@ -4,7 +4,6 @@ $(document).ready(function() {
     e.preventDefault();
     var username = $('#ghusername').val();    
     getGitHubData(username);
-    debugger;
   });  
 });
 
@@ -103,7 +102,6 @@ function requestJSON(url, callback) {
   }).done(function(data) {
     callback.call(null, data);
   });
-  debugger;
 return otherTest;
 }
 
