@@ -7,12 +7,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:id])
-    # if UserTweet.find_by(user_name: current_user["email"])
-    #   resumerunner = ResumeRunner.new(current_user)
-    #   @tweets = resumerunner.tweets
-    # end
+    puts @user.inspect
+    puts @user.github_info.inspect
+    @user_all = {user_settings: @user, user_github: @user.github_info }
+    puts @user_all.inspect
     respond_to do |wants|
-      wants.js { render json: @user }
+      wants.js { render json: @user_all }
       wants.html
     end
   end
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = current_user
     run_twitter_api(current_user)
     saved = @user.update(user_params)
-
+    puts @user.github_info
     respond_to do |wants|
       wants.js do
         if saved
