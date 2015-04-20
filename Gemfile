@@ -1,9 +1,6 @@
-source 'http://gems.github.com' do
-  gem 'mongoid', github: "mongoid/mongoid"
-end
-
 source 'https://rubygems.org'
 gem 'mongo'
+gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
 
