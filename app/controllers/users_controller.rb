@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:id])
     tweets = TweetParser.new(current_user).tweets
-    puts tweets
     @user_all = { user_settings: @user, 
                   user_github: @user.github_info,
                   user_tweets: tweets }
