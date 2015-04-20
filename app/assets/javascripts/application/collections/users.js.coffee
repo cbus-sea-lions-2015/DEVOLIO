@@ -1,3 +1,3 @@
 class App.Collections.Users extends App.Collection
-  url: 'users'
+  urlRoot: 'users'
   model: App.Models.User

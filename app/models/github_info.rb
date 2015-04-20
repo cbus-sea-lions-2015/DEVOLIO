@@ -3,7 +3,7 @@ class GithubInfo
 
   field :pushEvents
   field :pullEvents
-  field :gitsEvents
+  field :gistEvents
   field :forkEvents
   field :mostRecentEventDate
   field :oldestEventDate

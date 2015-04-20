@@ -40,8 +40,6 @@ class TwitterAPI
         result += " OR #{term}"
       end
     end
-
-    puts "query string: #{result}"
     result
   end
 end

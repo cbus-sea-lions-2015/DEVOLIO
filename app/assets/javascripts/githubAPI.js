@@ -8,7 +8,7 @@ function processGithubApi() {
 };
 
 var getGitHubData = function(username){
-  var githubResults = {test: "test"}
+  var githubResults = {}
   var user_uri   = 'https://api.github.com/users/'+username;
   var events_uri = 'https://api.github.com/users/'+username+'/events';
 
@@ -106,6 +106,7 @@ return otherTest;
 }
 
 function saveGithubResults(githubResults) {
+  console.log(githubResults)
   $.ajax({
     url: '/store_github',
     type: 'POST',

@@ -7,10 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:id])
-    tweets = TweetParser.new(current_user).tweets
-    puts tweets
+    tweets = TweetParser.new(@user).tweets
     @user_all = { user_settings: @user, 
-                  user_github: @user.github_info,
+                  user_github: (@user.github_info || User.first.github_info),
                   user_tweets: tweets }
     respond_to do |wants|
       wants.js { render json: @user_all }
