@@ -128,7 +128,15 @@
       <h3>Tweets</h3>
       <ul>
         <% for (var i = 0; i < user_tweets.length; i++) {%>
-          <li class='i-am-a-lovely-tweet'><%= user_tweets[i].text %></li>
+          <li class='i-am-a-lovely-tweet'>
+            <img src="<%= user_tweets[i].user.profile_image_url %>" alt="profile-image">
+            <a href="https://www.twitter.com/<%= user_tweets[i].user.screen_name %>" title="user-profile"><strong><%= user_tweets[i].user.name %></strong></a>
+            <span class="meta">@<%= user_tweets[i].user.screen_name %></span>
+            <span class="meta"> | <%= parseTwitterDate(user_tweets[i].created_at) %></span>
+            <div><%= user_tweets[i].text %></div>
+            <span class="meta"><%= user_tweets[i].retweet_count %> retweets</span>
+            <span class="meta"><%= user_tweets[i].favorite_count %> favorites</span>
+          </li>
         <% } %>
       </ul>
     </section>
