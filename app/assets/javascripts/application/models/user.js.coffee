@@ -17,5 +17,5 @@ class App.Models.User extends App.Model
 
     },
     user_tweets: {
-    
+
     }

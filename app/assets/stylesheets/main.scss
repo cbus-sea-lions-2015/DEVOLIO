@@ -77,7 +77,6 @@ h4, h5 {
 h5 {
   color: $gray;
 }
-
 .button, button, input[type="submit"] {
   border: 3px solid #fff;
   text-decoration: none;
@@ -92,7 +91,10 @@ h5 {
   margin: 0 0.5em;
   transition: background 0.1s ease,color 0.1s linear, border-color 0.1s ease;
 }
-
+.light-container button {
+  border-color: $green;
+  color: $green;
+}
 .button.active, button.active, .button:hover, button:hover, input[type="submit"]:hover {
   background: $green;
   color: #fff;
@@ -291,9 +293,23 @@ header .subtitle span {
   position: relative;
 }
 .skill-percentage:before {
+  width: 0;
+  transform: width 0.6s ease;
+}
+.skill-percentage.w20:before {
+  width: 20%;
+}
+.skill-percentage.w40:before {
+  width: 40%;
+}
+.skill-percentage.w60:before {
+  width: 60%;
+}
+.skill-percentage.w80:before {
   width: 80%;
-  -webkit-animation: skill_1 0.6s ease;
-  animation: skill_1 0.6s ease;
+}
+.skill-percentage.w100:before {
+  width: 100%;
 }
 .skill-percentage::before {
   content: "";
