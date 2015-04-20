@@ -19,6 +19,18 @@
 //= require githubAPI
 //= require visualdata
 
+function sendEmail(address, username) {
+  console.log('sending an email to ' + address + ', from ' + username + '!')
+  $.ajax({
+    url: 'email',
+    data: {email: address, username: username},
+    type: 'POST'
+  }).done(function(data){
+  })
+}
+
+window.sendEmail = sendEmail
+
 function parseTwitterDate(tdate) {
     var system_date = new Date(Date.parse(tdate));
     var user_date = new Date();
