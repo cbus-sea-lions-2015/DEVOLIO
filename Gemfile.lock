@@ -1,16 +1,5 @@
-GIT
-  remote: git://github.com/mongoid/mongoid.git
-  revision: cc69597eedb41e8b7e07d485f5095ae4ccbbbe22
-  specs:
-    mongoid (4.0.2)
-      activemodel (~> 4.0)
-      moped (~> 2.0.0)
-      origin (~> 2.1)
-      tzinfo (>= 0.3.37)
-
 GEM
   remote: https://rubygems.org/
-  remote: http://gems.github.com/
   specs:
     actionmailer (4.2.1)
       actionpack (= 4.2.1)
@@ -150,6 +139,11 @@ GEM
     minitest (5.6.0)
     mongo (1.3.1)
       bson (>= 1.3.1)
+    mongoid (4.0.2)
+      activemodel (~> 4.0)
+      moped (~> 2.0.0)
+      origin (~> 2.1)
+      tzinfo (>= 0.3.37)
     moped (2.0.4)
       bson (~> 2.2)
       connection_pool (~> 2.0)
@@ -303,7 +297,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mongo
-  mongoid!
+  mongoid
   pry
   rails (= 4.2.1)
   rails_12factor
