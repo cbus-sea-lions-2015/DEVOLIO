@@ -82,7 +82,11 @@
   <section class="col-xs-6">
     <section id="user_tweets">
       <h3>Tweets</h3>
-
+      <ul>
+        <% for (var i = 0; i < user_tweets.length; i++) {%>
+          <li class='i-am-a-fucking-tweet'><%= user_tweets[i].text %></li>
+        <% } %>
+      </ul>
     </section>
     <section id="user_interests">
       <h3>Interests</h3>
