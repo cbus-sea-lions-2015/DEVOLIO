@@ -298,6 +298,7 @@ DEPENDENCIES
   jquery-rails
   mongo
   mongoid
+  moped
   pry
   rails (= 4.2.1)
   rails_12factor
