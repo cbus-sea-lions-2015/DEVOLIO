@@ -17,3 +17,4 @@
 //= require backbone
 //= require application/app
 //= require githubAPI
+//= require visualdata
