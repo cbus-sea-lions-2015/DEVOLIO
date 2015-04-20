@@ -8,6 +8,8 @@ class App.Views.Users.Edit extends App.View
     @$el.html(@template(@model.attributes))
 
   onFormSubmit: ->
+    $('#get_api').attr('disabled', true)
+    $('#get_api').val('Loading...')
     form = @$el.find "form"
     newAttrs = form.serializeJSON()
     success = =>
@@ -15,6 +17,9 @@ class App.Views.Users.Edit extends App.View
       gh_handle = @model.get('github_handle')
       window.getGitHubData(gh_handle) if gh_handle
       App.router.navigate("/#{@model.get('username')}", {trigger: true});
-    error = -> $('.message').html("<span class='error'>There was an issue saving your updates</span>")
+    error = ->
+      $('#get_api').attr('disabled', false)
+      $('#get_api').val('Submit')
+      $('.message').html("<span class='error'>There was an issue saving your updates</span>")
     @model.save(newAttrs, success: success, error: error)
     false
