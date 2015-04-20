@@ -111,13 +111,13 @@
   </section><!-- end github section -->
   <% } %>
   <section class="col-xs-6">
-    <% if (user_settings.skills.length > 1) { %>
+    <% if (user_settings.skills) { %>
     <section id="user_skills">
-      <h3>Skills</h3>
+      <h3>Tech Stack</h3>
       <ul class="skills-list">
-        <% for(var i=0; i< user_settings.skills.length; i++) { %>
-          <li class="skill-percentage"><%= user_settings.skills[i] %></li>
-        <% } %>
+        <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
+          <li class="skill-percentage w<%= user_settings.skills[key]*20 %>"><%= key %></li>
+        <% }} %>
       </ul>
     </section>
     <% } %>
