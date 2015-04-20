@@ -3,12 +3,12 @@
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
       <div class="avatar col-xs-3">
-        <!-- <img src="/assets/images/<%= avatar %>" alt="avatar" /> -->
+        <img src="<%= user_github.aviurl %>" alt="">
       </div>
       <div class="name col-xs-9">
-        <h2><%= name %></h2>
+        <h2><%= user_settings.name %></h2>
       </div>
-      <p><%= description %></p>
+      <p><%= user_settings.description %></p>
       <ul class="icons">
         <li><a href="#" class="entypo-github"></a></li>
         <li><a href="#" class="entypo-twitter"></a></li>
@@ -16,15 +16,15 @@
       </ul>
       <ul class="contact-info">
         <li class="col-xs-3">Username</li>
-        <li class="col-xs-9"><%= username %></li>
+        <li class="col-xs-9"><%= user_settings.username %></li>
         <li class="col-xs-3">Email</li>
-        <li class="col-xs-9"><%= email %></li>
+        <li class="col-xs-9"><%= user_settings.email %></li>
         <li class="col-xs-3">Blog</li>
-        <li class="col-xs-9"><%= blog_link %></li>
+        <li class="col-xs-9"><%= user_settings.blog_link %></li>
         <li class="col-xs-3">GitHub</li>
-        <li class="col-xs-9"><%= github_handle %></li>
+        <li class="col-xs-9"><%= user_settings.github_handle %></li>
         <li class="col-xs-3">Twitter</li>
-        <li class="col-xs-9"><%= twitter_handle %></li>
+        <li class="col-xs-9"><%= user_settings.twitter_handle %></li>
 
       </ul>
     </section>
@@ -44,7 +44,28 @@
 </section>
 <section class="dark-container col-xs-12 col-sm-8">
   <section class="user_github">
-    <h3>GitHub Activity</h3>
+    <h3>Recent GitHub Activity</h3>
+    <ul>
+      <li><%= user_github.aviurl %></li>
+      <li><%= user_github.blog_link %></li>
+      <li><%= user_github.commitMessages %></li>
+      <li><%= user_github.commits %></li>
+      <li><%= user_github.followersnum %></li>
+      <li><%= user_github.followingnum %></li>
+      <li><%= user_github.forkEvents %></li>
+      <li><%= user_github.fullName %></li>
+      <li><%= user_github.gistsEvents %></li>
+      <li><%= user_github.languages %></li>
+      <li><%= user_github.lineAdditions %></li>
+      <li><%= user_github.lineDeletions %></li>
+      <li><%= user_github.location %></li>
+      <li><%= user_github.mostRecentEventDate %></li>
+      <li><%= user_github.oldestEventDate %></li>
+      <li><%= user_github.profileurl %></li>
+      <li><%= user_github.pullEvents %></li>
+      <li><%= user_github.pushEvents %></li>
+      <li><%= user_github.reposnum %></li>
+    </ul>
     <div class="data-graphs">
     </div>
   </section>
@@ -52,8 +73,8 @@
     <section id="user_skills">
       <h3>Skills</h3>
       <ul class="skills-list">
-        <% for(var i=0; i< skills.length; i++) { %>
-          <li class="skill-percentage"><%= skills[i] %></li>
+        <% for(var i=0; i< user_settings.skills.length; i++) { %>
+          <li class="skill-percentage"><%= user_settings.skills[i] %></li>
         <% } %>
       </ul>
     </section>
@@ -66,8 +87,8 @@
     <section id="user_interests">
       <h3>Interests</h3>
       <ul class="interests">
-        <% for(var i=0; i< interests.length; i++) { %>
-          <li><%= interests[i] %></li>
+        <% for(var i=0; i< user_settings.interests.length; i++) { %>
+          <li><%= user_settings.interests[i] %></li>
         <% } %>
       </ul>
     </section>
