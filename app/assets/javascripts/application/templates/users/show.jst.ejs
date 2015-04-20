@@ -3,33 +3,50 @@
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
       <div class="avatar col-xs-3">
-        <img src='<%= user_github.aviurl %>' alt="">
+        <% if (user_github) { %>
+        <img src='<%= user_github.aviurl %>' alt="avatar">
+        <% } else { %>
+        <img src='http://i.imgur.com/i31E9hh.jpg' alt="default-avatar">
+        <% } %>
       </div>
       <div class="name col-xs-9">
         <h2><%= user_settings.name %></h2>
       </div>
       <p><%= user_settings.description %></p>
       <ul class="icons">
+        <% if (user_settings.github_handle) { %>
         <li><a href="#" class="entypo-github"></a></li>
+        <% } %>
+        <% if (user_settings.twitter_handle) { %>
         <li><a href="#" class="entypo-twitter"></a></li>
+        <% } %>
+        <% if (user_settings.linkedin_handle) { %>
         <li><a href="#" class="entypo-linkedin"></a></li>
+        <% } %>
       </ul>
+      <hr>
       <ul class="contact-info">
         <li class="col-xs-3">Username</li>
         <li class="col-xs-9"><%= user_settings.username %></li>
         <li class="col-xs-3">Email</li>
         <li class="col-xs-9"><%= user_settings.email %></li>
-        <li class="col-xs-3">Blog</li>
-        <li class="col-xs-9"><%= user_settings.blog_link %></li>
+        <% if (user_settings.website) { %>
+        <li class="col-xs-3">Website</li>
+        <li class="col-xs-9"><a href="<%= user_settings.website %>"><%= user_settings.website %></a></li>
+        <% } %>
+        <% if (user_settings.github_handle) { %>
         <li class="col-xs-3">GitHub</li>
         <li class="col-xs-9"><%= user_settings.github_handle %></li>
+        <% } %>
+        <% if (user_settings.twitter_handle) { %>
         <li class="col-xs-3">Twitter</li>
         <li class="col-xs-9"><%= user_settings.twitter_handle %></li>
-
+        <% } %>
       </ul>
     </section>
+    <% if (user_settings.linkedin_handle) { %>
     <section id="user_linkedin">
-      <!-- <h3>Experience</h3> -->
+      <h3>Experience</h3>
       <div class="position">
         <!-- position title -->
         <h4></h4>
@@ -38,13 +55,36 @@
         <!-- time span -->
         <p class="time-span"></p>
       </div>
-      <!-- <h3>Recommendations</h3> -->
+      <h3>Recommendations</h3>
       <p></p>
     </section>
+    <% } %>
 </section>
 <section class="dark-container col-xs-12 col-sm-8">
+  <% if (user_github) { %>
   <section class="user_github">
     <h3>Recent GitHub Activity</h3>
+    <div class="pie-charts">
+      <section>
+        <div class="pieID pie">
+
+        </div>
+        <ul class="pieID legend">
+          <li>
+            <em>Commits</em>
+            <span><%= user_github.commits %></span>
+          </li>
+          <li>
+            <em>Lines Added</em>
+            <span><%= user_github.lineAdditions %></span>
+          </li>
+          <li>
+            <em>Lines Deleted</em>
+            <span><%= user_github.lineDeletions %></span>
+          </li>
+        </ul>
+      </section>
+    </div>
     <ul>
       <li><a href='<%= user_github.aviurl %>'>Your Avatar!</a></li>
       <li><%= user_github.blog_link %>: Link to your blog if you have one</li>
@@ -68,8 +108,10 @@
     </ul>
     <div class="data-graphs">
     </div>
-  </section>
+  </section><!-- end github section -->
+  <% } %>
   <section class="col-xs-6">
+    <% if (user_settings.skills.length > 1) { %>
     <section id="user_skills">
       <h3>Skills</h3>
       <ul class="skills-list">
@@ -78,8 +120,10 @@
         <% } %>
       </ul>
     </section>
+    <% } %>
   </section>
   <section class="col-xs-6">
+    <% if (user_settings.twitter_handle) { %>
     <section id="user_tweets">
       <h3>Tweets</h3>
       <ul>
@@ -88,6 +132,8 @@
         <% } %>
       </ul>
     </section>
+    <% } %>
+    <% if (user_settings.interests.length > 1) { %>
     <section id="user_interests">
       <h3>Interests</h3>
       <ul class="interests">
@@ -96,6 +142,7 @@
         <% } %>
       </ul>
     </section>
+    <% } %>
   </section>
 </section>
 </div>

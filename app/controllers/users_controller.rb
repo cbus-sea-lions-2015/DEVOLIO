@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:id])
     tweets = TweetParser.new(@user).tweets
-    @user_all = { user_settings: @user, 
+    @user_all = { user_settings: @user,
                   user_github: (@user.github_info || User.first.github_info),
                   user_tweets: tweets }
     respond_to do |wants|
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :email, :twitter_handle, :description, :interests, :skills, :github_handle)
+    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :skills, :github_handle, :website)
   end
 
   def run_twitter_api(current_user)
