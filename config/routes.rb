@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # get '/:username', to: 'users#show'
   # get '/dashboard', to: 'users#edit'
 
-  get 'run_api', to: 'api#run'
+  get 'resumes/twitter/:username', to: 'resumes#twitter'
+  get 'resumes/github/:username', to: 'resumes#twitter'
 
   post 'store_github', to: 'api#github'
 

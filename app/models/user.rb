@@ -33,9 +33,11 @@ class User
   field :github_handle,      type: String
 
   has_one :github_info
+  has_one :user_tweet
 
   validates_uniqueness_of :username, :email
   validates_format_of :username, with: /\w+/
+
 
   ## Confirmable
   # field :confirmation_token,   type: String
