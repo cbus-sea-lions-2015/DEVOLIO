@@ -15,4 +15,7 @@ class App.Models.User extends App.Model
     },
     user_github: {
 
+    },
+    user_tweets: {
+    
     }
