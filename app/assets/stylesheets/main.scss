@@ -21,6 +21,7 @@ html {
   padding: 0;
 }
 body {
+  background: $dark-gray !important;
   box-sizing: inherit;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
@@ -151,6 +152,7 @@ hr {
   border: 0;
   height: 0;
   border-bottom: 1px solid $light-gray;
+  clear: both;
 }
 
 /* Layout */

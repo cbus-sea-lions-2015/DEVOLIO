@@ -27,10 +27,11 @@ class User
   field :twitter_handle,     type: String
   field :description,        type: String
   field :interests
-  field :blog_link,          type: String
+  field :website,            type: String
   field :RSS_feed,           type: String
   field :skills
   field :github_handle,      type: String
+  field :avatar,             type: String
 
   has_one :github_info
   has_one :user_tweet

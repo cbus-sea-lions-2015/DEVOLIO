@@ -1,11 +1,11 @@
-function processGithubApi() {
+// function processGithubApi() {
 
-  $(document).on('click', '#get_api', function(e){
-    e.preventDefault();
-    var username = $('#gh_username').val();    
-    getGitHubData(username);
-  })  
-};
+//   $(document).on('click', '#get_api', function(e){
+//     e.preventDefault();
+//     var username = $('#gh_username').val();
+//     getGitHubData(username);
+//   })
+// };
 
 var getGitHubData = function(username){
   var githubResults = {}
@@ -41,7 +41,7 @@ var getGitHubData = function(username){
       var additions = 0;
       var deletions = 0;
       var commitMessages = [];
-      
+
       $.getJSON(events_uri, function(json){
         events = json;
         for (var i = 0; i < events.length; i++) {
@@ -85,12 +85,12 @@ var getGitHubData = function(username){
         githubResults.commits = commits;
         githubResults.lineAdditions = additions;
         githubResults.lineDeletions = deletions;
-        githubResults.commitMessages = commitMessages; 
+        githubResults.commitMessages = commitMessages;
         githubResults.languages = languages;
         saveGithubResults(githubResults);
       })
     }
-  }); 
+  });
 }
 window.getGitHubData = getGitHubData;
 
@@ -106,7 +106,6 @@ return otherTest;
 }
 
 function saveGithubResults(githubResults) {
-  console.log(githubResults)
   $.ajax({
     url: '/store_github',
     type: 'POST',

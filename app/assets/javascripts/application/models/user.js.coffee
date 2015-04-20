@@ -1,16 +1,18 @@
 class App.Models.User extends App.Model
-  urlRoot: 'users'
+  urlRoot: 'users',
   defaults:
     user_settings: {
-        avatar: 'super_mario.jpg',
-        username: '',
-        blog_link: '',
-        email: '',
-        interests: '',
-        name: '',
-        skills: '',
-        twitter_handle: '',
-        github_handle: ''
-        description: ''
-        },
-    user_github: {}
+      avatar: 'http://i.imgur.com/i31E9hh.jpg',
+      username: '',
+      website: '',
+      email: '',
+      interests: '',
+      name: '',
+      skills: '',
+      twitter_handle: '',
+      github_handle: ''
+      description: ''
+    },
+    user_github: {
+
+    }
