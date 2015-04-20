@@ -6,22 +6,15 @@ class App.Views.Users.Edit extends App.View
 
   render: ->
     @$el.html(@template(@model.attributes))
+
   onFormSubmit: ->
     form = @$el.find "form"
-    newAttrs = @updateModelFromForm(form)
+    newAttrs = form.serializeJSON()
     success = =>
+      console.log @model
       gh_handle = @model.get('github_handle')
       window.getGitHubData(gh_handle) if gh_handle
       App.router.navigate("/#{@model.get('username')}", {trigger: true});
     error = -> $('.message').html("<span class='error'>There was an issue saving your updates</span>")
     @model.save(newAttrs, success: success, error: error)
     false
-
-  updateModelFromForm: (form) =>
-    unindexed_array = form.serializeArray()
-    formData = {}
-    $.map unindexed_array, (n, i) =>
-      formData[n['name']] = n['value']
-    formData
-
-
