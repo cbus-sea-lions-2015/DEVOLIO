@@ -144,7 +144,6 @@ form fieldset {
   color: #266DA1;
   text-transform: lowercase;
   font-size: 0.8em;
-  display: block;
   margin-bottom: 1em;
 }
 
@@ -339,3 +338,27 @@ header .subtitle span {
   font-size: 3em;
   text-align: center;
 }
+
+#user_tweets ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: $black;
+  line-height: 1.2em;
+
+}
+
+#user_tweets ul li {
+  border-bottom: 1px solid $light-gray;
+  padding: 0.6em 0.8em;
+
+}
+
+#user_tweets ul li div {
+  padding: 0.4em 0;
+}
+
+
+
+
