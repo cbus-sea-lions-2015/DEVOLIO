@@ -24,7 +24,7 @@ Rails.application.configure do
     authentication: 'plain',
     enable_starttls_auto: true,
     user_name: 'devolio.app@gmail.com',
-    user_password: 'sealions'
+    password: 'sealions'
   }
 
   # Print deprecation notices to the Rails logger.
