@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:id])
     tweets = TweetParser.new(@user).tweets
     @user_all = { user_settings: @user,
-                  user_github: (@user.github_info || User.first.github_info),
+                  user_github: @user.github_info,
                   user_tweets: tweets }
     respond_to do |wants|
       wants.js { render json: @user_all }
@@ -23,9 +23,8 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    run_twitter_api(current_user)
     saved = @user.update(user_params)
-    puts @user.github_info
+    run_twitter_api(current_user) if saved
     respond_to do |wants|
       wants.js do
         if saved
@@ -50,10 +49,10 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :skills, :github_handle, :website)
   end
 
-  def run_twitter_api(current_user)
-    current_user.user_tweet.destroy if current_user.user_tweet
-    twitter = TwitterAPI.new(current_user["twitter_handle"])
-    tweets = twitter.search(current_user["twitter_includes"] || [])
+  def run_twitter_api(user)
+    user.user_tweet.destroy if user.user_tweet
+    twitter = TwitterAPI.new(user["twitter_handle"])
+    tweets = twitter.search(user["twitter_includes"] || [])
     current_user.user_tweet = UserTweet.new(user_name: current_user["email"], tweets: tweets)
   end
 end

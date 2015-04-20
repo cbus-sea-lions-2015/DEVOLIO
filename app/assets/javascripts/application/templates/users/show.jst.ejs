@@ -123,7 +123,7 @@
     <% } %>
   </section>
   <section class="col-xs-6">
-    <% if (user_settings.twitter_handle) { %>
+    <% if (user_settings.twitter_handle && user_tweets.length > 0) { %>
     <section id="user_tweets">
       <h3>Tweets</h3>
       <ul>
