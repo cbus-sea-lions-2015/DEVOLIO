@@ -26,6 +26,15 @@ function sendEmail(address, username) {
     data: {email: address, username: username},
     type: 'POST'
   }).done(function(data){
+    $('#send_email').attr('disabled', false)
+    $('#send_email').val('Submit')
+    $("#send-email-address").val("")
+    $('#send-email-message').html("Your email has been sent to " + address + "!")
+  }).fail(function(data){
+    $('#send_email').attr('disabled', false)
+    $('#send_email').val('Submit')
+    $("#send-email-address").val("")
+    $('#send-email-message').html("There was an error and your email was not able to be sent. Please try again shortly.")
   })
 }
 

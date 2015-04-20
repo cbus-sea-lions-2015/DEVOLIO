@@ -27,18 +27,14 @@ class App.Views.Users.Edit extends App.View
   mailerFormSubmit: (e) ->
     e.preventDefault()
     $('#send_email').attr('disabled', true)
-    $('#send_email').val('Loading...')
+    $('#send_email').val('Sending...')
     form = @$el.find "#mailer_form"
     username = $('body').attr('id')
     console.log(username)
     address = $('#send-email-address').val();
     window.sendEmail(address, username)
-    success = =>
-      console.log("Mail successfully sent1")
     error = ->
       $(form + ' .message').html("<span class='error'>There was an issue and no email was sent.</span>")
-    $('#send_email').attr('disabled', false)
-    $('#send_email').val('Submit')
 
   updateModelFromForm: (form) =>
     unindexed_array = form.serializeArray()
