@@ -7,10 +7,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:id])
-    puts @user.inspect
-    puts @user.github_info.inspect
-    @user_all = {user_settings: @user, user_github: @user.github_info }
-    puts @user_all.inspect
+    tweets = TweetParser.new(current_user).tweets
+    puts tweets
+    @user_all = { user_settings: @user, 
+                  user_github: @user.github_info,
+                  user_tweets: tweets }
     respond_to do |wants|
       wants.js { render json: @user_all }
       wants.html
