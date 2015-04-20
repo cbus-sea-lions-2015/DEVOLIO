@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 gem 'mongo'
+gem 'moped'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'devise'
