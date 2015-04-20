@@ -2,6 +2,7 @@ class App.Views.Users.Show extends App.View
   template: JST['application/templates/users/show']
 
   render: ->
+    console.log(@model)
     intList = @model.attributes.user_settings.interests.split(",")
     skillsList = @model.attributes.user_settings.skills.split(",")
     @model.attributes.user_settings.interests = intList

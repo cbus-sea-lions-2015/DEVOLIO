@@ -3,32 +3,32 @@
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
       <div class="avatar col-xs-3">
-        <img src="" alt="avatar" />
+        <img src='<%= user_github.aviurl %>' alt="">
       </div>
       <div class="name col-xs-9">
         <h2><%= name %></h2>
       </div>
-      <p><%= description %></p>
+      <p><%= user_settings.description %></p>
       <ul class="icons">
-        <li><a href="http://github.com/<%= github_handle %>" class="entypo-github"></a></li>
-        <li><a href="http://twitter.com/<%= twitter_handle %>" class="entypo-twitter"></a></li>
+        <li><a href="http://github.com/<%= user_settings.github_handle %>" class="entypo-github"></a></li>
+        <li><a href="http://twitter.com/<%= user_settings.twitter_handle %>" class="entypo-twitter"></a></li>
         <!--li><a href="#" class="entypo-linkedin"></a></li-->
       </ul>
       <ul class="contact-info">
         <li class="col-xs-3">Username</li>
-        <li class="col-xs-9"><%= username %></li>
+        <li class="col-xs-9"><%= user_settings.username %></li>
         <li class="col-xs-3">Email</li>
-        <li class="col-xs-9"><%= email %></li>
+        <li class="col-xs-9"><%= user_settings.email %></li>
         <li class="col-xs-3">Blog</li>
-        <li class="col-xs-9"><%= blog_link %></li>
+        <li class="col-xs-9"><%= user_settings.blog_link %></li>
         <li class="col-xs-3">GitHub</li>
-        <li class="col-xs-9"><%= github_handle %></li>
+        <li class="col-xs-9"><%= user_settings.github_handle %></li>
         <li class="col-xs-3">Twitter</li>
-        <li class="col-xs-9"><%= twitter_handle %></li>
+        <li class="col-xs-9"><%= user_settings.twitter_handle %></li>
         <li class="col-xs-3">Skills</li>
-        <li class="col-xs-9"><%= skills %></li>
+        <li class="col-xs-9"><%= user_settings.skills %></li>
         <li class="col-xs-3">Interests</li>
-        <li class="col-xs-9"><%= interests %></li>
+        <li class="col-xs-9"><%= user_settings.interests %></li>
       </ul>
     </section>
 </section>
@@ -41,31 +41,31 @@
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Short Description</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="description" value="<%= description %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="description" value="<%= user_settings.description %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">email</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="email" value="<%= email %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="email" value="<%= user_settings.email %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">GitHub Username</label>
-      <input class="col-xs-12 col-sm-6" id="gh_username" type="text" name="github_handle" value="<%= github_handle %>">
+      <input class="col-xs-12 col-sm-6" id="gh_username" type="text" name="github_handle" value="<%= user_settings.github_handle %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Twitter Username</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="twitter_handle" value="<%= twitter_handle %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="twitter_handle" value="<%= user_settings.twitter_handle %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Blog</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="blog_link" value="<%= blog_link %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="blog_link" value="<%= user_settings.blog_link %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Technical Skills</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="skills" value="<%= skills %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="skills" value="<%= user_settings.skills %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="interests" value="<%= interests %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="interests" value="<%= user_settings.interests %>">
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Confirm Password</label>

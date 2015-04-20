@@ -2,7 +2,7 @@ class TweetParser
   attr_reader :tweets
 
   def initialize(user)
-    @tweets = user.user_tweet.tweets
+    @tweets = (user.user_tweet ? user.user_tweet.tweets : nil)
   end
 
   def parse
