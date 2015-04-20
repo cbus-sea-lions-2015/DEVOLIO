@@ -6,7 +6,6 @@ class App.Routers.Users extends App.Router
 
   show: (username)->
     user = new App.Models.User id: username
-    console.log(user)
     user.fetch().done ->
       view = new App.Views.Users.Show(model: user)
       $('.main-container').html(view.el)

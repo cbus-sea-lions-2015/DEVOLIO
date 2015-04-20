@@ -1,9 +1,10 @@
 class UserGithub
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
 
   field :pushEvents
   field :pullEvents
-  field :gitsEvents
+  field :gistEvents
   field :forkEvents
   field :mostRecentEventDate
   field :oldestEventDate

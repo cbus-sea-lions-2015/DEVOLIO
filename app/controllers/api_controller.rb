@@ -10,6 +10,6 @@ class ApiController < ApplicationController
 
   private 
   def github_params
-    params.require(:github_profile).permit(:pushEvents, :pullEvents, :gitsEvents, :forkEvents, :mostRecentEventDate, :oldestEventDate, :commits, :lineAdditions, :lineDeletions, :commitMessages, :languages, :github_handle, :fullName, :aviurl, :profileurl, :location, :followersnum, :followingnum, :reposnum, :blog_link)
+    params.require(:github_profile).permit!#(:pushEvents, :pullEvents, :gitsEvents, :forkEvents, :mostRecentEventDate, :oldestEventDate, :commits, :lineAdditions, :lineDeletions, :commitMessages => [], :languages, :github_handle, :fullName, :aviurl, :profileurl, :location, :followersnum, :followingnum, :reposnum, :blog_link)
   end
 end
