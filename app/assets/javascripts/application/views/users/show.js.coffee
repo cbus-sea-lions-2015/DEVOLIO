@@ -4,8 +4,14 @@ class App.Views.Users.Show extends App.View
   render: ->
     console.log(@model)
     # model {user_settings{}, user_github{}, user_tweets{}}
-    intList = @model.attributes.user_settings.interests.split(",")
-    skillsList = @model.attributes.user_settings.skills.split(",")
-    @model.attributes.user_settings.interests = intList
-    @model.attributes.user_settings.skills = skillsList
+    if @model.attributes.user_settings.interests
+      intList = @model.attributes.user_settings.interests.split(",")
+      @model.attributes.user_settings.interests = intList
+    else
+      @model.attributes.user_settings.interests = ""
+    if @model.attributes.user_settings.skills
+      skillsList = @model.attributes.user_settings.skills.split(",")
+      @model.attributes.user_settings.skills = skillsList
+    else
+      @model.attributes.user_settings.skills = ""
     @$el.html(@template(@model.attributes))
