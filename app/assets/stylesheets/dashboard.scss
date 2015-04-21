@@ -68,6 +68,9 @@ input[type="range"][value="4"]:hover:after {
 input[type="range"][value="5"]:hover:after {
   content: "Expert - Know inner workings";
 }
+fieldset.skill-range {
+  margin: 0.5em auto;
+}
 
 // Positions
 .added-position {
