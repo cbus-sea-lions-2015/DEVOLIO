@@ -7,13 +7,11 @@ function addSkillMeters() {
     var sibling = $(this).siblings(".skill-label"),
         parent = $(this).parent('fieldset'),
       skill = sibling.val();
-    var skillMeter = '<fieldset><label for="skills[' + skill + ']" class="col-xs-3">' + skill + '</label><span class="col-sm-6"><input id="skill-' + skill + '"type="range" min="0" max="5" value="1" data-skill="skill" class="skill" name="skills[' + skill + ']"></span></fieldset>';
-    if( !$(this).val() ) {
-      console.log('empty')
-      parent.find('.error').toggleClass('hidden');
+    var skillMeter = '<fieldset class="col-xs-12"><label for="skills[' + skill + ']" class="col-xs-3">' + skill + '</label><span class="col-sm-6"><input id="skill-' + skill + '"type="range" min="0" max="5" value="1" data-skill="skill" class="skill" name="skills[' + skill + ']"></span></fieldset>';
+    if( !sibling.val() ) {
+      parent.find('.error').removeClass('hidden');
     } else {
-      console.log('not empty')
-      parent.find('.error').toggleClass('hidden');
+      parent.find('.error').addClass('hidden');
       parent.append(skillMeter);
       sibling.val('');
     }

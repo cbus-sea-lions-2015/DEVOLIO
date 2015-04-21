@@ -118,13 +118,13 @@
         <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">+</button>
         <span class="meta col-xs-12 col-sm-3">Rank your experience from "Familiar with" to "I contribute to it".</span>
         <p class="error hidden">Please enter a skill.</p>
+        <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
+          <fieldset class="col-xs-12">
+            <label for="skills[<%= key %>]" class="col-xs-3"><%= key %></label>
+            <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span>
+          </fieldset>
+        <% }} %>
       </fieldset>
-      <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
-        <fieldset>
-          <label for="skills[<%= key %>]" class="col-xs-3"><%= key %></label>
-          <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span>
-        </fieldset>
-      <% }} %>
       <hr>
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">Confirm Password</label>
