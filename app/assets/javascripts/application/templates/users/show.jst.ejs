@@ -15,10 +15,10 @@
       <p><%= user_settings.description %></p>
       <ul class="icons">
         <% if (user_settings.github_handle) { %>
-        <li><a href="#" class="entypo-github"></a></li>
+        <li><a href="http://github.com/<%= user_settings.github_handle %>" class="fa fa-github-alt"></a></li>
         <% } %>
         <% if (user_settings.twitter_handle) { %>
-        <li><a href="#" class="entypo-twitter"></a></li>
+        <li><a href="https://twitter.com/<%= user_settings.twitter_handle %>" class="fa fa-twitter"></a></li>
         <% } %>
         <% if (user_settings.linkedin_handle) { %>
         <li><a href="#" class="entypo-linkedin"></a></li>
