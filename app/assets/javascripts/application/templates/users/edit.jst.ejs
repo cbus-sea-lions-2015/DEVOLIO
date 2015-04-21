@@ -96,27 +96,27 @@
       <h3>Employment History</h3>
       <fieldset>
         <label for="add-position-input" class="col-xs-12 col-sm-3">Add Position</label><button class="add-position button col-sm-1">+</button>
-        <p class="error hidden">Please limit positions to 3.</p>
-        <%  for (var key in user_settings.positions) { if (user_settings.positions.hasOwnProperty(key)) { %>
-          <div class="position col-xs-12">
+        <p class="error hidden col-xs-12">Please limit positions to 3.</p>
+        <%  var i = 1; for (var key in user_settings.positions) { if (user_settings.positions.hasOwnProperty(key)) { %>
+          <div class="added-position col-xs-12">
             <fieldset>
               <label for="position" class="col-xs-12 col-sm-3">Position Title</label>
-              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= key %>][title]" value="<%= user_settings.positions[key].title %>">
+              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= i %>][title]" value="<%= user_settings.positions[key].title %>">
             </fieldset>
             <fieldset>
               <label for="company" class="col-xs-12 col-sm-3">Company</label>
-              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= key %>][company]" value="<%= user_settings.positions[key].company %>">
+              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= i %>][company]" value="<%= user_settings.positions[key].company %>">
             </fieldset>
             <fieldset>
               <label for="time" class="col-xs-12 col-sm-3">Date Range</label>
-              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= key %>][range]" value="<%= user_settings.positions[key].range %>">
+              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= i %>][range]" value="<%= user_settings.positions[key].range %>">
             </fieldset>
             <fieldset>
               <label for="position" class="col-xs-12 col-sm-3">Short Description</label>
-              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= key %>][description]" value="<%= user_settings.positions[key].description %>">
+              <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= i %>][description]" value="<%= user_settings.positions[key].description %>">
             </fieldset>
           </div>
-        <% }} %>
+        <% i += 1; }} %>
       </fieldset>
       <hr>
       <h3>Tech Stack</h3>
@@ -139,7 +139,7 @@
         <span class="meta col-xs-12 col-sm-3">We need your current password to confirm changes.</span>
       </fieldset>
       <fieldset>
-        <input type="submit" id="get_api">
+        <input type="submit" id="get_api" name="submit">
         <p class="message"></p>
       </fieldset>
     </form>
