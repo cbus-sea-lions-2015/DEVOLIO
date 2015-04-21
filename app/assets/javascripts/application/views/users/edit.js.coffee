@@ -5,6 +5,7 @@ class App.Views.Users.Edit extends App.View
     'submit #user-form' : 'userFormSubmit'
     'submit #mailer-form' : 'mailerFormSubmit'
     'click .delete-skill' : 'deleteSkill'
+    'click .delete-position' : 'deletePosition'
 
   render: ->
     @$el.html(@template(@model.attributes))
@@ -41,3 +42,8 @@ class App.Views.Users.Edit extends App.View
     e.preventDefault()
     skillNode = e.currentTarget.parentNode
     skillNode.remove()
+
+  deletePosition: (e) ->
+    e.preventDefault()
+    positionNode = e.currentTarget.parentNode.parentNode
+    positionNode.remove()  
