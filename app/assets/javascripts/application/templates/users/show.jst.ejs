@@ -146,7 +146,7 @@
       <h3>Interests</h3>
       <ul class="interests">
         <% for(var i=0; i< user_settings.interests.length; i++) { %>
-          <li><%= user_settings.interests[i] %></li>
+          <li><%= getIconMarkup(user_settings.interests[i]) %></li>
         <% } %>
       </ul>
     </section>
