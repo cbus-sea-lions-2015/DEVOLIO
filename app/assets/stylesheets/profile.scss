@@ -49,41 +49,65 @@ $font-weight--bold:   900;
 .skill-percentage {
   margin-bottom: 10px;
   position: relative;
+  &:before {
+    content: "";
+    width: 20%;
+    transform: width 0.6s ease;
+    height: 6px;
+    background: $green;
+    position: absolute;
+    margin-top: 3px;
+    bottom: 0;
+  }
+  &:after {
+    content: "";
+    width: 100%;
+    height: 6px;
+    background: $gray;
+    display: block;
+    margin-top: 3px;
+  }
+  &:hover:after {
+    content: "Familiar with - Have been introduced to";
+    display: block;
+    text-align: center;
+    line-height: 3em;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
 }
-.skill-percentage:before {
-  width: 0;
-  transform: width 0.6s ease;
+.skill-percentage.w40{
+  &:before {
+    width: 40%;
+  }
+  &:hover:after {
+    content: "Sandboxed - Have played around with";
+  }
 }
-.skill-percentage.w20:before {
-  width: 20%;
+.skill-percentage.w60{
+  &:before {
+    width: 60%;
+  }
+  &:hover:after {
+    content: "Practiced - Used in projects";
+  }
 }
-.skill-percentage.w40:before {
-  width: 40%;
+.skill-percentage.w80{
+  &:before {
+    width: 80%;
+  }
+  &:hover:after {
+    content: "Experienced - Use frequently";
+  }
 }
-.skill-percentage.w60:before {
-  width: 60%;
-}
-.skill-percentage.w80:before {
-  width: 80%;
-}
-.skill-percentage.w100:before {
-  width: 100%;
-}
-.skill-percentage::before {
-  content: "";
-  height: 6px;
-  background: $green;
-  position: absolute;
-  margin-top: 3px;
-  bottom: 0;
-}
-.skill-percentage:after {
-  content: "";
-  width: 100%;
-  height: 6px;
-  background: $gray;
-  display: block;
-  margin-top: 3px;
+.skill-percentage.w100{
+  &:before {
+    width: 100%;
+  }
+  &:hover:after {
+    content: "Expert - Know inner workings";
+  }
 }
 
 
