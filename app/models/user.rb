@@ -24,14 +24,17 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
   field :name,               type: String
+  field :github_handle,      type: String
   field :twitter_handle,     type: String
+  field :linkedin_handle,    type: String
   field :description,        type: String
   field :interests
   field :website,            type: String
   field :RSS_feed,           type: String
   field :skills
-  field :github_handle,      type: String
+
   field :avatar,             type: String
+  field :positions
 
   has_one :github_info
   has_one :user_tweet
