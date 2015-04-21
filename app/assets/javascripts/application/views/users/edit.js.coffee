@@ -2,7 +2,7 @@ class App.Views.Users.Edit extends App.View
   template: JST['application/templates/users/edit']
 
   events:
-    'submit #user_form' : 'userFormSubmit'
+    'submit #user-form' : 'userFormSubmit'
     'submit #mailer-form' : 'mailerFormSubmit'
 
   render: ->
@@ -11,9 +11,10 @@ class App.Views.Users.Edit extends App.View
   userFormSubmit: ->
     $('#get_api').attr('disabled', true)
     $('#get_api').val('Loading...')
-    form = @$el.find "#user_form"
-    newAttrs = @updateModelFromForm(form)
+    form = @$el.find "#user-form"
+    newAttrs = form.serializeJSON()
     success = =>
+      console.log @model
       gh_handle = @model.get('github_handle')
       window.getGitHubData(gh_handle) if gh_handle
       App.router.navigate("/#{@model.get('username')}", {trigger: true});
@@ -35,10 +36,3 @@ class App.Views.Users.Edit extends App.View
     window.sendEmail(address, username)
     error = ->
       $(form + ' .message').html("<span class='error'>There was an issue and no email was sent.</span>")
-
-  updateModelFromForm: (form) =>
-    unindexed_array = form.serializeArray()
-    formData = {}
-    $.map unindexed_array, (n, i) =>
-      formData[n['name']] = n['value']
-    formData

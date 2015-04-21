@@ -30,7 +30,11 @@
         <li class="col-xs-3">Twitter</li>
         <li class="col-xs-9"><%= user_settings.twitter_handle %></li>
         <li class="col-xs-3">Skills</li>
-        <li class="col-xs-9"><%= user_settings.skills %></li>
+        <li class="col-xs-9">
+          <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
+            <span><%= key %></span>
+          <% }} %>
+        </li>
         <li class="col-xs-3">Interests</li>
         <li class="col-xs-9"><%= user_settings.interests %></li>
       </ul>
@@ -38,7 +42,7 @@
 </section>
 <section class="light-container col-xs-12 col-sm-8">
   <h3>Edit Your Portfolio Information</h3>
-  <form id="user_form">
+  <form id="user-form">
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Name</label>
       <input class="col-xs-12 col-sm-6" type="text" name="name" value="<%= user_settings.name %>">
@@ -61,15 +65,23 @@
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Website</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="blog_link" value="<%= user_settings.website %>">
+      <input class="col-xs-12 col-sm-6" type="text" name="website" value="<%= user_settings.website %>">
     </fieldset>
     <fieldset>
-      <label for="" class="col-xs-12 col-sm-3">Technical Skills</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="skills" value="<%= user_settings.skills %>">
+      <label for="add-skill-input" class="col-xs-12 col-sm-3">Technical Skills</label>
+      <input id="add-skill-input" class="col-xs-12 col-sm-3 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">+</button>
+        <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
+          <p class="col-xs-12">
+            <label for="skills[<%= key %>]" class="col-xs-3"><%= key %></label>
+            <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span>
+          </p>
+        <% }} %>
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>
       <input class="col-xs-12 col-sm-6" type="text" name="interests" value="<%= user_settings.interests %>">
+      <p class="col-xs-12">Separate interests with commas (no spaces)</p>
+      <p class="meta col-xs-9"><strong>Current Icons:</strong> animals, art, business, coffee, cooking, cycling, diy, games, mentoring, music, outdoors, photography, reading, research, speaking, sports, travel, tv/movies, writing</p>
     </fieldset>
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Confirm Password</label>

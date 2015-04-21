@@ -12,12 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.serializejson
 //= require bootstrap-sprockets
 //= require underscore
 //= require backbone
 //= require application/app
 //= require githubAPI
 //= require visualdata
+//= require iconHelper
 
 function sendEmail(address, username) {
   console.log('sending an email to ' + address + ', from ' + username + '!')
@@ -39,7 +41,6 @@ function sendEmail(address, username) {
 }
 
 window.sendEmail = sendEmail
-
 function parseTwitterDate(tdate) {
     var system_date = new Date(Date.parse(tdate));
     var user_date = new Date();
@@ -68,3 +69,18 @@ var K = function () {
         ie: a.match(/MSIE\s([^;]*)/)
     }
 }();
+
+function addSkillMeters() {
+    $(document).on('click','.add-skill', function(e){
+        e.preventDefault();
+        var sibling = $(this).siblings(".skill-label");
+        var hidden = $('#tech_skills');
+        var hiddenValue = hidden.val();
+        var parent = $(this).parent('fieldset');
+        var skill = sibling.val();
+        var skillMeter = '<p class="col-xs-12"><label for="skills[' + skill + ']" class="col-xs-3">' + skill + '</label><span class="col-sm-6"><input id="skill-' + skill + '"type="range" min="0" max="5" value="1" data-skill="skill" class="skill" name="skills[' + skill + ']"></span></p>';
+        parent.append(skillMeter);
+        sibling.val('');
+    });
+}
+addSkillMeters();
