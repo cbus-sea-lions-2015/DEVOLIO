@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     @user.skills = params[:user][:skills]
+    @user.positions = params[:user][:positions]
     saved = @user.update(user_params)
     run_twitter_api(current_user) if saved
     respond_to do |wants|
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :github_handle, :website)
+    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :github_handle, :linkedin_handle, :website)
   end
 
   def run_twitter_api(user)

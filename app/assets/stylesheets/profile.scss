@@ -1,0 +1,118 @@
+/* Colors */
+$deep-orange:  #E64A19; /*Deep orange*/
+$orange:       #FF5722; /*Orange*/
+$peach:        #FFCCBC; /*Peach*/
+$white:        #FFFFFF; /*White*/
+$green:        #8BC34A; /*Green*/
+$black:        #212121; /*Black*/
+$dark-gray:    #292B2E; /*Shark Gray*/
+$gray:         #727272; /*Dark Gray*/
+$light-gray:   #B6B6B6; /*Gray*/
+
+/* Font-Weight */
+$font-weight--light:  300;
+$font-weight--medium: 400;
+$font-weight--bold:   900;
+
+
+// Position history
+.position {
+  margin-bottom: 3em;
+}
+.time-span {
+  margin: 0;
+  color: $light-gray;
+  font-size: 0.8em;
+}
+
+// User tweets
+#user_tweets ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: $black;
+  line-height: 1.2em;
+
+}
+#user_tweets ul li {
+  border-bottom: 1px solid $light-gray;
+  padding: 0.6em 0.8em;
+
+}
+#user_tweets ul li div {
+  padding: 0.4em 0;
+}
+
+
+// Skills
+.skill-percentage {
+  margin-bottom: 10px;
+  position: relative;
+}
+.skill-percentage:before {
+  width: 0;
+  transform: width 0.6s ease;
+}
+.skill-percentage.w20:before {
+  width: 20%;
+}
+.skill-percentage.w40:before {
+  width: 40%;
+}
+.skill-percentage.w60:before {
+  width: 60%;
+}
+.skill-percentage.w80:before {
+  width: 80%;
+}
+.skill-percentage.w100:before {
+  width: 100%;
+}
+.skill-percentage::before {
+  content: "";
+  height: 6px;
+  background: $green;
+  position: absolute;
+  margin-top: 3px;
+  bottom: 0;
+}
+.skill-percentage:after {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background: $gray;
+  display: block;
+  margin-top: 3px;
+}
+
+
+// Interests
+.interests li {
+  color: $gray;
+  display: inline-block;
+  text-align: center;
+  background: $black;
+  width: 5.5em;
+  height: 5em;
+  margin: 0.2em 0.05em;
+  vertical-align: middle;
+}
+.interests li span {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  vertical-align: bottom;
+}
+.interests li .fa {
+  display: block;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 2em;
+  text-align: center;
+  margin: .45em 0;
+}
+.interests li .fa-question-circle {
+  color: $gray;
+}

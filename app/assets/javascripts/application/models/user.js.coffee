@@ -9,9 +9,11 @@ class App.Models.User extends App.Model
       interests: '',
       name: '',
       skills: '',
+      github_handle: '',
       twitter_handle: '',
-      github_handle: ''
-      description: ''
+      linkedin_handle: '',
+      description: '',
+      positions: ''
     },
     user_github: {
 
