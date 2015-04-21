@@ -20,28 +20,6 @@ var getGitHubData = function(username){
       githubResults.followingnum = json.following;
       githubResults.reposnum = json.public_repos;
 
-      var repos;
-      var allLang = {}
-      var allStars = 0
-      var reposData = {}
-
-      $.getJSON(repos_uri, function(json){
-        repos = json;
-        for (var i = 0; i < repos.length; i++) {
-          allStars += repos[i].stargazers_count;
-          var language = repos[i].language;
-          if (language in allLang) {
-            allLang[language]++;
-          }
-          else {
-            allLang[language] = 1;
-          }
-        }
-        reposData.allLang = allLang;
-        reposData.allStars = allStars
-        githubResults.reposData = reposData
-      })
-
       var events;
       var pushEvents = 0;
       var pullEvents = 0;
@@ -102,8 +80,32 @@ var getGitHubData = function(username){
         githubResults.lineDeletions = deletions;
         githubResults.commitMessages = commitMessages;
         githubResults.languages = languages;
-        console.log(githubResults)
-        saveGithubResults(githubResults);
+
+        var repos;
+        var allLang = {}
+        var allStars = 0
+        var reposData = {}
+
+        $.getJSON(repos_uri, function(json){
+          repos = json;
+          for (var i = 0; i < repos.length; i++) {
+            allStars += repos[i].stargazers_count;
+            var rlanguage = repos[i].language;
+            if (rlanguage in allLang) {
+              allLang[rlanguage]++;
+            }
+            else {
+              allLang[rlanguage] = 1;
+            }
+          }
+          reposData.allLang = allLang;
+          reposData.allStars = allStars
+          githubResults.reposData = reposData
+          
+          console.log(githubResults.reposData)
+          console.log(githubResults)
+          saveGithubResults(githubResults);
+        })
       })
     }
   });
