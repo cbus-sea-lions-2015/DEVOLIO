@@ -1,5 +1,5 @@
 class App.Models.User extends App.Model
-  urlRoot: 'users',
+    urlRoot: 'users',
   defaults:
     user_settings: {
       avatar: 'http://i.imgur.com/i31E9hh.jpg',

@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    @email_history = User.find_by(username: params[@user.username]).email_histories.map {|e| e.recipient}
+
     @user = current_user
     @user.skills = params[:user][:skills]
     @user.positions = params[:user][:positions]
