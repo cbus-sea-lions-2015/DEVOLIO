@@ -63,7 +63,7 @@
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">Short Description</label>
         <input class="col-xs-12 col-sm-6" type="text" name="description" value="<%= user_settings.description %>">
-        <span class="meta col-xs-12 col-sm-3">2-3 sentences about why you are in tech.</span>
+        <span class="meta col-xs-12 col-sm-3">recommended: 2-3 sentences about why you are in tech.</span>
       </fieldset>
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">email</label>
@@ -89,7 +89,7 @@
         <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>
         <input class="col-xs-12 col-sm-6" type="text" name="interests" value="<%= user_settings.interests %>">
         <span class="meta col-xs-12 col-sm-3">Separate interests with commas</span>
-        <p class="meta col-xs-9 offset-3"><strong>Current Icons:</strong> animals, art, business, coffee, cooking, cycling, diy, games, mentoring, music, outdoors, photography, reading, research, speaking, sports, travel, tv/movies, writing</p>
+        <p class="meta col-xs-9 offset-3"><strong>Interests are paired with icons for visual display on your devolio.</strong> We have paired interest/icons for: <br>animals, art, business, coffee, cooking, cycling, diy, games, mentoring, music, outdoors, photography, reading, research, speaking, sports, travel, tv/movies, writing<br> <strong>Feel free to add additional interests!</strong></p>
       </fieldset>
 
       <hr>
@@ -124,10 +124,10 @@
       <fieldset>
         <label for="add-skill-input" class="col-xs-12 col-sm-3">Add Skills</label>
         <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">+</button>
-        <span class="meta col-xs-12 col-sm-3">Rank your experience from "Familiar with" to "I contribute to it".</span>
+        <span class="meta col-xs-12 col-sm-3 meta-tooltip">What do the rankings mean?<span class="tooltip">Rankings range from 0-5, least experience to most. 0 and 1 values are essentially the same (since, why would you add a skill with 0 experience?)<img src="http://i.imgur.com/rOpTSia.jpg" title="rankings" /></span></span>
         <p class="error hidden">Please enter a skill.</p>
         <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
-          <fieldset class="col-xs-12">
+          <fieldset class="col-xs-12 skill-range">
             <label for="skills[<%= key %>]" class="col-xs-3"><%= key %></label>
             <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span><button class="delete-skill button col-sm-1">-</button>
           </fieldset>
@@ -143,6 +143,7 @@
         <input type="submit" id="get_api" name="submit">
         <p class="message"></p>
       </fieldset>
+      <p class="success"><strong>Please note!</strong> Importing your data from GitHub &amp; Twitter can take up to a couple of minutes behind the scenes. You'll be redirected to your Devolio on save, you may need to refresh before your information is fully populated.</p>
     </form>
   </section>
 </div>

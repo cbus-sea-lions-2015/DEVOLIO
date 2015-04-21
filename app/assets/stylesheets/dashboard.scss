@@ -14,6 +14,27 @@ $font-weight--light:  300;
 $font-weight--medium: 400;
 $font-weight--bold:   900;
 
+form .meta {
+  margin: 0;
+}
+form .meta-tooltip {
+  color: $orange;
+}
+form .meta-tooltip .tooltip {
+  display: none;
+}
+form .meta-tooltip:hover {
+  cursor: pointer;
+}
+form .meta-tooltip:hover .tooltip {
+  display: block;
+  opacity: 1;
+  width: 200%;
+  right: 0;
+  padding: 1em;
+  border: 1px solid gray;
+  background-color: white;
+}
 
 // Skills
 button.add-skill {
@@ -31,14 +52,42 @@ button.delete-skill, button.delete-position {
   }
 }
 
-form .meta {
-  margin: 0;
+input[type="range"] {
+  position: relative;
 }
+input[type="range"]:hover:after {
+  content: "Familiar with - Have been introduced to";
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 100%;
+}
+input[type="range"][value="2"]:hover:after {
+  content: "Sandboxed - Have played around with";
+}
+input[type="range"][value="3"]:hover:after {
+  content: "Practiced - Used in projects";
+}
+input[type="range"][value="4"]:hover:after {
+  content: "Experienced - Use frequently";
+}
+input[type="range"][value="5"]:hover:after {
+  content: "Expert - Know inner workings";
+}
+fieldset.skill-range {
+  margin: 0.5em auto;
+}
+
+// Positions
 .added-position {
   margin-top: 1em;
   padding-top: 1em;
 }
-
 .added-position + .added-position {
   border-top: 1px dashed $light-gray;
 }
