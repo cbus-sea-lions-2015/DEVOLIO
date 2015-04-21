@@ -39,18 +39,18 @@
         <li class="col-xs-9"><%= user_settings.interests %></li>
       </ul>
     </section>
-  <form id='mailer-form' class="col-xs-12">
-    <h4>Want to share your Devolio with someone?</h4>
-    <p>Enter any email address below and a link to your personal DEVOLIO will be automatically sent!</p>
-    <fieldset>
-      <label for="" class="col-xs-12 col-sm-3">Email Address</label>
-      <input class="col-xs-12 col-sm-6" type="text" name="email-address" id='send-email-address' value="">
-    </fieldset>
-    <fieldset>
-      <input type="submit" id="send_email" value="Send Link">
-      <p class="message" id='send-email-message'></p>
-    </fieldset>
-  </form>
+    <form id='mailer-form' class="col-xs-12">
+      <h4>Want to share your Devolio with someone?</h4>
+      <p>Enter any email address below and a link to your personal DEVOLIO will be automatically sent!</p>
+      <fieldset>
+        <label for="" class="col-xs-12 col-sm-3">Email Address</label>
+        <input class="col-xs-12 col-sm-6" type="text" name="email-address" id='send-email-address' value="">
+      </fieldset>
+      <fieldset>
+        <input type="submit" id="send_email" value="Send Link">
+        <p class="message" id='send-email-message'></p>
+      </fieldset>
+    </form>
   </section>
   <section class="light-container col-xs-12 col-sm-8">
     <h3>Edit Your Portfolio Information</h3>
@@ -84,6 +84,8 @@
         <label for="" class="col-xs-12 col-sm-3">Website</label>
         <input class="col-xs-12 col-sm-6" type="text" name="website" value="<%= user_settings.website %>">
       </fieldset>
+      <hr>
+      <h3>Tech Stack</h3>
       <fieldset>
         <label for="add-skill-input" class="col-xs-12 col-sm-3">Technical Skills</label>
         <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">+</button>
