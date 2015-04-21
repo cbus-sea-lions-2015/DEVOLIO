@@ -21,6 +21,8 @@ class GithubInfo
   field :followingnum
   field :reposnum
   field :blog_link
+  field :eventDates
+  field :reposData
 
   belongs_to :user
 end

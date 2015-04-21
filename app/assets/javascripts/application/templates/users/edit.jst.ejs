@@ -4,7 +4,7 @@
     <section id="user_profile">
       <div class="avatar col-xs-3">
         <% if (user_github) { %>
-        <img src='<%= user_settings.avatar %>' alt="avatar">
+        <img src='<%= user_github.aviurl %>' alt="avatar">
         <% } else { %>
         <img src='http://i.imgur.com/i31E9hh.jpg' alt="default-avatar">
         <% } %>
@@ -16,7 +16,6 @@
       <ul class="icons">
         <li><a href="http://github.com/<%= user_settings.github_handle %>" class="entypo-github"></a></li>
         <li><a href="http://twitter.com/<%= user_settings.twitter_handle %>" class="entypo-twitter"></a></li>
-        <!--li><a href="#" class="entypo-linkedin"></a></li-->
       </ul>
       <ul class="contact-info">
         <li class="col-xs-3">Username</li>
