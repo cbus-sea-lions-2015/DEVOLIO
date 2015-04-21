@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :github_handle, :website)
+    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :github_handle, :linkedin_handle, :website)
   end
 
   def run_twitter_api(user)
