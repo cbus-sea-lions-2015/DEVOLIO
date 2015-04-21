@@ -3,7 +3,8 @@ class App.Views.Users.Show extends App.View
 
   render: ->
     if @model.attributes.user_settings.interests
-      intList = @model.attributes.user_settings.interests.split(",")
+      intList = @model.attributes.user_settings.interests.split(",").map (interest) ->
+        interest.trim()
       @model.attributes.user_settings.interests = intList
     else
       @model.attributes.user_settings.interests = ""

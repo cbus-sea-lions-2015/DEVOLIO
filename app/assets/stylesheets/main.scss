@@ -334,7 +334,7 @@ header .subtitle span {
   display: inline-block;
   text-align: center;
   background: $black;
-  width: 5em;
+  width: 5.5em;
   height: 5em;
   margin: 0.2em 0.05em;
   vertical-align: middle;
@@ -352,6 +352,7 @@ header .subtitle span {
   color: #fff;
   font-size: 2em;
   text-align: center;
+  margin: .45em 0;
 }
 
 #user_tweets ul {
