@@ -144,7 +144,7 @@ form fieldset {
 }
 
 .meta {
-  color: #266DA1;
+  color: $gray;
   text-transform: lowercase;
   font-size: 0.8em;
   margin-bottom: 1em;
@@ -377,4 +377,10 @@ header .subtitle span {
 
 .interests li .fa-question-circle {
   color: $gray;
+}
+
+
+button.add-skill {
+  margin: 0;
+  padding: 0.25em 0.5em;
 }
