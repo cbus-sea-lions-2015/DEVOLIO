@@ -1,18 +1,10 @@
-// function processGithubApi() {
-
-//   $(document).on('click', '#get_api', function(e){
-//     e.preventDefault();
-//     var username = $('#gh_username').val();
-//     getGitHubData(username);
-//   })
-// };
-
 var getGitHubData = function(username){
   var githubResults = {}
   var user_uri   = 'https://api.github.com/users/'+username;
   var events_uri = 'https://api.github.com/users/'+username+'/events';
+  var repos_uri = 'https://api.github.com/users/'+username+'/repos';
 
-  var test;
+  // var test;
   requestJSON(user_uri, function(json){
     if(json.message == "Not Found" || username == '') {
       $('.message').html("<h2>No User Info Found</h2>");
@@ -80,6 +72,7 @@ var getGitHubData = function(username){
         githubResults.pullEvents = pullEvents;
         githubResults.gistEvents = gistEvents;
         githubResults.forkEvents = forkEvents;
+        githubResults.eventDates = eventDates
         githubResults.mostRecentEventDate = mostRecentEventDate;
         githubResults.oldestEventDate = oldestEventDate;
         githubResults.commits = commits;
@@ -87,7 +80,32 @@ var getGitHubData = function(username){
         githubResults.lineDeletions = deletions;
         githubResults.commitMessages = commitMessages;
         githubResults.languages = languages;
-        saveGithubResults(githubResults);
+
+        var repos;
+        var allLang = {}
+        var allStars = 0
+        var reposData = {}
+
+        $.getJSON(repos_uri, function(json){
+          repos = json;
+          for (var i = 0; i < repos.length; i++) {
+            allStars += repos[i].stargazers_count;
+            var rlanguage = repos[i].language;
+            if (rlanguage in allLang) {
+              allLang[rlanguage]++;
+            }
+            else {
+              allLang[rlanguage] = 1;
+            }
+          }
+          reposData.allLang = allLang;
+          reposData.allStars = allStars
+          githubResults.reposData = reposData
+          
+          console.log(githubResults.reposData)
+          console.log(githubResults)
+          saveGithubResults(githubResults);
+        })
       })
     }
   });

@@ -1,3 +1,4 @@
+<% console.log(user_github.reposData.allLang) %>
 <div class="portfolio">
   <section class="light-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
@@ -94,7 +95,7 @@
       <li><%= user_github.followingnum %> following</li>
       <li><%= user_github.forkEvents %> forks</li>
       <li><%= user_github.fullName %> your full name wow</li>
-      <li><%= user_github.gistsEvents %> gists</li>
+      <li><%= user_github.gistsEvents %> gist events</li>
       <li><%= user_github.languages %> language usage!</li>
       <li><%= user_github.lineAdditions %> lines added</li>
       <li><%= user_github.lineDeletions %> lines deleted</li>
@@ -104,7 +105,15 @@
       <li><%= user_github.profileurl %></li>
       <li><%= user_github.pullEvents %> pulls</li>
       <li><%= user_github.pushEvents %> pushes</li>
+      <li><%= user_github.reposData.allStars %> stars on your public repos!</li>
       <li><%= user_github.reposnum %> public repos belonging to you</li>
+      <% if (user_github.reposData.allLang) { %>
+        <ul>
+          <% for (var key in user_github.reposData.allLang) { if (user_github.reposData.allLang.hasOwnProperty(key)) { %>
+            <li><%= key %>: <%= user_github.reposData.allLang[key] %> repos!</li>
+          <% }} %>
+        </ul>
+      <% } %>
     </ul>
     <div class="data-graphs">
     </div>
