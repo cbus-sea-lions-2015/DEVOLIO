@@ -21,6 +21,8 @@
 //= require visualdata
 //= require formHelper
 //= require iconHelper
+//= require d3
+//= require pieCharts
 
 function sendEmail(address, username) {
   console.log('sending an email to ' + address + ', from ' + username + '!')

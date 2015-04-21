@@ -10,6 +10,9 @@ class App.Routers.Users extends App.Router
       view = new App.Views.Users.Show(model: user)
       $('.main-container').html(view.el)
       view.render()
+      console.log(user)
+      displayLanguages(user.attributes.user_github.reposData.allLang, '#js-recentLanguages')
+      displayLanguages(user.attributes.user_github.languages, '#js-allLanguages')
 
   edit: ->
     username = $('body').attr('id');
