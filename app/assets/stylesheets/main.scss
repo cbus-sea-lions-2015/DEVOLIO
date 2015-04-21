@@ -42,7 +42,7 @@ a:hover {
   text-decoration: underline;
 }
 /* Icons */
-a .fa {
+a.fa {
   background: $black;
   border-radius: 50%;
   color: #fff;
@@ -58,9 +58,10 @@ a .fa {
     background 0.2s ease-in-out,
     color 0.2s linear;
 }
-a .fa:hover {
+a.fa:hover {
   background: $green;
   color: $black;
+  text-decoration: none;
 }
 
 h3, h4, h5, h6 {
@@ -333,26 +334,25 @@ header .subtitle span {
   display: inline-block;
   text-align: center;
   background: $black;
-  width: 5em;
+  width: 5.5em;
   height: 5em;
   margin: 0.2em 0.05em;
   vertical-align: middle;
 }
 .interests li span {
-  display: inline-block;
+  display: block;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   vertical-align: bottom;
 }
 .interests li .fa {
-  display: inline;
+  display: block;
   vertical-align: middle;
-}
-.interests li .fa:before {
   color: #fff;
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
+  margin: .45em 0;
 }
 
 #user_tweets ul {
@@ -375,6 +375,6 @@ header .subtitle span {
   padding: 0.4em 0;
 }
 
-
-
-
+.interests li .fa-question-circle {
+  color: $gray;
+}

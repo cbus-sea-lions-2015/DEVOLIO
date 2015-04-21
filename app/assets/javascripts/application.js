@@ -19,6 +19,7 @@
 //= require application/app
 //= require githubAPI
 //= require visualdata
+//= require iconHelper
 
 
 
