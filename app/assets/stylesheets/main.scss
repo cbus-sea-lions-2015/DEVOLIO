@@ -276,3 +276,13 @@ header .subtitle span {
 .contact-info li:nth-child(even) {
   color: $gray;
 }
+
+.aside-box {
+  border: 3px solid $orange;
+  margin: 2em auto;
+  overflow: auto;
+}
+.aside-box input[type="submit"] {
+  border-color: #fff;
+  color: #fff;
+}
