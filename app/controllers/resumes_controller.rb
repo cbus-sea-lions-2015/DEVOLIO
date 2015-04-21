@@ -11,4 +11,16 @@ class ResumesController < ApplicationController
 
     github_data.to_json
   end
+
+  def email
+    puts '*' * 50
+    puts '*' * 50
+    puts 'SENDING EMAIL'
+    puts params
+    puts '*' * 50
+    puts '*' * 50
+    UserMailer.share_email(params).deliver_now
+    
+    render nothing: true
+  end
 end
