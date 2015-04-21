@@ -2,15 +2,16 @@ class App.Views.Users.Edit extends App.View
   template: JST['application/templates/users/edit']
 
   events:
-    'submit form' : 'onFormSubmit'
+    'submit #user-form' : 'userFormSubmit'
+    'submit #mailer-form' : 'mailerFormSubmit'
 
   render: ->
     @$el.html(@template(@model.attributes))
 
-  onFormSubmit: ->
+  userFormSubmit: ->
     $('#get_api').attr('disabled', true)
     $('#get_api').val('Loading...')
-    form = @$el.find "form"
+    form = @$el.find "#user-form"
     newAttrs = form.serializeJSON()
     success = =>
       console.log @model
@@ -23,3 +24,15 @@ class App.Views.Users.Edit extends App.View
       $('.message').html("<span class='error'>There was an issue saving your updates</span>")
     @model.save(newAttrs, success: success, error: error)
     false
+
+  mailerFormSubmit: (e) ->
+    e.preventDefault()
+    $('#send_email').attr('disabled', true)
+    $('#send_email').val('Sending...')
+    form = @$el.find "#mailer_form"
+    username = $('body').attr('id')
+    console.log(username)
+    address = $('#send-email-address').val();
+    window.sendEmail(address, username)
+    error = ->
+      $(form + ' .message').html("<span class='error'>There was an issue and no email was sent.</span>")

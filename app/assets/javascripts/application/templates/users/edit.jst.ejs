@@ -42,7 +42,7 @@
 </section>
 <section class="light-container col-xs-12 col-sm-8">
   <h3>Edit Your Portfolio Information</h3>
-  <form id="user_form">
+  <form id="user-form">
     <fieldset>
       <label for="" class="col-xs-12 col-sm-3">Name</label>
       <input class="col-xs-12 col-sm-6" type="text" name="name" value="<%= user_settings.name %>">
@@ -96,4 +96,16 @@
     </fieldset>
   </form>
 </section>
+<form id='mailer-form'>
+  <h4>Want to share your Devolio with someone?</h4>
+  <p>Enter any email address below and a link to your personal DEVOLIO will be automatically sent!</p>
+  <fieldset>
+    <label for="" class="col-xs-12 col-sm-3">Email Address</label>
+    <input class="col-xs-12 col-sm-6" type="text" name="email-address" id='send-email-address' value="">
+  </fieldset>
+  <fieldset>
+    <input type="submit" id="send_email" value="Send Link">
+    <p class="message" id='send-email-message'></p>
+  </fieldset>
+</form>
 </div>

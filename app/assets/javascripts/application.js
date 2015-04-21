@@ -21,9 +21,26 @@
 //= require visualdata
 //= require iconHelper
 
+function sendEmail(address, username) {
+  console.log('sending an email to ' + address + ', from ' + username + '!')
+  $.ajax({
+    url: 'email',
+    data: {email: address, username: username},
+    type: 'POST'
+  }).done(function(data){
+    $('#send_email').attr('disabled', false)
+    $('#send_email').val('Submit')
+    $("#send-email-address").val("")
+    $('#send-email-message').html("Your email has been sent to " + address + "!")
+  }).fail(function(data){
+    $('#send_email').attr('disabled', false)
+    $('#send_email').val('Submit')
+    $("#send-email-address").val("")
+    $('#send-email-message').html("There was an error and your email was not able to be sent. Please try again shortly.")
+  })
+}
 
-
-//
+window.sendEmail = sendEmail
 function parseTwitterDate(tdate) {
     var system_date = new Date(Date.parse(tdate));
     var user_date = new Date();
@@ -52,9 +69,6 @@ var K = function () {
         ie: a.match(/MSIE\s([^;]*)/)
     }
 }();
-
-
-
 
 function addSkillMeters() {
     $(document).on('click','.add-skill', function(e){
