@@ -1,18 +1,10 @@
-// function processGithubApi() {
-
-//   $(document).on('click', '#get_api', function(e){
-//     e.preventDefault();
-//     var username = $('#gh_username').val();
-//     getGitHubData(username);
-//   })
-// };
-
 var getGitHubData = function(username){
   var githubResults = {}
   var user_uri   = 'https://api.github.com/users/'+username;
   var events_uri = 'https://api.github.com/users/'+username+'/events';
+  var repos_uri = 'https://api.github.com/users/'+username+'/repos';
 
-  var test;
+  // var test;
   requestJSON(user_uri, function(json){
     if(json.message == "Not Found" || username == '') {
       $('.message').html("<h2>No User Info Found</h2>");
@@ -27,6 +19,28 @@ var getGitHubData = function(username){
       githubResults.followersnum = json.followers;
       githubResults.followingnum = json.following;
       githubResults.reposnum = json.public_repos;
+
+      var repos;
+      var allLang = {}
+      var allStars = 0
+      var reposData = {}
+
+      $.getJSON(repos_uri, function(json){
+        repos = json;
+        for (var i = 0; i < repos.length; i++) {
+          allStars += repos[i].stargazers_count;
+          var language = repos[i].language;
+          if (language in allLang) {
+            allLang[language]++;
+          }
+          else {
+            allLang[language] = 1;
+          }
+        }
+        reposData.allLang = allLang;
+        reposData.allStars = allStars
+        githubResults.reposData = reposData
+      })
 
       var events;
       var pushEvents = 0;
@@ -80,6 +94,7 @@ var getGitHubData = function(username){
         githubResults.pullEvents = pullEvents;
         githubResults.gistEvents = gistEvents;
         githubResults.forkEvents = forkEvents;
+        githubResults.eventDates = eventDates
         githubResults.mostRecentEventDate = mostRecentEventDate;
         githubResults.oldestEventDate = oldestEventDate;
         githubResults.commits = commits;
@@ -87,6 +102,7 @@ var getGitHubData = function(username){
         githubResults.lineDeletions = deletions;
         githubResults.commitMessages = commitMessages;
         githubResults.languages = languages;
+        console.log(githubResults)
         saveGithubResults(githubResults);
       })
     }
