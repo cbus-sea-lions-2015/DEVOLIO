@@ -4,6 +4,7 @@ class App.Views.Users.Edit extends App.View
   events:
     'submit #user-form' : 'userFormSubmit'
     'submit #mailer-form' : 'mailerFormSubmit'
+    'click .delete-skill' : 'deleteSkill'
 
   render: ->
     @$el.html(@template(@model.attributes))
@@ -31,8 +32,12 @@ class App.Views.Users.Edit extends App.View
     $('#send_email').val('Sending...')
     form = @$el.find "#mailer_form"
     username = $('body').attr('id')
-    console.log(username)
     address = $('#send-email-address').val();
     window.sendEmail(address, username)
     error = ->
       $(form + ' .message').html("<span class='error'>There was an issue and no email was sent.</span>")
+
+  deleteSkill: (e) ->
+    e.preventDefault()
+    skillNode = e.currentTarget.parentNode
+    skillNode.remove()

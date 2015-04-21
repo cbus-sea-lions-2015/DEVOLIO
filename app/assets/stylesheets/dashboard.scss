@@ -20,6 +20,17 @@ button.add-skill {
   margin: 0;
   padding: 0.25em 0.5em;
 }
+button.delete-skill {
+  margin: 0;
+  padding: 0.25em 0.5em;
+  border-color: $orange;
+  &:hover {
+    border-color: $orange;
+    background: $orange;
+    color: #fff;
+  }
+}
+
 form .meta {
   margin: 0;
 }

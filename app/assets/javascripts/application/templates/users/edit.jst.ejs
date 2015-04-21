@@ -128,7 +128,7 @@
         <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
           <fieldset class="col-xs-12">
             <label for="skills[<%= key %>]" class="col-xs-3"><%= key %></label>
-            <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span>
+            <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span><button class="delete-skill button col-sm-1">-</button>
           </fieldset>
         <% }} %>
       </fieldset>
