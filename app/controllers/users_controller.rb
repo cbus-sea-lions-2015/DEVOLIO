@@ -24,14 +24,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    puts '*' * 50
-    puts "local: #{params[:user][:loc_local]}"
-    puts "remote: #{params[:user][:loc_remote]}"
-    puts "relocate: #{params[:user][:loc_relocate]}"
-    puts '*' * 50
     @user = current_user
     @user.skills = params[:user][:skills]
     @user.positions = params[:user][:positions]
+    @user.loc_local = (params[:user][:loc_local] ? true : false)
+    @user.loc_remote = (params[:user][:loc_remote] ? true : false)
+    @user.loc_relocate = (params[:user][:loc_relocate] ? true : false)
     saved = @user.update(user_params)
     run_twitter_api(current_user) if saved
     respond_to do |wants|
