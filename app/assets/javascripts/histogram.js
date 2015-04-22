@@ -23,18 +23,19 @@ var parseHistogram = function(infoHash) {
 }
 
 var displayHistogram = function(lineData){
+  var parentWidth = $("#js-histogram").width();
   var vis = d3.select("#js-histogram")
     .append("svg:svg")
-    .attr("width", 1000)       
-    .attr("height", 500)
+    .attr("width", parentWidth)
+    .attr("height", parentWidth/4)
     .append("svg:g"),
-    WIDTH = 1000,
-    HEIGHT = 500,
+    WIDTH = parentWidth,
+    HEIGHT = parentWidth/4,
     MARGINS = {
-      top: 20,
-      right: 20,
-      bottom: 20,
-      left: 50
+      top:0,
+      right:0,
+      bottom:0,
+      left:0
     },
 
   xRange = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([d3.min(lineData, function (d) {
@@ -55,24 +56,26 @@ var displayHistogram = function(lineData){
 
   xAxis = d3.svg.axis()
     .scale(xRange)
-    .tickSize(5)
+    .tickSize(2)
     .tickSubdivide(true)
     .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)); }),
 
   yAxis = d3.svg.axis()
     .scale(yRange)
-    .tickSize(5)
+    .tickSize(2)
     .orient("left")
     .tickSubdivide(true);
 
   vis.append("svg:g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+    .attr("fill","#727272")
     .call(xAxis);
 
   vis.append("svg:g")
     .attr("class", "y axis")
     .attr("transform", "translate(" + (MARGINS.left) + ",0)")
+    .attr("fill","#727272")
     .call(yAxis);
 
   var lineFunc = d3.svg.line()
@@ -86,8 +89,8 @@ var displayHistogram = function(lineData){
 
   vis.append("svg:path")
     .attr("d", lineFunc(lineData))
-    .attr("stroke", "blue")
-    .attr("stroke-width", 2)
+    .attr("stroke", "#FF5722")
+    .attr("stroke-width", 1)
     .attr("fill", "none");
 }
 
