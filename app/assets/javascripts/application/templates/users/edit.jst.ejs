@@ -1,3 +1,4 @@
+<% console.log(emailHistory) %>
 <div class="dashboard">
   <section class="dark-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
@@ -44,13 +45,23 @@
         <p>Enter any email address below and a link to your personal DEVOLIO will be automatically sent!</p>
         <fieldset>
           <label for="" class="col-xs-12 col-sm-6">Email Address</label>
-          <input class="col-xs-12 col-sm-6" type="text" name="email-address" id='send-email-address' value="">
+          <input class="col-xs-12 col-sm-6" type="email" name="email-address" id='send-email-address' value="">
         </fieldset>
         <fieldset>
           <input type="submit" id="send_email" value="Send Link">
           <p class="message" id='send-email-message'></p>
         </fieldset>
       </form>
+      <div class='email-history-box'>
+        <ul class='email-history-list'>
+          <p>You have sent emails to the following people:</p>
+          <% if (emailHistory.length > 0) { %>
+            <% for (var i = 0; i < emailHistory.length; i++) { %>
+              <li><%= emailHistory[i].recipient %> on <%= emailHistory[i].date %>.</li>
+            <% } %>
+          <% } %>
+        </ul>
+      </div>
     </aside>
   </section>
   <section class="light-container col-xs-12 col-sm-8">
@@ -83,7 +94,7 @@
       </fieldset>
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">Website</label>
-        <input class="col-xs-12 col-sm-6" type="text" name="website" value="<%= user_settings.website %>">
+        <input class="col-xs-12 col-sm-6" type="url" name="website" value="<%= user_settings.website %>">
       </fieldset>
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, only: [:show, :edit, :update, :destroy]
 
+  get 'email_history/:username', to: 'resumes#email_history'
+
   post 'store_github', to: 'api#github'
   post 'email', to: 'resumes#email'
 

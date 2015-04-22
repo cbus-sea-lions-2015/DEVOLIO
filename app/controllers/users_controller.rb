@@ -10,7 +10,8 @@ class UsersController < ApplicationController
     tweets = TweetParser.new(@user).tweets
     @user_all = { user_settings: @user,
                   user_github: @user.github_info,
-                  user_tweets: tweets }
+                  user_tweets: tweets,
+                  emailHistory: @user.email_histories }
     respond_to do |wants|
       wants.js { render json: @user_all }
       wants.html

@@ -23,9 +23,9 @@
 //= require iconHelper
 //= require d3
 //= require pieCharts
+//= require histogram
 
 function sendEmail(address, username) {
-  console.log('sending an email to ' + address + ', from ' + username + '!')
   $.ajax({
     url: 'email',
     data: {email: address, username: username},
@@ -34,7 +34,8 @@ function sendEmail(address, username) {
     $('#send_email').attr('disabled', false)
     $('#send_email').val('Submit')
     $("#send-email-address").val("")
-    $('#send-email-message').html("Your email has been sent to " + address + "!")
+    $('#send-email-message').html("Your email has been successfully sent!")
+    $('.email-history-list').append("<li>" + data.email + " on " + data.date + ".</li>")
   }).fail(function(data){
     $('#send_email').attr('disabled', false)
     $('#send_email').val('Submit')

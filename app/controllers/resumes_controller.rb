@@ -13,14 +13,18 @@ class ResumesController < ApplicationController
   end
 
   def email
-    puts '*' * 50
-    puts '*' * 50
-    puts 'SENDING EMAIL'
-    puts params
-    puts '*' * 50
-    puts '*' * 50
-    UserMailer.share_email(params).deliver_now
+    email = UserMailer.share_email(params).deliver_now
+    date = DateTime.now.strftime("%Y-%m-%d")
     
-    render nothing: true
+    render json: {email: params[:email], date: date }
+  end
+
+  def email_history
+    @email_history = User.find_by(username: params[:username]).email_histories.map {|e| e.recipient}
+    respond_to do |wants|
+      wants.js do
+        render json: {history: @email_history}
+      end
+    end
   end
 end
