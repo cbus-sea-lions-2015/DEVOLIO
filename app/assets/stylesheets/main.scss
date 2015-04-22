@@ -286,3 +286,12 @@ header .subtitle span {
   border-color: #fff;
   color: #fff;
 }
+
+
+.graph-container {
+  overflow: visible;
+}
+.graph-container svg {
+  overflow: visible;
+  margin-bottom: 3em;
+}

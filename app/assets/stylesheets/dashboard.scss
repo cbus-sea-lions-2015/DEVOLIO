@@ -52,33 +52,7 @@ button.delete-skill, button.delete-position {
   }
 }
 
-input[type="range"] {
-  position: relative;
-}
-input[type="range"]:hover:after {
-  content: "Familiar with - Have been introduced to";
-  display: block;
-  text-align: center;
-  font-size: 1rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  position: absolute;
-  left: 0;
-  top: 0.5em;
-  width: 100%;
-}
-input[type="range"][value="2"]:hover:after {
-  content: "Sandboxed - Have played around with";
-}
-input[type="range"][value="3"]:hover:after {
-  content: "Practiced - Used in projects";
-}
-input[type="range"][value="4"]:hover:after {
-  content: "Experienced - Use frequently";
-}
-input[type="range"][value="5"]:hover:after {
-  content: "Expert - Know inner workings";
-}
+
 fieldset.skill-range {
   margin: 0.5em auto;
 }
