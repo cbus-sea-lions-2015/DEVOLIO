@@ -18,7 +18,6 @@
 //= require backbone
 //= require application/app
 //= require githubAPI
-//= require visualdata
 //= require formHelper
 //= require iconHelper
 //= require d3
