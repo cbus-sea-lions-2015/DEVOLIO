@@ -48,24 +48,37 @@ var createPieChart = function(dataset, selector){
     .append("svg:g")
     .attr("class", "slice");
 
-  arcs.append("svg:path")
-    .attr("fill", function(d, i) { return color(i); } )
-    .attr("d", arc);
+  var g = vis.selectAll(".arc")
+    .data(pie(dataset))
+  .enter().append("g")
+    .attr("class", "arc");
 
-  arcs.append("svg:text")
-    .attr("fill","#000")
-    .style("text-transform","uppercase")
-    .style("font-size","0.8em")
-    .style("font-family", "'Oswald', sans-serif")
-    .attr("transform", function(d){
-    d.innerRadius = 0;
-    d.outerRadius = radius;
-    return "translate(" + arc.centroid(d) + ")";})
-      .attr("text-anchor", "middle").text(
-        function(d, i) {
-          if(dataset[i].value > 0){
-            return dataset[i].label;
-          }
-        }
-      );
+  g.append("path")
+      .attr("fill", function(d, i) { return color(i); })
+    .transition()
+      .duration(2000)
+      .attrTween("d", tweenPie)
+      .each('end',  function(d){
+        g.append("svg:text")
+          .attr("fill","#000")
+          .style("text-transform","uppercase")
+          .style("font-size","0.8em")
+          .style("font-family", "'Oswald', sans-serif")
+          .attr("transform", function(d){
+          d.innerRadius = 0;
+          d.outerRadius = radius;
+          return "translate(" + arc.centroid(d) + ")";})
+            .attr("text-anchor", "middle").text(
+              function(d, i) {
+                if(dataset[i].value > 0){
+                  return dataset[i].label;
+                }
+              }
+            );
+      });
+
+  function tweenPie(b) {
+    var i = d3.interpolate({startAngle: 1.1*Math.PI, endAngle: 1.1*Math.PI}, b);
+    return function(t) { return arc(i(t)); };
+  }
 }
