@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @user_all = { user_settings: @user,
                   user_github: @user.github_info,
                   user_tweets: tweets,
-                  emailHistory: @user.email_histories }
+                  emailHistory: @user.email_histories,
+                  location_pref: calc_location_pref(@user) }
     respond_to do |wants|
       wants.js { render json: @user_all }
       wants.html
@@ -23,6 +24,11 @@ class UsersController < ApplicationController
   end
 
   def update
+    puts '*' * 50
+    puts "local: #{params[:user][:loc_local]}"
+    puts "remote: #{params[:user][:loc_remote]}"
+    puts "relocate: #{params[:user][:loc_relocate]}"
+    puts '*' * 50
     @user = current_user
     @user.skills = params[:user][:skills]
     @user.positions = params[:user][:positions]
@@ -49,7 +55,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :github_handle, :linkedin_handle, :website)
+    params.require(:user).permit(:username, :name, :email, :avatar, :twitter_handle, :description, :interests, :github_handle, :linkedin_handle, :website, :loc_local, :loc_remote, :loc_relocate)
   end
 
   def run_twitter_api(user)
@@ -57,5 +63,23 @@ class UsersController < ApplicationController
     twitter = TwitterAPI.new(user["twitter_handle"])
     tweets = twitter.search(user["twitter_includes"] || [])
     current_user.user_tweet = UserTweet.new(user_name: current_user["email"], tweets: tweets)
+  end
+
+  def calc_location_pref(user)
+    if user.loc_local && user.loc_remote && user.loc_relocate
+      "work locally, remotely, or relocate"
+    elsif user.loc_local && user.loc_remote
+      "work locally or remotely"
+    elsif user.loc_local && user.relocate
+      "work locally or relocate"
+    elsif user.loc_remote && user.loc_relocate
+      "work remotely or relocate"
+    elsif user.loc_local
+      "work locally"
+    elsif user.loc_remote
+      "work remotely"
+    elsif user.loc_relocate
+      "relocate for work"
+    end
   end
 end

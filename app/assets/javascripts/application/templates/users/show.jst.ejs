@@ -34,6 +34,12 @@
         <li class="col-xs-3">Website</li>
         <li class="col-xs-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
         <% } %>
+        <% if (location_pref) { %>
+          <li class="col-xs-3">I want to:</li>
+          <li class="col-xs-9"><%= location_pref %></li>
+        <% } else { %>
+          <li class="col-xs-12">I have no location preference</li>
+        <% } %>
       </ul>
     </section>
     <% if (user_settings.positions != null) { %>
