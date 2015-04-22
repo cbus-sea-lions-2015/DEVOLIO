@@ -38,6 +38,7 @@ class User
 
   has_one :github_info
   has_one :user_tweet
+  has_many :email_histories
 
   validates_uniqueness_of :username, :email
   validates_format_of :username, with: /\w+/
