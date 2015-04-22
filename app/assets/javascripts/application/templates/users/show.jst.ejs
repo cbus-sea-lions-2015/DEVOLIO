@@ -66,15 +66,17 @@
   <% if (user_github) { %>
   <section class="user_github">
     <h3>Recent GitHub Activity</h3>
-    <div class="pie-charts">
+    <div class="data-graphs col-xs-12">
+      <div id="js-histogram" class="col-xs-12 graph-container">
+      </div>
+    </div>
+    <div class="pie-charts col-xs-12">
       <section>
         <div class="pieID pie">
-        <div id="js-recentLanguages">
-        </div>
-        <div id="js-allLanguages">
-        </div>
-        <div id="js-histogram">
-        </div>
+          <div id="js-recentLanguages" class="col-xs-6 graph-container">
+          </div>
+          <div id="js-allLanguages" class="col-xs-6 graph-container">
+          </div>
         </div>
         <ul class="pieID legend">
           <li>
@@ -92,7 +94,7 @@
         </ul>
       </section>
     </div>
-    <ul>
+    <!-- <ul>
       <li><a href='<%= user_github.aviurl %>'>Your Avatar!</a></li>
       <li><%= user_github.blog_link %>: Link to your blog if you have one</li>
       <li><%= user_github.commitMessages %>random commit message among many!</li>
@@ -120,9 +122,7 @@
           <% }} %>
         </ul>
       <% } %>
-    </ul>
-    <div class="data-graphs">
-    </div>
+    </ul> -->
   </section><!-- end github section -->
   <% } %>
   <section class="col-xs-6">
