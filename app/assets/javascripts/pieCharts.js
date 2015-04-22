@@ -1,9 +1,13 @@
 var displayLanguages = function(infoHash, selector){
   var dataset = [];
-
   for (language in infoHash) {
     if (infoHash.hasOwnProperty(language)) {
-      dataset.push({"label":language, "value":parseInt(infoHash[language])});
+      if (language === "null") {
+        dataset.push({"label":"other", "value":parseInt(infoHash[language])});
+      }
+      else {
+        dataset.push({"label":language, "value":parseInt(infoHash[language])});
+      }
     }
   }
 
