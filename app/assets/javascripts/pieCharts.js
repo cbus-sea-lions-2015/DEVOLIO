@@ -3,7 +3,6 @@ var displayLanguages = function(infoHash, selector){
 
   for (language in infoHash) {
     if (infoHash.hasOwnProperty(language)) {
-      console.log("hi")
       dataset.push({"label":language, "value":parseInt(infoHash[language])});
     }
   }
