@@ -16,7 +16,6 @@ class App.Views.Users.Edit extends App.View
     form = @$el.find "#user-form"
     newAttrs = form.serializeJSON()
     success = =>
-      console.log @model
       gh_handle = @model.get('github_handle')
       window.getGitHubData(gh_handle) if gh_handle
       App.router.navigate("/#{@model.get('username')}", {trigger: true});
