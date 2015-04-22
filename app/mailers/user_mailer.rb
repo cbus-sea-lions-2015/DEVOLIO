@@ -5,6 +5,7 @@ class UserMailer < ApplicationMailer
     @user = User.find_by(username: params[:username])
     @url = "https://devolio.herokuapp.com/#{@user.username}"
     mail(to: params[:email], subject: "#{@user.name} would like to share their Devolio!")
+    @user.email_histories.create(recipient: params[:email])
   end
 
 end
