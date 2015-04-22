@@ -43,8 +43,11 @@ button.add-skill {
 }
 button.delete-skill, button.delete-position {
   margin: 0;
+  color: $gray;
+  margin-left: 5px;
   padding: 0.25em 0.5em;
   border-color: $orange;
+  width: 8em;
   &:hover {
     border-color: $orange;
     background: $orange;
