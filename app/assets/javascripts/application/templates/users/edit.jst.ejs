@@ -77,6 +77,24 @@
         <span class="meta col-xs-12 col-sm-3">recommended: 2-3 sentences about why you are in tech.</span>
       </fieldset>
       <fieldset>
+        <label for="" class="col-xs-12 col-sm-3">I want to:</label>
+        <% if (user_settings.loc_local) { %>
+          <input class="" type="checkbox" name="loc_local" checked>Work Locally
+        <% } else { %>
+          <input class="" type="checkbox" name="loc_local">Work Locally
+        <% } %>
+        <% if (user_settings.loc_remote) { %>
+          <input class="" type="checkbox" name="loc_remote" checked>Work Remotely
+        <% } else { %>
+          <input class="" type="checkbox" name="loc_remote">Work Remotely
+        <% } %>
+        <% if (user_settings.loc_relocate) { %>
+          <input class="" type="checkbox" name="loc_relocate" checked>Relocate
+        <% } else { %>
+          <input class="" type="checkbox" name="loc_relocate">Relocate
+        <% } %>
+      </fieldset>
+      <fieldset>
         <label for="" class="col-xs-12 col-sm-3">email</label>
         <input class="col-xs-12 col-sm-6" type="text" name="email" value="<%= user_settings.email %>">
       </fieldset>

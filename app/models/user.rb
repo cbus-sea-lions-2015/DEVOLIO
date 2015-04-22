@@ -36,6 +36,10 @@ class User
   field :avatar,             type: String
   field :positions
 
+  field :loc_local
+  field :loc_relocate
+  field :loc_remote
+
   has_one :github_info
   has_one :user_tweet
   has_many :email_histories
