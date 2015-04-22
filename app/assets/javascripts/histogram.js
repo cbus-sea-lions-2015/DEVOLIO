@@ -22,7 +22,7 @@ var parseHistogram = function(infoHash) {
   //Add zeros to close off graph for fill
   dataset.push({'x':dataset[dataset.length-1].x, 'y': 0});
   dataset.unshift({'x': dataset[0].x, 'y': 0})
-  
+
   displayHistogram(dataset);
 }
 
@@ -91,11 +91,22 @@ var displayHistogram = function(lineData){
   })
   .interpolate('linear');
 
+  vis.append("linearGradient")
+      .attr("id", "color-gradient")
+    .selectAll("stop")
+      .data([
+        {offset: "0%", color: "rgba(255,255,255,0)"},
+        {offset: "100%", color: "rgba(230,74,25,0.67)"}
+      ])
+    .enter().append("stop")
+      .attr("offset", function(d) { return d.offset; })
+      .attr("stop-color", function(d) { return d.color; });
+
   vis.append("svg:path")
     .attr("d", lineFunc(lineData))
-    .attr("stroke", "#FF5722")
+    .attr("stroke", "#E64A19")
     .attr("stroke-width", 1)
-    .attr("fill", "none");
+    .attr("class", "area");
 }
 
 

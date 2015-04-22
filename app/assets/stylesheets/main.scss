@@ -77,6 +77,8 @@ h4, h5 {
 }
 h5 {
   color: $gray;
+  text-align: center;
+  margin: 1em auto;
 }
 .button, button, input[type="submit"] {
   border: 3px solid #fff;
@@ -294,4 +296,7 @@ header .subtitle span {
 .graph-container svg {
   overflow: visible;
   margin-bottom: 3em;
+}
+.area {
+  fill: url(#color-gradient);
 }
