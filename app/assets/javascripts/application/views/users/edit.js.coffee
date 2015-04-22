@@ -46,4 +46,4 @@ class App.Views.Users.Edit extends App.View
   deletePosition: (e) ->
     e.preventDefault()
     positionNode = e.currentTarget.parentNode.parentNode
-    positionNode.remove()  
+    positionNode.remove()
