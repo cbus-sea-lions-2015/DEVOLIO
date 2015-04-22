@@ -40,6 +40,11 @@ class User
   field :loc_relocate
   field :loc_remote
 
+  field :project_link,        type: String
+  field :project_name,        type: String
+  field :project_description, type: String
+  field :project_pic_link,    type: String
+
   has_one :github_info
   has_one :user_tweet
   has_many :email_histories
