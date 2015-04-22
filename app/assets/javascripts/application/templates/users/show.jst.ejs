@@ -26,17 +26,17 @@
       </ul>
       <hr>
       <ul class="contact-info">
-        <li class="col-xs-3">Username</li>
-        <li class="col-xs-9"><%= user_settings.username %></li>
-        <li class="col-xs-3">Email</li>
-        <li class="col-xs-9"><%= user_settings.email %></li>
+        <li class="col-xs-12 col-sm-3">Username</li>
+        <li class="col-xs-12 col-sm-9"><%= user_settings.username %></li>
+        <li class="col-xs-12 col-sm-3">Email</li>
+        <li class="col-xs-12 col-sm-9"><%= user_settings.email %></li>
         <% if (user_settings.website) { %>
-        <li class="col-xs-3">Website</li>
-        <li class="col-xs-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
+        <li class="col-xs-12 col-sm-3">Website</li>
+        <li class="col-xs-12 col-sm-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
         <% } %>
         <% if (location_pref) { %>
-          <li class="col-xs-3">I want to:</li>
-          <li class="col-xs-9"><%= location_pref %></li>
+          <li class="col-xs-12 col-sm-3">I want to:</li>
+          <li class="col-xs-12 col-sm-9"><%= location_pref %></li>
         <% } else { %>
           <li class="col-xs-12">I have no location preference</li>
         <% } %>
