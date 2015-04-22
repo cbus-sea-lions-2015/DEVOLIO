@@ -31,9 +31,7 @@ var getGitHubData = function(username){
       format: "json",
     }).error(function(error) {
       $('.message').html("<h2>"+ error +"</h2>");
-      console.log("API request error message: ",error);
     }).done(function(data) {
-      console.log("API request success!",url)
       callback.call(null, data);
     });
     return request;
@@ -138,10 +136,8 @@ var getGitHubData = function(username){
       data: {github_profile: githubResults}
     }).done(function(data){
       $('.message').html("<h2>GitHub save success!</h2>");
-      console.log("GitHub save success!");
     }).error(function(error) {
       $('.message').html("<h2>"+ error +"</h2>");
-      console.log("Save error message: ",error);
     });
   }
 }
