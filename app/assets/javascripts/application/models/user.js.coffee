@@ -15,9 +15,5 @@ class App.Models.User extends App.Model
       description: '',
       positions: ''
     },
-    user_github: {
-
-    },
-    user_tweets: {
-
-    }
+    user_github: {},
+    user_tweets: {}
