@@ -16,7 +16,6 @@ var parseHistogram = function(infoHash) {
       ++result[dateArray[i]];
     }
 
-
   for (property in result){
     dataset.push({'x':Date.parse(property.toString()), 'y':result[property]});
   }
@@ -29,14 +28,15 @@ var displayHistogram = function(lineData){
     .attr("width", 1000)       
     .attr("height", 500)
     .append("svg:g"),
-  WIDTH = 1000,
-  HEIGHT = 500,
-  MARGINS = {
-    top: 20,
-    right: 20,
-    bottom: 20,
-    left: 50
-  },
+    WIDTH = 1000,
+    HEIGHT = 500,
+    MARGINS = {
+      top: 20,
+      right: 20,
+      bottom: 20,
+      left: 50
+    },
+
   xRange = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right]).domain([d3.min(lineData, function (d) {
       return d.x;
     }),
@@ -57,14 +57,13 @@ var displayHistogram = function(lineData){
     .scale(xRange)
     .tickSize(5)
     .tickSubdivide(true)
-    .tickValues(lineData[0]),
+    .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)); }),
 
   yAxis = d3.svg.axis()
     .scale(yRange)
     .tickSize(5)
     .orient("left")
     .tickSubdivide(true);
-
 
   vis.append("svg:g")
     .attr("class", "x axis")
@@ -83,15 +82,13 @@ var displayHistogram = function(lineData){
   .y(function (d) {
     return yRange(d.y);
   })
-  .interpolate('basis');
+  .interpolate('linear');
 
   vis.append("svg:path")
     .attr("d", lineFunc(lineData))
     .attr("stroke", "blue")
     .attr("stroke-width", 2)
     .attr("fill", "none");
-
-debugger;
 }
 
 
