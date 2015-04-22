@@ -1,8 +1,4 @@
 var displayLanguages = function(infoHash, selector){
-  var width = 400;
-  var height = 400;
-  var radius = height/2;
-  var color = d3.scale.category20b();
   var dataset = [];
 
   for (language in infoHash) {
