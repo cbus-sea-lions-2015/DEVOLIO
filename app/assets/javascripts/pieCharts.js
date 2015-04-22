@@ -26,7 +26,7 @@ var createPieChart = function(dataset, selector){
   var width = $(selector).width();
   var height = width;
   var radius = width/2;
-  var color = d3.scale.category20b();
+  var color = d3.scale.category20c();
 
   var vis = d3.select(selector)
     .append("svg:svg")
