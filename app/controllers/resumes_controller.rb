@@ -13,9 +13,10 @@ class ResumesController < ApplicationController
   end
 
   def email
-    UserMailer.share_email(params).deliver_now
+    email = UserMailer.share_email(params).deliver_now
+    date = DateTime.now.strftime("%Y-%m-%d")
     
-    render nothing: true
+    render json: {email: params[:email], date: date }
   end
 
   def email_history

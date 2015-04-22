@@ -53,11 +53,11 @@
         </fieldset>
       </form>
       <div class='email-history-box'>
-        <ul>
+        <ul class='email-history-list'>
+          <p>You have sent emails to the following people:</p>
           <% if (emailHistory.length > 0) { %>
-            <p>You have sent emails to the following people:</p>
             <% for (var i = 0; i < emailHistory.length; i++) { %>
-              <li><%= emailHistory[i].recipient %></li>
+              <li><%= emailHistory[i].recipient %> on <%= emailHistory[i].date %>.</li>
             <% } %>
           <% } %>
         </ul>

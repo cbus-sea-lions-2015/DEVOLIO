@@ -37,6 +37,8 @@ class App.Views.Users.Edit extends App.View
     window.sendEmail(address, username)
     error = ->
       $(form + ' .message').html("<span class='error'>There was an issue and no email was sent.</span>")
+    success = ->
+      
 
   deleteSkill: (e) ->
     e.preventDefault()
