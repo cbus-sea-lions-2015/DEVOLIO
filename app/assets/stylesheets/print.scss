@@ -1,0 +1,10 @@
+@media print {
+  $black:        #212121; /*Black*/
+  $dark-gray:    #292B2E; /*Shark Gray*/
+  $gray:         #727272; /*Dark Gray*/
+  $light-gray:   #B6B6B6; /*Gray*/
+  body {
+    background: transparent;
+    color: $black;
+  }
+}
