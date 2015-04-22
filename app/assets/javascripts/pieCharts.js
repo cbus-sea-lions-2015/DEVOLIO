@@ -10,6 +10,14 @@ var displayLanguages = function(infoHash, selector){
   createPieChart(dataset, selector);
 }
 
+var displayLineActivity = function(infoHash, selector) {
+  var dataset = [
+    {"label":"lines added", "value":parseInt(infoHash.lineAdditions)},
+    {"label":"lines deleted", "value":parseInt(infoHash.lineDeletions)}
+  ];
+  createPieChart(dataset, selector);
+}
+
 var createPieChart = function(dataset, selector){
   var width = $(selector).width();
   var height = width;
@@ -41,7 +49,10 @@ var createPieChart = function(dataset, selector){
     .attr("d", arc);
 
   arcs.append("svg:text")
-    .attr("fill","#292B2E")
+    .attr("fill","#000")
+    .style("text-transform","uppercase")
+    .style("font-size","0.8em")
+    .style("font-family", "'Oswald', sans-serif")
     .attr("transform", function(d){
     d.innerRadius = 0;
     d.outerRadius = radius;

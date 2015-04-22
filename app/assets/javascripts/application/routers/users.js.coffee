@@ -10,10 +10,12 @@ class App.Routers.Users extends App.Router
       view = new App.Views.Users.Show(model: user)
       $('.main-container').html(view.el)
       view.render()
-      displayLanguages(user.attributes.user_github.reposData.allLang, '#js-recentLanguages')
-      displayLanguages(user.attributes.user_github.languages, '#js-allLanguages')
-      parseHistogram(user.attributes.user_github.eventDates)
-
+      if user.attributes.user_github
+        console.log "User github",user.attributes.user_github
+        parseHistogram(user.attributes.user_github.eventDates)
+        displayLanguages(user.attributes.user_github.reposData.allLang, '#js-allLanguages')
+        displayLanguages(user.attributes.user_github.languages, '#js-recentLanguages')
+        displayLineActivity(user.attributes.user_github, '#js-lineactivity')
 
   edit: ->
     username = $('body').attr('id');

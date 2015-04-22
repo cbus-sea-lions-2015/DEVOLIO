@@ -49,6 +49,7 @@ $font-weight--bold:   900;
 .skill-percentage {
   margin-bottom: 10px;
   position: relative;
+  text-transform: uppercase;
   &:before {
     content: "";
     width: 20%;
@@ -112,6 +113,9 @@ $font-weight--bold:   900;
 
 
 // Interests
+.interests {
+  text-align: center;
+}
 .interests li {
   color: $gray;
   display: inline-block;
@@ -129,7 +133,7 @@ $font-weight--bold:   900;
   text-transform: uppercase;
   vertical-align: bottom;
 }
-.interests li .fa {
+.interests li .fa, .interests li p {
   display: block;
   vertical-align: middle;
   color: #fff;
@@ -139,4 +143,7 @@ $font-weight--bold:   900;
 }
 .interests li .fa-question-circle {
   color: $gray;
+}
+.interests li p {
+  margin: 0.2em 0;
 }
