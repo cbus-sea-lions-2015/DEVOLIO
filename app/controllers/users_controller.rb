@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       "work locally, remotely, or relocate"
     elsif user.loc_local && user.loc_remote
       "work locally or remotely"
-    elsif user.loc_local && user.relocate
+    elsif user.loc_local && user.loc_relocate
       "work locally or relocate"
     elsif user.loc_remote && user.loc_relocate
       "work remotely or relocate"
