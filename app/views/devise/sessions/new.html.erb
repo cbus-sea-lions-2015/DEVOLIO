@@ -1,8 +1,12 @@
 <h2>Log in</h2>
 <div class="col-md-4"></div>
 <div class="col-md-4 light-container">
+  
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+  <div class="error">
+    
+    <%= devise_error_messages! %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
