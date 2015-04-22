@@ -23,6 +23,7 @@
 //= require iconHelper
 //= require d3
 //= require pieCharts
+//= require histogram
 
 function sendEmail(address, username) {
   $.ajax({
