@@ -50,7 +50,7 @@ var getGitHubData = function(username){
   }
 
   function extractReposData(data) {
-    var repos = data;
+    var repos = data.repo;
     var allStars = 0,
         allLang = {},
         reposData = {}
