@@ -19,10 +19,10 @@ var parseHistogram = function(infoHash) {
   for (property in result){
     dataset.push({'x':Date.parse(property.toString()), 'y':result[property]});
   }
-  debugger;
   //Add zeros to close off graph for fill
   dataset.push({'x':dataset[dataset.length-1].x, 'y': 0});
   dataset.unshift({'x': dataset[0].x, 'y': 0})
+  
   displayHistogram(dataset);
 }
 
