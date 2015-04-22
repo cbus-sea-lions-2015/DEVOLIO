@@ -9,7 +9,7 @@ var parseHistogram = function(infoHash) {
     }
   }
     result = { };
-    for(i = 0; i < dateArray.length; ++i) {
+    for(i = dateArray.length - 1; i >= 0; --i) {
       if(!result[dateArray[i]]) {
         result[dateArray[i]] = 0;
       }
@@ -20,12 +20,15 @@ var parseHistogram = function(infoHash) {
   for (property in result){
     dataset.push({'x':Date.parse(property.toString()), 'y':result[property]});
   }
-  debugger;
   displayHistogram(dataset);
 }
 
 var displayHistogram = function(lineData){
-  var vis = d3.select("#js-histogram"),
+  var vis = d3.select("#js-histogram")
+    .append("svg:svg")
+    .attr("width", 1000)       
+    .attr("height", 500)
+    .append("svg:g"),
   WIDTH = 1000,
   HEIGHT = 500,
   MARGINS = {
@@ -53,7 +56,8 @@ var displayHistogram = function(lineData){
   xAxis = d3.svg.axis()
     .scale(xRange)
     .tickSize(5)
-    .tickSubdivide(true),
+    .tickSubdivide(true)
+    .tickValues(lineData[0]),
 
   yAxis = d3.svg.axis()
     .scale(yRange)
@@ -85,8 +89,10 @@ var displayHistogram = function(lineData){
     .attr("d", lineFunc(lineData))
     .attr("stroke", "blue")
     .attr("stroke-width", 2)
-    .attr("fill", "none")
+    .attr("fill", "none");
 
+debugger;
 }
+
 
 
