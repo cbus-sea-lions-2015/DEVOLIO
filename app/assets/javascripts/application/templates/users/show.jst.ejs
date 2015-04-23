@@ -26,8 +26,8 @@
       </ul>
       <hr>
       <ul class="contact-info">
-        <li class="col-xs-3">Username</li>
-        <li class="col-xs-9"><%= user_settings.username %></li>
+        <li class="col-xs-3 print-hide">Username</li>
+        <li class="col-xs-9 print-hide"><%= user_settings.username %></li>
         <li class="col-xs-3">Email</li>
         <li class="col-xs-9"><%= user_settings.email %></li>
         <% if (user_settings.website) { %>
@@ -72,11 +72,11 @@
   <% if (user_github) { %>
   <section class="user_github">
     <h3>Recent GitHub Activity</h3>
-    <div class="data-graphs col-xs-12">
+    <div class="data-graphs print-hide col-xs-12">
       <div id="js-histogram" class="col-xs-12 graph-container">
       </div>
     </div>
-    <div class="pie-charts col-xs-12">
+    <div class="pie-charts print-hide col-xs-12">
       <section>
         <div class="pieID pie">
           <div id="js-recentLanguages" class="col-xs-6 col-md-4 graph-container">
@@ -85,46 +85,50 @@
           <div id="js-allLanguages" class="col-xs-6 col-md-4 graph-container">
             <h5>Overall Languages Used</h5>
           </div>
-          <div id="js-lineactivity" class="col-xs-0 col-md-4 graph-container">
+          <div id="js-lineactivity" class="col-xs-6 col-md-4 graph-container print-hide">
             <h5>Lines Added/Deleted</h5>
           </div>
         </div>
       </section>
-      <ul class="col-xs-12 interests">
-            <li>
-              <p><%= user_github.followersnum || 0 %></p>
-              <span>Followers</span>
-            </li>
-            <li>
-              <p><%= user_github.followingnum || 0 %></p>
-              <span>Following</span>
-            </li>
-            <li>
-              <p><%= user_github.reposnum || 0 %></p>
-              <span>Public Repos</span>
-            </li>
-            <li>
-              <p><%= user_github.allStars || 0 %></p>
-              <span>Repo Stars</span>
-            </li>
-            <li>
-              <p><%= user_github.commits || 0 %></p>
-              <span>Commits</span>
-            </li>
-            <li>
-              <p><%= user_github.pushEvents || 0 %></p>
-              <span>Pushes</span>
-            </li>
-            <li>
-              <p><%= user_github.pullEvents || 0 %></p>
-              <span>Pulls</span>
-            </li>
-            <li>
-              <p><%= user_github.gistsEvents || 0%></p>
-              <span>Gist Activity</span>
-            </li>
-          </ul>
     </div>
+    <ul class="col-xs-12 github-stats">
+      <li class="print-show core-activity">
+        <p><%= parseInt(user_github.pushEvents) + parseInt(user_github.pullEvents) + parseInt(user_github.commits) %></p>
+        <span>Total public pushes, pulls, and forks since <%= user_github.oldestEventDate %> span</span>
+      </li>
+      <li>
+        <p><%= user_github.followersnum || 0 %></p>
+        <span>Followers</span>
+      </li>
+      <li>
+        <p><%= user_github.followingnum || 0 %></p>
+        <span>Following</span>
+      </li>
+      <li>
+        <p><%= user_github.reposnum || 0 %></p>
+        <span>Public Repos</span>
+      </li>
+      <li>
+        <p><%= user_github.allStars || 0 %></p>
+        <span>Repo Stars</span>
+      </li>
+      <li>
+        <p><%= user_github.commits || 0 %></p>
+        <span>Commits</span>
+      </li>
+      <li>
+        <p><%= user_github.pushEvents || 0 %></p>
+        <span>Pushes</span>
+      </li>
+      <li>
+        <p><%= user_github.pullEvents || 0 %></p>
+        <span>Pulls</span>
+      </li>
+      <li>
+        <p><%= user_github.gistsEvents || 0%></p>
+        <span>Gist Activity</span>
+      </li>
+    </ul>
   </section><!-- end github section -->
   <% } %>
   <section class="col-xs-6">
