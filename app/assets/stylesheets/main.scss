@@ -166,12 +166,10 @@ hr {
 .light-container {
   background: #fff;
   color: $black;
-  padding: 2em;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
-  padding: 2em;
 }
 .light-container {
   background: #fff;
@@ -267,7 +265,8 @@ header .subtitle span {
   padding: 0;
   margin: 0.25em 0;
   vertical-align: middle;
-  line-height: 2em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
 }
 .contact-info li:nth-child(odd) {
   font-weight: $font-weight--bold;

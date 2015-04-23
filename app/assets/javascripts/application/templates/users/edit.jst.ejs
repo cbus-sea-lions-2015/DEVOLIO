@@ -1,4 +1,3 @@
-<% console.log(emailHistory) %>
 <div class="dashboard">
   <section class="dark-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
@@ -44,8 +43,8 @@
         <h3>Want to share your Devolio with someone?</h3>
         <p>Enter any email address below and a link to your personal DEVOLIO will be automatically sent!</p>
         <fieldset>
-          <label for="" class="col-xs-12 col-sm-6">Email Address</label>
-          <input class="col-xs-12 col-sm-6" type="email" name="email-address" id='send-email-address' value="">
+          <label for="" class="col-xs-12 col-sm-5">Email Address</label>
+          <input class="col-xs-12 col-sm-7" type="email" name="email-address" id='send-email-address' value="">
         </fieldset>
         <fieldset>
           <input type="submit" id="send_email" value="Send Link">
@@ -65,7 +64,7 @@
     </aside>
   </section>
   <section class="light-container col-xs-12 col-sm-8">
-    <h3>Edit Your Portfolio Information</h3>
+    <h3>Build Your Dev Portfolio</h3>
     <form id="user-form">
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">Name</label>
@@ -124,7 +123,7 @@
       <hr>
       <h3>Employment History</h3>
       <fieldset>
-        <label for="add-position-input" class="col-xs-12 col-sm-3">Add Position</label><button class="add-position button col-sm-1">+</button>
+        <label for="add-position-input" class="col-xs-12 col-sm-3">Add Position</label><button class="add-position button col-sm-1">Add</button>
         <p class="error hidden col-xs-12">Please limit positions to 3.</p>
         <%  var i = 1; for (var key in user_settings.positions) { if (user_settings.positions.hasOwnProperty(key)) { %>
           <div class="added-position col-xs-12">
@@ -152,7 +151,7 @@
       <h3>Tech Stack</h3>
       <fieldset>
         <label for="add-skill-input" class="col-xs-12 col-sm-3">Add Skills</label>
-        <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">+</button>
+        <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">Add</button>
         <span class="meta col-xs-12 col-sm-3 meta-tooltip">What do the rankings mean?<span class="tooltip">Rankings range from 0-5, least experience to most. 0 and 1 values are essentially the same (since, why would you add a skill with 0 experience?)<img src="http://i.imgur.com/rOpTSia.jpg" title="rankings" /></span></span>
         <p class="error hidden">Please enter a skill.</p>
         <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
@@ -174,11 +173,11 @@
         <label for="project_name" class="col-xs-12 col-sm-3">Project Name</label>
         <input class="col-xs-12 col-sm-6" type="text" name="project_name" value="<%= user_settings.project_name %>">
       </fieldset>
-      <fieldset>  
+      <fieldset>
         <label for="project_description" class="col-xs-12 col-sm-3">Description</label>
         <input class="col-xs-12 col-sm-6" type="text" name="project_description" value="<%= user_settings.project_description %>">
       </fieldset>
-      <fieldset>  
+      <fieldset>
         <label for="project_pic_link" class="col-xs-12 col-sm-3">Picture Link</label>
         <input class="col-xs-12 col-sm-6" type="url" name="project_pic_link" value="<%= user_settings.project_pic_link %>">
         <p class="meta col-xs-9 offset-3">services such a <a href="http://imgur.com/">imgur</a> or <a href="http://www.snag.gy">snaggy</a> are great for sharing photos like this! smaller, more square images will likely display best.</p>
