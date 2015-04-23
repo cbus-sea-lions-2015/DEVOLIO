@@ -1,0 +1,70 @@
+.print-show {
+  display: none !important;
+}
+@media print {
+  @import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+  html {
+    width: 7.5in;
+  }
+  html, body, .light-container, .dark-container, body p, body span, body h1, body h2, body h3, body h4, body h5, body h6, .github-stats li p {
+    background: transparent;
+    color: #444444;
+    font-family: 'Lora', serif;
+    line-height: 20pt;
+    font-size: 14pt;
+    letter-spacing: 0;
+    padding: 0;
+    margin: 0;
+    text-transform: none;
+  }
+  .light-container, .dark-container {
+    width: 100%;
+  }
+  .print-show {
+    display: initial !important;
+  }
+  .print-hide, .logo, .avatar, .icons, #user_tweets, .interests i {
+    display: none !important;
+  }
+  .name {
+    font-size: 24pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #333333;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 1em;
+  }
+  .contact-info li, .interests li, .github-stats li {
+    display: inline;
+    width: auto;
+    height: auto;
+    margin: 0;
+    line-height: 20pt;
+  }
+  .interests {
+    text-align: left;
+  }
+  .interests li span {
+    text-transform: capitalize;
+    display: inline;
+    font-size: 1em;
+  }
+  .contact-info li:nth-child(odd) {
+    width: 15%;
+  }
+  .contact-info a:after {
+    content: "";
+  }
+  .area {
+    fill: none;
+    stroke: #333333;
+  }
+  .im-a-pie {
+    fill: none;
+  }
+  .im-a-pie .slice, .im-a-pie .arc {
+    fill: none;
+    stroke: #333333;
+  }
+}
