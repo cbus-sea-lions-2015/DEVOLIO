@@ -17,6 +17,9 @@
     margin: 0;
     text-transform: none;
   }
+  body h1, body h2, body h3, body h4 {
+    font-family: 'Lora', serif;
+  }
   .light-container, .dark-container {
     width: 100%;
   }
