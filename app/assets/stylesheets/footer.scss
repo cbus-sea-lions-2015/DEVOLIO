@@ -1,0 +1,49 @@
+/* Colors */
+$deep-orange:  #E64A19; /*Deep orange*/
+$orange:       #FF5722; /*Orange*/
+$peach:        #FFCCBC; /*Peach*/
+$white:        #FFFFFF; /*White*/
+$green:        #8BC34A; /*Green*/
+$black:        #212121; /*Black*/
+$dark-gray:    #292B2E; /*Shark Gray*/
+$gray:         #727272; /*Dark Gray*/
+$light-gray:   #B6B6B6; /*Gray*/
+
+/* Font-Weight */
+$font-weight--light:  300;
+$font-weight--medium: 400;
+$font-weight--bold:   900;
+
+footer {
+  color: white;
+  width: 100%;
+  background-color: $black;
+
+  .footer-content {
+    margin-top: 2em;
+    text-align: center;
+    width: 100%;
+    color: $light-gray;
+    .footer-title {
+      font-weight: $font-weight--bold;
+    }
+    a:hover {
+      color: $peach;
+      text-decoration: none;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        display: inline;
+        padding: 0 15px;
+        a {
+          color: $green;
+          &:hover {
+            color: $peach;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
