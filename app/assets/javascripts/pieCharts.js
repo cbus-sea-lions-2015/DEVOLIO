@@ -56,7 +56,7 @@ var createPieChart = function(dataset, selector){
     .attr("fill","#000")
     .style("text-transform","uppercase")
     .style("font-size","0.8em")
-    .style("font-family", "'Oswald', sans-serif")
+    .style("font-family", "'Montserrat', sans-serif")
     .attr("transform", function(d){
     d.innerRadius = 0;
     d.outerRadius = radius;
