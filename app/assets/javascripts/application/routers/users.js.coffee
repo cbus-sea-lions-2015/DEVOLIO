@@ -15,7 +15,7 @@ class App.Routers.Users extends App.Router
         parseHistogram(user.attributes.user_github.eventDates)
         displayLanguages(user.attributes.user_github.reposData.allLang, '#js-allLanguages')
         displayLanguages(user.attributes.user_github.languages, '#js-recentLanguages')
-        displayGitHubActivity(user.attributes.user_github, '#js-gitHubActivity"')
+        displayGitHubActivity(user.attributes.user_github, '#js-gitHubActivity')
 
 
   edit: ->
