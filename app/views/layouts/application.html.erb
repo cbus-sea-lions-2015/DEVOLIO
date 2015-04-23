@@ -8,6 +8,9 @@
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' >
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+
+  <!-- Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <% if user_signed_in? %>
 <body id="<%= current_user.username %>">
