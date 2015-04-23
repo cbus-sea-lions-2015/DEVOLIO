@@ -8,6 +8,9 @@
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css' >
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+
+  <!-- Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <% if user_signed_in? %>
 <body id="<%= current_user.username %>">
@@ -22,16 +25,28 @@
       <% end -%>
     <%= yield %>
   </div>
-  <footer class="dark-container">
+  <footer>
     <div class="nav">
-    <% if user_signed_in? %>
-        Welcome <%=  current_user.email %>
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "button" %>
-        <%= link_to "Dashboard", '/dashboard', class: "button" %>
-        <%= link_to "My DEVOLIO", "/#{current_user.username}", class: "button" %>
-    <% else %>
-        <%= link_to "Sign in", new_user_session_path, class: "button" %> or <%= link_to "Sign up", new_user_registration_path, class: "button"  %>
-    <% end %>
+      <section class='col-xs-12'>
+        <% if user_signed_in? %>
+            Welcome <%=  current_user.username %>!
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "button" %>
+            <%= link_to "Dashboard", '/dashboard', class: "button" %>
+            <%= link_to "My DEVOLIO", "/#{current_user.username}", class: "button" %>
+        <% else %>
+            <%= link_to "Sign in", new_user_session_path, class: "button" %> or <%= link_to "Sign up", new_user_registration_path, class: "button"  %>
+        <% end %>
+      </section>
+      <section class='col-xs-12 footer-content'>
+        <p>Like open source? Follow <a href="https://github.com/cbus-sea-lions-2015/DEVOLIO"><strong>DEVOLIO on github</strong></a> for information on how to contribute!</p>
+        <p>This application created and maintained by a team of four:</p>
+        <ul>
+          <li><a href="http://www.github.com/jannypie">Jan Dennison</a></li>
+          <li><a href="http://www.github.com/marycbaylis">Mary Baylis</a></li>
+          <li><a href="http://www.github.com/jroger2908">Jonathan Roger</a></li>
+          <li><a href="http://www.github.com/secade">Chris Singer</a></li>
+        </ul>
+      </section>
     </div>
   </footer>
 
