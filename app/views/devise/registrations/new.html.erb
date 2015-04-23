@@ -1,8 +1,11 @@
 <h2>Register with Devolio</h2>
 <div class="col-md-4"></div>
 <div class="col-md-4 light-container">
+  
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
   <%= devise_error_messages! %>
+  
   <fieldset>
     <%= f.label :username, class: "col-sm-3" %>
     <%= f.text_field :username, required: true, autofocus: true %>

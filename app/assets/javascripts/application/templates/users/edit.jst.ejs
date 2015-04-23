@@ -131,7 +131,7 @@
             <fieldset>
               <label for="position" class="col-xs-12 col-sm-3">Position Title</label>
               <input class="col-xs-12 col-sm-6" type="text" name="positions[<%= i %>][title]" value="<%= user_settings.positions[key].title %>">
-              <button class="delete-position button col-sm-1">-</button>
+              <button class="delete-position button col-sm-1">remove</button>
             </fieldset>
             <fieldset>
               <label for="company" class="col-xs-12 col-sm-3">Company</label>
@@ -158,9 +158,30 @@
         <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
           <fieldset class="col-xs-12 skill-range">
             <label for="skills[<%= key %>]" class="col-xs-3"><%= key %></label>
-            <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span><button class="delete-skill button col-sm-1">-</button>
+            <span class="col-sm-6"><input type="range" min="0" max="5" name="skills[<%= key %>]" value="<%= user_settings.skills[key] %>"></span><button class="delete-skill button col-sm-1">remove</button>
           </fieldset>
         <% }} %>
+      </fieldset>
+      <hr>
+      <h3>Featured Project</h3>
+      <p class="meta col-xs-12"><strong>Here you can enter some information regarding a project you really want to share with the world.</strong> In the description, enter what you find particularly pride-worthy or engaging about the project- we recommend limiting the description to 2-3 sentences.</p>
+      <br>
+      <fieldset>
+        <label for="project_link" class="col-xs-12 col-sm-3">Project Link</label>
+        <input class="col-xs-12 col-sm-6" type="url" name="project_link" value="<%= user_settings.project_link %>">
+      </fieldset>
+      <fieldset>
+        <label for="project_name" class="col-xs-12 col-sm-3">Project Name</label>
+        <input class="col-xs-12 col-sm-6" type="text" name="project_name" value="<%= user_settings.project_name %>">
+      </fieldset>
+      <fieldset>  
+        <label for="project_description" class="col-xs-12 col-sm-3">Description</label>
+        <input class="col-xs-12 col-sm-6" type="text" name="project_description" value="<%= user_settings.project_description %>">
+      </fieldset>
+      <fieldset>  
+        <label for="project_pic_link" class="col-xs-12 col-sm-3">Picture Link</label>
+        <input class="col-xs-12 col-sm-6" type="url" name="project_pic_link" value="<%= user_settings.project_pic_link %>">
+        <p class="meta col-xs-9 offset-3">services such a <a href="http://imgur.com/">imgur</a> or <a href="http://www.snag.gy">snaggy</a> are great for sharing photos like this! smaller, more square images will likely display best.</p>
       </fieldset>
       <hr>
       <fieldset>

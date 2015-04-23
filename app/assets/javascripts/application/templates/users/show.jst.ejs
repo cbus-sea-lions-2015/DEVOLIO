@@ -26,17 +26,17 @@
       </ul>
       <hr>
       <ul class="contact-info">
-        <li class="col-xs-3 print-hide">Username</li>
-        <li class="col-xs-9 print-hide"><%= user_settings.username %></li>
-        <li class="col-xs-3">Email</li>
-        <li class="col-xs-9"><%= user_settings.email %></li>
+        <li class="col-xs-12 col-sm-3 print-hide">Username</li>
+        <li class="col-xs-12 col-sm-9 print-hide"><%= user_settings.username %></li>
+        <li class="col-xs-12 col-sm-3">Email</li>
+        <li class="col-xs-12 col-sm-9"><%= user_settings.email %></li>
         <% if (user_settings.website) { %>
-        <li class="col-xs-3">Website</li>
-        <li class="col-xs-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
+        <li class="col-xs-12 col-sm-3">Website</li>
+        <li class="col-xs-12 col-sm-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
         <% } %>
         <% if (location_pref) { %>
-          <li class="col-xs-3">I want to:</li>
-          <li class="col-xs-9"><%= location_pref %></li>
+          <li class="col-xs-12 col-sm-3">I want to:</li>
+          <li class="col-xs-12 col-sm-9"><%= location_pref %></li>
         <% } else { %>
           <li class="col-xs-12">I have no location preference</li>
         <% } %>
@@ -53,8 +53,6 @@
           <p><%= user_settings.positions[key].description %></p>
         </div>
       <% }} %>
-      <!-- <h3>Recommendations</h3> -->
-      <!-- <p></p> -->
     </section>
     <% } %>
     <% if (user_settings.interests.length > 1) { %>
@@ -131,6 +129,24 @@
     </ul>
   </section><!-- end github section -->
   <% } %>
+  <section class='col-xs-12'>
+    <% if (user_settings.project_name) { %>
+      <section id='featured-project-title'>
+        <h3>Featured Project</h3>
+      </section>
+      <section id='featured-project-body'>
+        <section class='col-xs-12 col-md-6 col-lg-8'>
+          <h4><a href="<%= user_settings.project_link%>"><%= user_settings.project_name %></a></h4>
+          <p><%= user_settings.project_description %></p>
+        </section>
+        <% if (user_settings.project_pic_link) { %>
+          <section class='col-xs-12 col-md-6 col-lg-4'>
+            <img src='<%= user_settings.project_pic_link %>' alt="project picture">
+          </section>
+        <% } %>
+      </section>
+    <% } %>
+  </section>
   <section class="col-xs-6">
     <% if (user_settings.skills) { %>
     <section id="user_skills">

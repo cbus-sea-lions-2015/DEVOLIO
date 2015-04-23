@@ -62,7 +62,8 @@ var displayHistogram = function(lineData){
     .scale(xRange)
     .tickSize(2)
     .tickSubdivide(true)
-    .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)); }),
+    .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)); })
+    .ticks(Math.min(5, lineData.length)),
 
   yAxis = d3.svg.axis()
     .scale(yRange)
@@ -88,13 +89,13 @@ var displayHistogram = function(lineData){
     .call(yAxis);
 
   var lineFunc = d3.svg.line()
-  .x(function (d) {
-    return xRange(d.x);
-  })
-  .y(function (d) {
-    return yRange(d.y);
-  })
-  .interpolate('linear');
+    .x(function (d) {
+      return xRange(d.x);
+    })
+    .y(function (d) {
+      return yRange(d.y);
+    })
+    .interpolate('linear');
 
   vis.append("linearGradient")
       .attr("id", "color-gradient")
@@ -112,6 +113,35 @@ var displayHistogram = function(lineData){
     .attr("stroke", "#E64A19")
     .attr("stroke-width", 1)
     .attr("class", "area");
+
+      /* Add 'curtain' rectangle to hide entire graph */
+  var curtain = vis.append('rect')
+    .attr('x', -1 * WIDTH)
+    .attr('y', -1 * HEIGHT)
+    .attr('height', HEIGHT)
+    .attr('width', WIDTH)
+    .attr('class', 'curtain')
+    .attr('transform', 'rotate(180)')
+    .style('fill', '#292B2E')
+
+
+  /* Create a shared transition for anything we're animating */
+  var t = vis.transition()
+    // .delay(750)
+    .duration(2000)
+    .ease('linear')
+    .each('end', function() {
+      d3.select('line.guide')
+        .transition()
+        .style('opacity', 0)
+        .remove()
+    });
+
+  t.select('rect.curtain')
+    .attr('width', 0);
+  t.select('line.guide')
+    .attr('transform', 'translate(' + WIDTH + ', 0)')
+
 }
 
 
