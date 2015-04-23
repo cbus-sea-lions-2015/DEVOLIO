@@ -14,10 +14,11 @@ var displayLanguages = function(infoHash, selector){
   createPieChart(dataset, selector);
 }
 
-var displayLineActivity = function(infoHash, selector) {
+var displayGitHubActivity = function(infoHash, selector) {
   var dataset = [
-    {"label":"lines added", "value":parseInt(infoHash.lineAdditions)},
-    {"label":"lines deleted", "value":parseInt(infoHash.lineDeletions)}
+    {"label":"Commits", "value":parseInt(infoHash.commits)},
+    {"label":"Pushes", "value":parseInt(infoHash.pushEvents)},
+    {"label":"Pull Requests", "value":parseInt(infoHash.pullEvents)}
   ];
   createPieChart(dataset, selector);
 }
