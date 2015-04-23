@@ -63,7 +63,7 @@ var displayHistogram = function(lineData){
     .tickSize(2)
     .tickSubdivide(true)
     .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)); })
-    .ticks(Math.min(5, lineData.length)),
+    .ticks(Math.min(10, lineData.length/2)),
 
   yAxis = d3.svg.axis()
     .scale(yRange)

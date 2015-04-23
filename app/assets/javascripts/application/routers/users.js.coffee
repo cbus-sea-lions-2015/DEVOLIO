@@ -15,7 +15,8 @@ class App.Routers.Users extends App.Router
         parseHistogram(user.attributes.user_github.eventDates)
         displayLanguages(user.attributes.user_github.reposData.allLang, '#js-allLanguages')
         displayLanguages(user.attributes.user_github.languages, '#js-recentLanguages')
-        displayLineActivity(user.attributes.user_github, '#js-lineactivity')
+        displayGitHubActivity(user.attributes.user_github, '#js-gitHubActivity')
+
 
   edit: ->
     username = $('body').attr('id');
