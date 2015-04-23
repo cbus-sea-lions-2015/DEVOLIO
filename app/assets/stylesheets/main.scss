@@ -21,7 +21,7 @@ html {
   padding: 0;
 }
 body {
-  background: $dark-gray !important;
+  background: $dark-gray;
   box-sizing: inherit;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
@@ -77,8 +77,6 @@ h4, h5 {
 }
 h5 {
   color: $gray;
-  text-align: center;
-  margin: 1em auto;
 }
 .button, button, input[type="submit"] {
   border: 3px solid #fff;
@@ -188,7 +186,7 @@ hr {
 }
 
 /* Reset list styles */
-.icons, .contact-info, .skills-list, .interests {
+.icons, .contact-info, .skills-list, .interests, .github-stats {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -292,6 +290,10 @@ header .subtitle span {
 
 .graph-container {
   overflow: visible;
+}
+.graph-container h5 {
+  text-align: center;
+  margin: 1em auto;
 }
 .graph-container svg {
   overflow: visible;

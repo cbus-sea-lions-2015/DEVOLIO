@@ -23,7 +23,7 @@
   .print-show {
     display: initial !important;
   }
-  .print-hide, .logo, .avatar, .icons, #user_tweets, .interests i {
+  .print-hide, .logo, .avatar, .icons, #user_tweets, .interests i, footer {
     display: none !important;
   }
   .name {
@@ -55,16 +55,5 @@
   }
   .contact-info a:after {
     content: "";
-  }
-  .area {
-    fill: none;
-    stroke: #333333;
-  }
-  .im-a-pie {
-    fill: none;
-  }
-  .im-a-pie .slice, .im-a-pie .arc {
-    fill: none;
-    stroke: #333333;
   }
 }

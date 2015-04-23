@@ -112,11 +112,11 @@ $font-weight--bold:   900;
 }
 
 
-// Interests
-.interests {
+// Interests & Stats
+.github-stats {
   text-align: center;
 }
-.interests li {
+.interests li, .github-stats li {
   color: $gray;
   display: inline-block;
   text-align: center;
@@ -126,14 +126,14 @@ $font-weight--bold:   900;
   margin: 0.2em 0.05em;
   vertical-align: middle;
 }
-.interests li span {
+.interests li span, .github-stats li span {
   display: block;
   font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   vertical-align: bottom;
 }
-.interests li .fa, .interests li p {
+.interests li .fa, .github-stats li p {
   display: block;
   vertical-align: middle;
   color: #fff;
@@ -144,6 +144,6 @@ $font-weight--bold:   900;
 .interests li .fa-question-circle {
   color: $gray;
 }
-.interests li p {
+.github-stats li p {
   margin: 0.2em 0;
 }
