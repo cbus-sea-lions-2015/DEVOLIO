@@ -173,13 +173,22 @@ hr {
   color: #fff;
   overflow: auto;
 }
+.portfolio, .dashboard {
+  display: table;
+}
 .light-container {
   background: #fff;
   color: $black;
+  display: table-cell;
+  float: none;
+  padding-bottom: 3em;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
+  display: table-cell;
+  float: none;
+  padding-bottom: 3em;
 }
 .light-container {
   background: #fff;
@@ -254,6 +263,9 @@ header .subtitle span {
   display: inline-block;
   vertical-align: middle;
   margin-bottom: 2em;
+}
+.avatar {
+  padding: 0;
 }
 .avatar img {
   border-radius: 50%;

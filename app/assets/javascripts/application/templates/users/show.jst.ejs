@@ -1,15 +1,15 @@
-<div class="portfolio row-eq-height">
-  <section class="light-container col-xs-12 col-md-4">
+<div class="portfolio">
+  <section class="light-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
-      <div class="avatar col-xs-3">
+      <div class="avatar col-xs-4">
         <% if (user_github) { %>
         <img src='<%= user_github.aviurl %>' alt="avatar">
         <% } else { %>
         <img src='http://i.imgur.com/i31E9hh.jpg' alt="default-avatar">
         <% } %>
       </div>
-      <div class="name col-xs-9">
+      <div class="name col-xs-8">
         <h2><%= user_settings.name %></h2>
       </div>
       <p class="col-xs-12"><%= user_settings.description %></p>
@@ -26,17 +26,21 @@
       </ul>
       <hr>
       <ul class="contact-info">
-        <li class="col-xs-12 col-sm-3 print-hide">Username</li>
-        <li class="col-xs-12 col-sm-9 print-hide"><%= user_settings.username %></li>
-        <li class="col-xs-12 col-sm-3">Email</li>
-        <li class="col-xs-12 col-sm-9"><%= user_settings.email %></li>
+        <li class="col-xs-12 col-sm-4 print-hide">Username</li>
+        <li class="col-xs-12 col-sm-8 print-hide"><%= user_settings.username %></li>
+        <li class="col-xs-12 col-sm-4">Email</li>
+        <li class="col-xs-12 col-sm-8"><%= user_settings.email %></li>
         <% if (user_settings.website) { %>
-        <li class="col-xs-12 col-sm-3">Website</li>
-        <li class="col-xs-12 col-sm-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
+        <li class="col-xs-12 col-sm-4">Website</li>
+        <li class="col-xs-12 col-sm-8"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
+        <% } %>
+        <% if (user_github.location) { %>
+        <li class="col-xs-12 col-sm-4">Location</li>
+        <li class="col-xs-12 col-sm-8"><%= user_github.location %></li>
         <% } %>
         <% if (location_pref) { %>
-          <li class="col-xs-12 col-sm-3">I want to:</li>
-          <li class="col-xs-12 col-sm-9"><%= location_pref %></li>
+          <li class="col-xs-12 col-sm-4">I want to</li>
+          <li class="col-xs-12 col-sm-8"><%= location_pref %></li>
         <% } else { %>
           <li class="col-xs-12">I have no location preference</li>
         <% } %>
@@ -66,7 +70,7 @@
     </section>
     <% } %>
 </section>
-<section class="dark-container col-xs-12 col-md-8">
+<section class="dark-container col-xs-12 col-sm-8">
   <% if (user_github) { %>
   <section class="user_github">
     <h3>Recent GitHub Activity</h3>
