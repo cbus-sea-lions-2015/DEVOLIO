@@ -67,9 +67,10 @@ var displayHistogram = function(lineData){
 
   yAxis = d3.svg.axis()
     .scale(yRange)
-    .tickSize(2)
+    //.tickSize(2)
     .orient("left")
-    .tickSubdivide(true)
+    //.tickSubdivide(true)
+    .tickFormat(function (d) { return ''; });
 
   vis.append("svg:g")
     .attr("class", "x axis")
