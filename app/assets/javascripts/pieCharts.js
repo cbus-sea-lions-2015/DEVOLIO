@@ -60,15 +60,22 @@ var createPieChart = function(dataset, selector){
       .duration(2000)
       .attrTween("d", tweenPie)
       .each('end',  function(d){
-        g.append("svg:text")
-          .attr("fill","#000")
+
+           g.append("svg:text")
+          .attr("fill","#333")
           .style("text-transform","uppercase")
           .style("font-size","0.8em")
           .style("font-family", "'Oswald', sans-serif")
           .attr("transform", function(d){
-          d.innerRadius = 0;
+          d.innerRadius = 10;
           d.outerRadius = radius;
-          return "translate(" + arc.centroid(d) + ")";})
+          if (dataset.length == 1){
+            return "translate(" + arc.centroid(d) + ")";
+          }
+          else {
+            return "translate(" + arc.centroid(d) + ")rotate(" + angle(d) + ")";
+          }
+      })
             .attr("text-anchor", "middle").text(
               function(d, i) {
                 if(dataset[i].value > 0){
@@ -76,10 +83,17 @@ var createPieChart = function(dataset, selector){
                 }
               }
             );
+
+          
       });
 
   function tweenPie(b) {
     var i = d3.interpolate({startAngle: 1.1*Math.PI, endAngle: 1.1*Math.PI}, b);
     return function(t) { return arc(i(t)); };
+  }
+
+  function angle(d) {
+    var a = (d.startAngle + d.endAngle) * 90 / Math.PI - 90;
+    return a > 90 ? a - 180 : a;
   }
 }
