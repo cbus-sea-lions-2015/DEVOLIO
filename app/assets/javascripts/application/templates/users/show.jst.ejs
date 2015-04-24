@@ -39,7 +39,7 @@
         <li class="col-xs-12 col-sm-8"><%= user_github.location %></li>
         <% } %>
         <% if (location_pref) { %>
-          <li class="col-xs-12 col-sm-4">I want to</li>
+          <li class="col-xs-12 col-sm-4">Looking to</li>
           <li class="col-xs-12 col-sm-8"><%= location_pref %></li>
         <% } else { %>
           <li class="col-xs-12">I have no location preference</li>
@@ -122,11 +122,10 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12">
+    <div class="col-xs-12 print-hide">
       <% var totalLineActivity = parseInt(user_github.lineAdditions) + parseInt(user_github.lineDeletions) %>
       <span class="lines-data additions" style="width:<%= parseInt(user_github.lineAdditions)/totalLineActivity * 100 %>%;"></span><span class="lines-data deletions" style="width:<%= parseInt(user_github.lineDeletions)/totalLineActivity * 100 %>%;"></span>
     </div>
-    <p class="meta">*all data reflects public activity drawn from GitHub api, private activity is not shown</p>
   </section><!-- end github section -->
   <% } %>
   <section class='col-xs-12'>
@@ -147,7 +146,7 @@
       </section>
     <% } %>
   </section>
-  <section class="col-xs-6">
+  <section class="col-xs-6 skills-section">
     <% if (user_settings.skills) { %>
     <section id="user_skills">
       <h3>Tech Stack</h3>
@@ -181,4 +180,7 @@
 
   </section>
 </section>
+<div class="print-footer print-show col-xs-12">
+  Dev portfolio by <span>DEVOLIO</span> | https://devolio.herokuapp.com/<%= user_settings.username %>
+</div>
 </div>

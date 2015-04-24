@@ -38,7 +38,7 @@ a {
   color: $orange;
   text-decoration: none;
 }
-a:hover {
+a:hover, a:active {
   color: $orange;
   text-decoration: underline;
 }
@@ -123,9 +123,11 @@ input[type="submit"] {
 form label {
   text-transform: uppercase;
   vertical-align: middle;
-  line-height: 2em;
+  font-size: 0.8em;
+  margin-bottom: 0;
 }
 form fieldset {
+  clear: both;
   margin: 1em 0;
 }
 .button.small, input[type="submit"].small {
@@ -203,7 +205,7 @@ hr {
 }
 
 /* Reset list styles */
-.icons, .contact-info, .skills-list, .interests, .github-stats {
+.icons, .contact-info, .skills-list, .interests, .github-stats, .email-history-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -293,6 +295,7 @@ header .subtitle span {
 .contact-info li:nth-child(odd) {
   font-weight: $font-weight--bold;
   clear: both;
+  font-size: 0.8em;
 }
 .contact-info li:nth-child(even) {
   color: $gray;
@@ -307,20 +310,6 @@ header .subtitle span {
   border-color: #fff;
   color: #fff;
 }
-
-
-.graph-container {
-  overflow: visible;
-  margin: 1em auto;
-}
-.graph-container h5 {
-  text-align: center;
-  margin: -2em auto 0;
-}
-.graph-container svg {
-  overflow: visible;
-  margin-bottom: 3em;
-}
-.area {
-  fill: url(#color-gradient);
+.aside-box input[type="submit"]:hover {
+  border-color: $green;
 }
