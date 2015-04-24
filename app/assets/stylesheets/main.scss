@@ -175,26 +175,29 @@ hr {
   color: #fff;
   overflow: auto;
 }
-.portfolio, .dashboard {
-  display: table;
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .portfolio, .dashboard {
+    display: table;
+  }
+  .light-container {
+    display: table-cell;
+    float: none;
+  }
+  .dark-container {
+    display: table-cell;
+    float: none;
+  }
 }
 .light-container {
   background: #fff;
   color: $black;
-  display: table-cell;
-  float: none;
   padding-bottom: 3em;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
-  display: table-cell;
-  float: none;
   padding-bottom: 3em;
-}
-.light-container {
-  background: #fff;
-  color: $black;
 }
 .nav {
   text-align: right;
