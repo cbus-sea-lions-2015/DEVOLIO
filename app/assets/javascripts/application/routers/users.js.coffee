@@ -11,7 +11,6 @@ class App.Routers.Users extends App.Router
       $('.main-container').html(view.el)
       view.render()
       if user.attributes.user_github
-        console.log "User github",user.attributes.user_github
         parseHistogram(user.attributes.user_github.eventDates)
         displayLanguages(user.attributes.user_github.reposData.allLang, '#js-allLanguages')
         displayLanguages(user.attributes.user_github.languages, '#js-recentLanguages')
