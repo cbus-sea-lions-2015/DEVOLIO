@@ -39,6 +39,7 @@ a {
   text-decoration: none;
 }
 a:hover {
+  color: $orange;
   text-decoration: underline;
 }
 /* Icons */
@@ -118,10 +119,7 @@ input[type="submit"] {
   color: $green;
   line-height: 1em;
 }
-:required {
-  border-color: $deep-orange;
-  border-width: 1px;
-}
+
 form label {
   text-transform: uppercase;
   vertical-align: middle;
@@ -158,6 +156,18 @@ hr {
 }
 
 /* Layout */
+/*
+ * Row with equal height columns
+ * http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display:  -webkit-box;
+  display: -webkit-flex;
+  display:  -ms-flexbox;
+  display:         flex;
+}
+
 .main-container {
   background: $dark-gray;
   color: #fff;
@@ -289,10 +299,11 @@ header .subtitle span {
 
 .graph-container {
   overflow: visible;
+  margin: 1em auto;
 }
 .graph-container h5 {
   text-align: center;
-  margin: 1em auto;
+  margin: -2em auto 0;
 }
 .graph-container svg {
   overflow: visible;

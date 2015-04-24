@@ -1,35 +1,36 @@
-<h2>Register with Devolio</h2>
-<div class="col-md-4"></div>
-<div class="col-md-4 light-container">
-  
+<div class="col-md-3"></div>
+<div class="col-xs-12 col-md-6 light-container">
+  <h2>Register with Devolio</h2>
+
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
   <%= devise_error_messages! %>
-  
+
   <fieldset>
-    <%= f.label :username, class: "col-sm-3" %>
-    <%= f.text_field :username, required: true, autofocus: true %>
+    <%= f.label :username, class: "col-xs-12 col-md-5" %>
+    <%= f.text_field :username, required: true, autofocus: true, class: "col-xs-12 col-md-7" %>
   </fieldset>
   <fieldset>
-    <%= f.label :name, class: "col-sm-3" %>
-    <%= f.text_field :name, required: true %>
+    <%= f.label :name, class: "col-xs-12 col-md-5" %>
+    <%= f.text_field :name, required: true, class: "col-xs-12 col-md-7" %>
   </fieldset>
 
   <fieldset>
-    <%= f.label :email, class: "col-sm-3" %>
-    <%= f.email_field :email, required:true %>
+    <%= f.label :email, class: "col-xs-12 col-md-5" %>
+    <%= f.email_field :email, required:true, class: "col-xs-12 col-md-7" %>
   </fieldset>
 
   <fieldset>
-    <%= f.label :password, class: "col-sm-3" %>
+    <%= f.label :password, class: "col-xs-12 col-md-5" %>
+    <%= f.password_field :password, required: true, autocomplete: "off", class: "col-xs-12 col-md-7" %>
     <% if @validatable %>
     <em class="col-sm-12">(<%= @minimum_password_length %> characters minimum)</em>
     <% end %>
-    <%= f.password_field :password, required: true, autocomplete: "off" %>
   </fieldset>
   <fieldset>
-    <%= f.label :password_confirmation, class: "col-sm-3" %>
-    <%= f.password_field :password_confirmation, required: true, autocomplete: "off" %>
+    <%= f.label :password_confirmation, class: "col-xs-12 col-md-5" %>
+    <%= f.password_field :password_confirmation, required: true, autocomplete: "off", class: "col-xs-12 col-md-7" %>
   </fieldset>
 
   <div class="actions">
@@ -37,4 +38,4 @@
   </div>
 <% end %>
 </div>
-<div class="col-md-4"></div>
+<div class="col-xs-0 col-md-3"></div>

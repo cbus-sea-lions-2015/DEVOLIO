@@ -47,13 +47,13 @@ $font-weight--bold:   900;
 
 // Skills
 .skill-percentage {
-  margin-bottom: 10px;
+  margin-bottom: 1.25em;
   position: relative;
   text-transform: uppercase;
+  font-size: 0.9em;
   &:before {
     content: "";
     width: 20%;
-    transform: width 0.6s ease;
     height: 6px;
     background: $green;
     position: absolute;
@@ -111,6 +111,18 @@ $font-weight--bold:   900;
   }
 }
 
+.lines-data {
+  height: 6px;
+  display: inline-block;
+  width: 0;
+  transform: width 0.6s ease;
+}
+.lines-data.additions {
+  background: $green;
+}
+.lines-data.deletions {
+  background: $deep-orange;
+}
 
 // Interests & Stats
 .github-stats {

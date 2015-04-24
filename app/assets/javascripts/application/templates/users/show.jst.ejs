@@ -1,5 +1,5 @@
-<div class="portfolio">
-  <section class="light-container col-xs-12 col-sm-4">
+<div class="portfolio row-eq-height">
+  <section class="light-container col-xs-12 col-md-4">
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
       <div class="avatar col-xs-3">
@@ -66,67 +66,63 @@
     </section>
     <% } %>
 </section>
-<section class="dark-container col-xs-12 col-sm-8">
+<section class="dark-container col-xs-12 col-md-8">
   <% if (user_github) { %>
   <section class="user_github">
     <h3>Recent GitHub Activity</h3>
-    <div class="data-graphs  col-xs-12">
-      <div id="js-histogram" class="col-xs-12 graph-container">
+    <div class="data-graphs  col-xs-12 graph-container">
+      <div id="js-histogram">
       </div>
+      <h5>Total Activity Events Over Time</h5>
     </div>
     <div class="pie-charts print-hide col-xs-12">
-      <section>
-        <div class="pieID pie">
-          <div id="js-recentLanguages" class="col-xs-6 col-md-4 graph-container">
-            <h5>Recent Languages Used</h5>
+      <div class="pieID pie">
+        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+          <div id="js-recentLanguages">
           </div>
-          <div id="js-allLanguages" class="col-xs-6 col-md-4 graph-container">
-            <h5>Overall Languages Used</h5>
-          </div>
-          <div id="js-gitHubActivity" class="col-xs-0 col-md-4 graph-container">
-            <h5>Recent Github Events</h5>
-          </div>
+          <h5>Recent Languages</h5>
         </div>
-      </section>
+        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+          <div id="js-allLanguages">
+          </div>
+          <h5>Total Languages Overall</h5>
+        </div>
+        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+          <div id="js-gitHubActivity">
+          </div>
+          <h5>Recent Github Events</h5>
+        </div>
+        <div class="col-xs-6 col-md-12 col-lg-3 graph-container">
+          <ul class="github-stats graph-container">
+            <li class="print-show core-activity">
+              <p><%= parseInt(user_github.pushEvents) + parseInt(user_github.pullEvents) + parseInt(user_github.commits) %></p>
+              <span>Total public pushes, pulls, and forks since <%= user_github.oldestEventDate %> span</span>
+            </li>
+            <li>
+              <p><%= user_github.followersnum || 0 %></p>
+              <span>Followers</span>
+            </li>
+            <li>
+              <p><%= user_github.followingnum || 0 %></p>
+              <span>Following</span>
+            </li>
+            <li>
+              <p><%= user_github.reposnum || 0 %></p>
+              <span>Public Repos</span>
+            </li>
+            <li>
+              <p><%= user_github.allStars || 0 %></p>
+              <span>Repo Stars</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <ul class="col-xs-12 github-stats">
-      <li class="print-show core-activity">
-        <p><%= parseInt(user_github.pushEvents) + parseInt(user_github.pullEvents) + parseInt(user_github.commits) %></p>
-        <span>Total public pushes, pulls, and forks since <%= user_github.oldestEventDate %> span</span>
-      </li>
-      <li>
-        <p><%= user_github.followersnum || 0 %></p>
-        <span>Followers</span>
-      </li>
-      <li>
-        <p><%= user_github.followingnum || 0 %></p>
-        <span>Following</span>
-      </li>
-      <li>
-        <p><%= user_github.reposnum || 0 %></p>
-        <span>Public Repos</span>
-      </li>
-      <li>
-        <p><%= user_github.allStars || 0 %></p>
-        <span>Repo Stars</span>
-      </li>
-      <li>
-        <p><%= user_github.commits || 0 %></p>
-        <span>Commits</span>
-      </li>
-      <li>
-        <p><%= user_github.pushEvents || 0 %></p>
-        <span>Pushes</span>
-      </li>
-      <li>
-        <p><%= user_github.pullEvents || 0 %></p>
-        <span>Pulls</span>
-      </li>
-      <li>
-        <p><%= user_github.gistsEvents || 0%></p>
-        <span>Gist Activity</span>
-      </li>
-    </ul>
+    <div class="col-xs-12">
+      <% var totalLineActivity = parseInt(user_github.lineAdditions) + parseInt(user_github.lineDeletions) %>
+      <span class="lines-data additions" style="width:<%= parseInt(user_github.lineAdditions)/totalLineActivity * 100 %>%;"></span><span class="lines-data deletions" style="width:<%= parseInt(user_github.lineDeletions)/totalLineActivity * 100 %>%;"></span>
+    </div>
+    <p class="meta">*all data reflects public activity drawn from GitHub api, private activity is not shown</p>
   </section><!-- end github section -->
   <% } %>
   <section class='col-xs-12'>

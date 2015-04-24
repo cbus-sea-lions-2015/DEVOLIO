@@ -31,10 +31,10 @@ var displayHistogram = function(lineData){
   var vis = d3.select("#js-histogram")
     .append("svg:svg")
     .attr("width", parentWidth)
-    .attr("height", parentWidth/4)
+    .attr("height", parentWidth/5)
     .append("svg:g"),
     WIDTH = parentWidth,
-    HEIGHT = parentWidth/4,
+    HEIGHT = parentWidth/5,
     MARGINS = {
       top:0,
       right:0,
