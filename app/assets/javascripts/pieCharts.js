@@ -18,7 +18,7 @@ var displayGitHubActivity = function(infoHash, selector) {
   var dataset = [
     {"label":"Commits", "value":parseInt(infoHash.commits)},
     {"label":"Pushes", "value":parseInt(infoHash.pushEvents)},
-    {"label":"Pull Requests", "value":parseInt(infoHash.pullEvents)}
+    {"label":"Pulls", "value":parseInt(infoHash.pullEvents)}
   ];
   createPieChart(dataset, selector);
 }
@@ -64,9 +64,10 @@ var createPieChart = function(dataset, selector){
           .attr("fill","#000")
           .style("text-transform","uppercase")
           .style("font-size","0.8em")
-          .style("font-family", "'Oswald', sans-serif")
+          .style("font-family", "'Montserrat', sans-serif")
+          .style("margin","10")
           .attr("transform", function(d){
-          d.innerRadius = 0;
+          d.innerRadius = 25;
           d.outerRadius = radius;
           return "translate(" + arc.centroid(d) + ")";})
             .attr("text-anchor", "middle").text(

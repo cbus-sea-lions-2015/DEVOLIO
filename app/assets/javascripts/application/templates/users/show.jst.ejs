@@ -2,14 +2,14 @@
   <section class="light-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
-      <div class="avatar col-xs-3">
+      <div class="avatar col-xs-4">
         <% if (user_github) { %>
         <img src='<%= user_github.aviurl %>' alt="avatar">
         <% } else { %>
         <img src='http://i.imgur.com/i31E9hh.jpg' alt="default-avatar">
         <% } %>
       </div>
-      <div class="name col-xs-9">
+      <div class="name col-xs-8">
         <h2><%= user_settings.name %></h2>
       </div>
       <p class="col-xs-12"><%= user_settings.description %></p>
@@ -26,17 +26,21 @@
       </ul>
       <hr>
       <ul class="contact-info">
-        <li class="col-xs-12 col-sm-3">Username</li>
-        <li class="col-xs-12 col-sm-9"><%= user_settings.username %></li>
-        <li class="col-xs-12 col-sm-3">Email</li>
-        <li class="col-xs-12 col-sm-9"><%= user_settings.email %></li>
+        <li class="col-xs-12 col-sm-4 print-hide">Username</li>
+        <li class="col-xs-12 col-sm-8 print-hide"><%= user_settings.username %></li>
+        <li class="col-xs-12 col-sm-4">Email</li>
+        <li class="col-xs-12 col-sm-8"><%= user_settings.email %></li>
         <% if (user_settings.website) { %>
-        <li class="col-xs-12 col-sm-3">Website</li>
-        <li class="col-xs-12 col-sm-9"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
+        <li class="col-xs-12 col-sm-4">Website</li>
+        <li class="col-xs-12 col-sm-8"><a href="<%= user_settings.website %>" target="_blank"><%= user_settings.website %></a></li>
+        <% } %>
+        <% if (user_github.location) { %>
+        <li class="col-xs-12 col-sm-4">Location</li>
+        <li class="col-xs-12 col-sm-8"><%= user_github.location %></li>
         <% } %>
         <% if (location_pref) { %>
-          <li class="col-xs-12 col-sm-3">I want to:</li>
-          <li class="col-xs-12 col-sm-9"><%= location_pref %></li>
+          <li class="col-xs-12 col-sm-4">Looking to</li>
+          <li class="col-xs-12 col-sm-8"><%= location_pref %></li>
         <% } else { %>
           <li class="col-xs-12">I have no location preference</li>
         <% } %>
@@ -70,25 +74,34 @@
   <% if (user_github) { %>
   <section class="user_github">
     <h3>Recent GitHub Activity</h3>
-    <div class="data-graphs col-xs-12">
-      <div id="js-histogram" class="col-xs-12 graph-container">
+    <div class="data-graphs  col-xs-12 graph-container">
+      <div id="js-histogram">
       </div>
+      <h5>Total Activity Events Over Time</h5>
     </div>
-    <div class="pie-charts col-xs-12">
-      <section>
-        <div class="pieID pie">
-          <div id="js-recentLanguages" class="col-xs-6 col-md-4 graph-container">
-            <h5>Recent Languages Used</h5>
+    <div class="pie-charts print-hide col-xs-12">
+      <div class="pieID pie">
+        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+          <div id="js-recentLanguages">
           </div>
-          <div id="js-allLanguages" class="col-xs-6 col-md-4 graph-container">
-            <h5>Overall Languages Used</h5>
-          </div>
-          <div id="js-gitHubActivity" class="col-xs-0 col-md-4 graph-container">
-            <h5>Recent Github Events</h5>
-          </div>
+          <h5>Recent Languages</h5>
         </div>
-      </section>
-      <ul class="col-xs-12 interests">
+        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+          <div id="js-allLanguages">
+          </div>
+          <h5>Total Languages Overall</h5>
+        </div>
+        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+          <div id="js-gitHubActivity">
+          </div>
+          <h5>Recent Github Events</h5>
+        </div>
+        <div class="col-xs-6 col-md-12 col-lg-3 graph-container">
+          <ul class="github-stats graph-container">
+            <li class="print-show core-activity">
+              <p><%= parseInt(user_github.pushEvents) + parseInt(user_github.pullEvents) + parseInt(user_github.commits) %></p>
+              <span>Total public pushes, pulls, and forks since <%= user_github.oldestEventDate %> span</span>
+            </li>
             <li>
               <p><%= user_github.followersnum || 0 %></p>
               <span>Followers</span>
@@ -102,26 +115,16 @@
               <span>Public Repos</span>
             </li>
             <li>
-              <p><%= user_github.reposData.allStars || 0 %></p>
+              <p><%= user_github.allStars || 0 %></p>
               <span>Repo Stars</span>
             </li>
-            <li>
-              <p><%= user_github.commits || 0 %></p>
-              <span>Commits</span>
-            </li>
-            <li>
-              <p><%= user_github.pushEvents || 0 %></p>
-              <span>Pushes</span>
-            </li>
-            <li>
-              <p><%= user_github.pullEvents || 0 %></p>
-              <span>Pulls</span>
-            </li>
-            <li>
-              <p><%= user_github.gistsEvents || 0%></p>
-              <span>Gist Activity</span>
-            </li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 print-hide">
+      <% var totalLineActivity = parseInt(user_github.lineAdditions) + parseInt(user_github.lineDeletions) %>
+      <span class="lines-data additions" style="width:<%= parseInt(user_github.lineAdditions)/totalLineActivity * 100 %>%;"></span><span class="lines-data deletions" style="width:<%= parseInt(user_github.lineDeletions)/totalLineActivity * 100 %>%;"></span>
     </div>
   </section><!-- end github section -->
   <% } %>
@@ -143,7 +146,7 @@
       </section>
     <% } %>
   </section>
-  <section class="col-xs-6">
+  <section class="col-xs-6 skills-section">
     <% if (user_settings.skills) { %>
     <section id="user_skills">
       <h3>Tech Stack</h3>
@@ -177,4 +180,7 @@
 
   </section>
 </section>
+<div class="print-footer print-show col-xs-12">
+  Dev portfolio by <span>DEVOLIO</span> | https://devolio.herokuapp.com/<%= user_settings.username %>
+</div>
 </div>
