@@ -1,0 +1,111 @@
+.print-show {
+  display: none !important;
+}
+@media print {
+  @import url(http://fonts.googleapis.com/css?family=Lora:400,700);
+  html {
+    width: 7.5in;
+  }
+  html, body, .light-container, .dark-container, body p, body span, body h1, body h2, body h3, body h4, body h5, body h6, .github-stats li p {
+    background: transparent;
+    color: #444444;
+    font-family: 'Lora', serif;
+    line-height: 16pt;
+    font-size: 12pt;
+    letter-spacing: 0;
+    padding: 0;
+    margin: 0;
+    text-transform: none;
+  }
+  [class*="col-"] {
+    padding: 0;
+  }
+  body h1, body h2, body h3, body h4 {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .light-container, .dark-container, .name, .skills-section, #featured-project-body section {
+    width: 100%;
+    display: block;
+  }
+  .print-show {
+    display: initial !important;
+  }
+  .print-hide, .logo, .avatar, .icons, #user_tweets, .interests i, footer, hr, #featured-project-body img, .skill-percentage:before, .skill-percentage:after, .user_github {
+    display: none !important;
+  }
+  .name {
+    font-size: 18pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #333333;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+  }
+  body h3 {
+    font-size: 16pt;
+    margin: 1em 0 0.5em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #ddd;
+  }
+  body h4 {
+    font-size: 14pt;
+    margin: 1em 0 0.25em;
+  }
+  .contact-info li:nth-child(odd) {
+    font-size: 1em;
+  }
+  .contact-info li, .interests li, .github-stats li, .skills-list li {
+    display: inline;
+    width: auto;
+    height: auto;
+    margin: 0;
+    line-height: 16pt;
+  }
+  .interests {
+    text-align: left;
+  }
+  .interests li span {
+    text-transform: capitalize;
+    display: inline;
+    font-size: 1em;
+    letter-spacing: 0;
+  }
+  .contact-info li:nth-child(odd) {
+    width: 15%;
+  }
+  .contact-info a:after {
+    content: "";
+  }
+  .contact-info {
+    clear: both;
+    margin-top: 2em;
+  }
+  .experience {
+    margin-bottom: 1em;
+  }
+  #featured-project-title {
+    page-break-after: avoid;
+  }
+  #featured-project-body {
+    padding: 0;
+  }
+  #featured-project-body h4 {
+    text-align: left;
+  }
+  .skill-percentage {
+    text-transform: none;
+  }
+
+  .print-footer {
+    margin-top: 2em;
+    text-align: center;
+    span {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 1px;
+    }
+  }
+}

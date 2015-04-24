@@ -1,42 +1,27 @@
-<% console.log(emailHistory) %>
 <div class="dashboard">
   <section class="dark-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
-      <div class="avatar col-xs-3">
+      <div class="avatar col-xs-4">
         <% if (user_github) { %>
         <img src='<%= user_github.aviurl %>' alt="avatar">
         <% } else { %>
         <img src='http://i.imgur.com/i31E9hh.jpg' alt="default-avatar">
         <% } %>
       </div>
-      <div class="name col-xs-9">
+      <div class="name col-xs-8">
         <h2><%= user_settings.name %></h2>
       </div>
-      <p><%= user_settings.description %></p>
-      <ul class="icons">
-        <li><a href="http://github.com/<%= user_settings.github_handle %>" class="entypo-github"></a></li>
-        <li><a href="http://twitter.com/<%= user_settings.twitter_handle %>" class="entypo-twitter"></a></li>
-      </ul>
-      <ul class="contact-info">
-        <li class="col-xs-3">Username</li>
-        <li class="col-xs-9"><%= user_settings.username %></li>
-        <li class="col-xs-3">Email</li>
-        <li class="col-xs-9"><%= user_settings.email %></li>
-        <li class="col-xs-3">Website</li>
-        <li class="col-xs-9"><%= user_settings.website %></li>
-        <li class="col-xs-3">GitHub</li>
-        <li class="col-xs-9"><%= user_settings.github_handle %></li>
-        <li class="col-xs-3">Twitter</li>
-        <li class="col-xs-9"><%= user_settings.twitter_handle %></li>
-        <li class="col-xs-3">Skills</li>
-        <li class="col-xs-9">
-          <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
-            <span><%= key %></span>
-          <% }} %>
-        </li>
-        <li class="col-xs-3">Interests</li>
-        <li class="col-xs-9"><%= user_settings.interests %></li>
+      <p class="col-xs-12"><%= user_settings.description %></p>
+      <ul class="contact-info col-xs-12">
+        <li class="col-xs-12 col-sm-4">Username</li>
+        <li class="col-xs-12 col-sm-8"><%= user_settings.username %></li>
+        <li class="col-xs-12 col-sm-4">Email</li>
+        <li class="col-xs-12 col-sm-8"><%= user_settings.email %></li>
+        <li class="col-xs-12 col-sm-4">Website</li>
+        <li class="col-xs-12 col-sm-8"><%= user_settings.website %></li>
+        <li class="col-xs-12 col-sm-4">Interests</li>
+        <li class="col-xs-12 col-sm-8"><%= user_settings.interests %></li>
       </ul>
     </section>
     <aside class="aside-box">
@@ -44,20 +29,20 @@
         <h3>Want to share your Devolio with someone?</h3>
         <p>Enter any email address below and a link to your personal DEVOLIO will be automatically sent!</p>
         <fieldset>
-          <label for="" class="col-xs-12 col-sm-6">Email Address</label>
-          <input class="col-xs-12 col-sm-6" type="email" name="email-address" id='send-email-address' value="">
+          <label for="" class="col-xs-12 col-sm-5">Email Address</label>
+          <input class="col-xs-12 col-sm-7" type="email" name="email-address" id='send-email-address' value="">
         </fieldset>
         <fieldset>
           <input type="submit" id="send_email" value="Send Link">
           <p class="message" id='send-email-message'></p>
         </fieldset>
       </form>
-      <div class='email-history-box'>
+      <div class='email-history-box col-xs-12'>
         <ul class='email-history-list'>
-          <p>You have sent emails to the following people:</p>
           <% if (emailHistory.length > 0) { %>
+          <p>Previously sent to:</p>
             <% for (var i = 0; i < emailHistory.length; i++) { %>
-              <li><%= emailHistory[i].recipient %> on <%= emailHistory[i].date %>.</li>
+              <li><%= emailHistory[i].recipient %> on <%= emailHistory[i].date %></li>
             <% } %>
           <% } %>
         </ul>
@@ -65,7 +50,7 @@
     </aside>
   </section>
   <section class="light-container col-xs-12 col-sm-8">
-    <h3>Edit Your Portfolio Information</h3>
+    <h3>Build Your Dev Portfolio</h3>
     <form id="user-form">
       <fieldset>
         <label for="" class="col-xs-12 col-sm-3">Name</label>
@@ -77,7 +62,7 @@
         <span class="meta col-xs-12 col-sm-3">recommended: 2-3 sentences about why you are in tech.</span>
       </fieldset>
       <fieldset>
-        <label for="" class="col-xs-12 col-sm-3">I want to:</label>
+        <label for="" class="col-xs-12 col-sm-3">Looking to</label>
         <% if (user_settings.loc_local) { %>
           <input class="" type="checkbox" name="loc_local" checked>Work Locally
         <% } else { %>
@@ -118,13 +103,14 @@
         <label for="" class="col-xs-12 col-sm-3">Personal Interests</label>
         <input class="col-xs-12 col-sm-6" type="text" name="interests" value="<%= user_settings.interests %>">
         <span class="meta col-xs-12 col-sm-3">Separate interests with commas</span>
-        <p class="meta col-xs-9 offset-3"><strong>Interests are paired with icons for visual display on your devolio.</strong> We have paired interest/icons for: <br>animals, art, business, coffee, cooking, cycling, diy, games, mentoring, music, outdoors, photography, reading, research, speaking, sports, travel, tv/movies, writing<br> <strong>Feel free to add additional interests!</strong></p>
+        <p class="meta col-xs-12"><strong>Interests are paired with icons for visual display on your devolio.</strong></p>
+        <p class="meta col-xs-12">We have already-paired interest/icons for: <br>animals, art, business, coffee, cooking, cycling, diy, games, mentoring, music, outdoors, photography, reading, research, speaking, sports, travel, tv/movies, writing</p>
       </fieldset>
 
       <hr>
       <h3>Employment History</h3>
       <fieldset>
-        <label for="add-position-input" class="col-xs-12 col-sm-3">Add Position</label><button class="add-position button col-sm-1">+</button>
+        <label for="add-position-input" class="col-xs-12 col-sm-3">Add Position</label><button class="add-position button col-sm-3">Add</button>
         <p class="error hidden col-xs-12">Please limit positions to 3.</p>
         <%  var i = 1; for (var key in user_settings.positions) { if (user_settings.positions.hasOwnProperty(key)) { %>
           <div class="added-position col-xs-12">
@@ -152,7 +138,7 @@
       <h3>Tech Stack</h3>
       <fieldset>
         <label for="add-skill-input" class="col-xs-12 col-sm-3">Add Skills</label>
-        <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">+</button>
+        <input id="add-skill-input" class="col-xs-12 col-sm-5 skill-label" type="text" class="skill-label"><button class="add-skill button col-sm-1">Add</button>
         <span class="meta col-xs-12 col-sm-3 meta-tooltip">What do the rankings mean?<span class="tooltip">Rankings range from 0-5, least experience to most. 0 and 1 values are essentially the same (since, why would you add a skill with 0 experience?)<img src="http://i.imgur.com/rOpTSia.jpg" title="rankings" /></span></span>
         <p class="error hidden">Please enter a skill.</p>
         <%  for (var key in user_settings.skills) { if (user_settings.skills.hasOwnProperty(key)) { %>
@@ -164,8 +150,7 @@
       </fieldset>
       <hr>
       <h3>Featured Project</h3>
-      <p class="meta col-xs-12"><strong>Here you can enter some information regarding a project you really want to share with the world.</strong> In the description, enter what you find particularly pride-worthy or engaging about the project- we recommend limiting the description to 2-3 sentences.</p>
-      <br>
+      <p class="meta col-xs-12"><strong>Enter a project you really want to share with the world.</strong> In the description, enter what you find particularly pride-worthy or engaging about the project- we recommend limiting the description to 2-3 sentences.</p>
       <fieldset>
         <label for="project_link" class="col-xs-12 col-sm-3">Project Link</label>
         <input class="col-xs-12 col-sm-6" type="url" name="project_link" value="<%= user_settings.project_link %>">
@@ -174,11 +159,11 @@
         <label for="project_name" class="col-xs-12 col-sm-3">Project Name</label>
         <input class="col-xs-12 col-sm-6" type="text" name="project_name" value="<%= user_settings.project_name %>">
       </fieldset>
-      <fieldset>  
+      <fieldset>
         <label for="project_description" class="col-xs-12 col-sm-3">Description</label>
         <input class="col-xs-12 col-sm-6" type="text" name="project_description" value="<%= user_settings.project_description %>">
       </fieldset>
-      <fieldset>  
+      <fieldset>
         <label for="project_pic_link" class="col-xs-12 col-sm-3">Picture Link</label>
         <input class="col-xs-12 col-sm-6" type="url" name="project_pic_link" value="<%= user_settings.project_pic_link %>">
         <p class="meta col-xs-9 offset-3">services such a <a href="http://imgur.com/">imgur</a> or <a href="http://www.snag.gy">snaggy</a> are great for sharing photos like this! smaller, more square images will likely display best.</p>
@@ -193,7 +178,7 @@
         <input type="submit" id="get_api" name="submit">
         <p class="message"></p>
       </fieldset>
-      <p class="success"><strong>Please note!</strong> Importing your data from GitHub &amp; Twitter can take up to a couple of minutes behind the scenes. You'll be redirected to your Devolio on save, you may need to refresh before your information is fully populated.</p>
+      <p class="success"><strong>Please note!</strong> Importing your data from GitHub &amp; Twitter can take up to a couple of minutes behind the scenes. You may need to refresh your Devolio before you see your information fully populated.</p>
       <p class="messages error"></p>
     </form>
   </section>

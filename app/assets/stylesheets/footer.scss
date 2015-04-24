@@ -18,18 +18,16 @@ footer {
   color: white;
   width: 100%;
   background-color: $black;
-
+  p {
+    margin: 0;
+  }
   .footer-content {
     margin-top: 2em;
     text-align: center;
     width: 100%;
-    color: $light-gray;
+    color: $gray;
     .footer-title {
       font-weight: $font-weight--bold;
-    }
-    a:hover {
-      color: $peach;
-      text-decoration: none;
     }
     ul {
       list-style-type: none;
@@ -39,7 +37,6 @@ footer {
         a {
           color: $green;
           &:hover {
-            color: $peach;
             text-decoration: none;
           }
         }

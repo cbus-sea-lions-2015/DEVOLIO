@@ -21,7 +21,7 @@ html {
   padding: 0;
 }
 body {
-  background: $dark-gray !important;
+  background: $dark-gray;
   box-sizing: inherit;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
@@ -38,7 +38,8 @@ a {
   color: $orange;
   text-decoration: none;
 }
-a:hover {
+a:hover, a:active {
+  color: $orange;
   text-decoration: underline;
 }
 /* Icons */
@@ -77,8 +78,6 @@ h4, h5 {
 }
 h5 {
   color: $gray;
-  text-align: center;
-  margin: 1em auto;
 }
 .button, button, input[type="submit"] {
   border: 3px solid #fff;
@@ -120,16 +119,15 @@ input[type="submit"] {
   color: $green;
   line-height: 1em;
 }
-:required {
-  border-color: $deep-orange;
-  border-width: 1px;
-}
+
 form label {
   text-transform: uppercase;
   vertical-align: middle;
-  line-height: 2em;
+  font-size: 0.8em;
+  margin-bottom: 0;
 }
 form fieldset {
+  clear: both;
   margin: 1em 0;
 }
 .button.small, input[type="submit"].small {
@@ -160,20 +158,39 @@ hr {
 }
 
 /* Layout */
+/*
+ * Row with equal height columns
+ * http://getbootstrap.com.vn/examples/equal-height-columns/equal-height-columns.css
+ * --------------------------------------------------
+ */
+.row-eq-height {
+  display:  -webkit-box;
+  display: -webkit-flex;
+  display:  -ms-flexbox;
+  display:         flex;
+}
+
 .main-container {
   background: $dark-gray;
   color: #fff;
   overflow: auto;
 }
+.portfolio, .dashboard {
+  display: table;
+}
 .light-container {
   background: #fff;
   color: $black;
-  padding: 2em;
+  display: table-cell;
+  float: none;
+  padding-bottom: 3em;
 }
 .dark-container {
   background: $dark-gray;
   color: #fff;
-  padding: 2em;
+  display: table-cell;
+  float: none;
+  padding-bottom: 3em;
 }
 .light-container {
   background: #fff;
@@ -188,7 +205,7 @@ hr {
 }
 
 /* Reset list styles */
-.icons, .contact-info, .skills-list, .interests {
+.icons, .contact-info, .skills-list, .interests, .github-stats, .email-history-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -249,6 +266,9 @@ header .subtitle span {
   vertical-align: middle;
   margin-bottom: 2em;
 }
+.avatar {
+  padding: 0;
+}
 .avatar img {
   border-radius: 50%;
   vertical-align: middle;
@@ -269,11 +289,13 @@ header .subtitle span {
   padding: 0;
   margin: 0.25em 0;
   vertical-align: middle;
-  line-height: 2em;
+  line-height: 1.2em;
+  margin-bottom: 0.5em;
 }
 .contact-info li:nth-child(odd) {
   font-weight: $font-weight--bold;
   clear: both;
+  font-size: 0.8em;
 }
 .contact-info li:nth-child(even) {
   color: $gray;
@@ -288,15 +310,6 @@ header .subtitle span {
   border-color: #fff;
   color: #fff;
 }
-
-
-.graph-container {
-  overflow: visible;
-}
-.graph-container svg {
-  overflow: visible;
-  margin-bottom: 3em;
-}
-.area {
-  fill: url(#color-gradient);
+.aside-box input[type="submit"]:hover {
+  border-color: $green;
 }

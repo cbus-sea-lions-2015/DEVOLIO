@@ -31,10 +31,10 @@ var displayHistogram = function(lineData){
   var vis = d3.select("#js-histogram")
     .append("svg:svg")
     .attr("width", parentWidth)
-    .attr("height", parentWidth/4)
+    .attr("height", parentWidth/5)
     .append("svg:g"),
     WIDTH = parentWidth,
-    HEIGHT = parentWidth/4,
+    HEIGHT = parentWidth/5,
     MARGINS = {
       top:0,
       right:0,
@@ -67,21 +67,23 @@ var displayHistogram = function(lineData){
 
   yAxis = d3.svg.axis()
     .scale(yRange)
-    //.tickSize(2)
     .orient("left")
-    //.tickSubdivide(true)
     .tickFormat(function (d) { return ''; });
 
   vis.append("svg:g")
     .attr("class", "x axis")
     .attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
     .attr("fill","#727272")
+    .style("font-size","0.8em")
+    .style("font-family", "'Montserrat', sans-serif")
     .call(xAxis);
 
   vis.append("svg:g")
     .attr("class", "y axis")
     .attr("transform", "translate(" + (MARGINS.left) + ",0)")
     .attr("fill","#727272")
+    .style("font-size","0.8em")
+    .style("font-family", "'Montserrat', sans-serif")
     .call(yAxis);
 
   var lineFunc = d3.svg.line()
