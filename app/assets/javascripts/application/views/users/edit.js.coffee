@@ -33,7 +33,8 @@ class App.Views.Users.Edit extends App.View
     form = @$el.find "#mailer_form"
     username = $('body').attr('id')
     address = $('#send-email-address').val();
-    window.sendEmail(address, username)
+    message = $('#send-email-personal-message').val();
+    window.sendEmail(address, username, message)
     error = ->
       $(form + ' .message').html("<span class='error'>There was an issue and no email was sent.</span>")
     success = ->

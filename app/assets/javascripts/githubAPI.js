@@ -66,7 +66,6 @@ var getGitHubData = function(username){
     }
     reposData.allLang = allLang;
     reposData.allStars = allStars;
-    console.log(reposData)
     return reposData
   }
 
