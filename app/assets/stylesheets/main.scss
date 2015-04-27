@@ -130,6 +130,12 @@ form fieldset {
   clear: both;
   margin: 1em 0;
 }
+textarea {
+  resize: vertical;
+  min-height: 3em;
+  color: $black;
+}
+
 .button.small, input[type="submit"].small {
   font-size: 12px;
   padding: 0.5em 0.75em;
