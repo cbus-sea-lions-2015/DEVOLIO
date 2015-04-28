@@ -23,7 +23,6 @@ class App.Routers.Users extends App.Router
     emailHistory = new App.Models.EmailHistory id: username
     user.fetch().done ->
       emailHistory.fetch().done ->
-        console.log(emailHistory)
         view = new App.Views.Users.Edit(model: user, emailHistory: emailHistory)
         $('.main-container').html(view.el)
         view.render()

@@ -1,18 +1,20 @@
-function sendEmail(address, username) {
+function sendEmail(address, username, message) {
   $.ajax({
     url: 'email',
-    data: {email: address, username: username},
+    data: {email: address, username: username, message: message},
     type: 'POST'
   }).done(function(data){
     $('#send_email').attr('disabled', false)
     $('#send_email').val('Submit')
     $("#send-email-address").val("")
+    $("#send-email-personal-message").val("")
     $('#send-email-message').html("Your email has been successfully sent!")
     $('.email-history-list').append("<li>" + data.email + " on " + data.date + ".</li>")
   }).fail(function(data){
     $('#send_email').attr('disabled', false)
     $('#send_email').val('Submit')
     $("#send-email-address").val("")
+    $("#send-email-personal-message").val("")
     $('#send-email-message').html("There was an error and your email was not able to be sent. Please try again shortly.")
   })
 }

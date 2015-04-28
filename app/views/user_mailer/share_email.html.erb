@@ -6,6 +6,9 @@
   <body>
     <h3>Hello!</h3>
     <p><%= @user.name %> would like to share their Devolio with you!</p>
+    <% if @message %>
+      <p><%= @message %></p>
+    <% end %>
     <p>DEVOLIO merges personal resume information with a user's GitHub account activity to quickly and easily produce an attractive, informative job search profile. Additionally, the dev community is centralized around Twitter, so a user can also show their Twitter stream on the same profile page.</p>
     <p>Simply <a href='<%= @url %>'>follow this link</a> to check it out!</p>
     <p>Sincerely,</p>
