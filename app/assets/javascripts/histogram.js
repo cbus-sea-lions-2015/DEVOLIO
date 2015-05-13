@@ -63,7 +63,7 @@ var displayHistogram = function(lineData){
     .tickSize(2)
     .tickSubdivide(true)
     .tickFormat(function(d) { return d3.time.format('%b %d')(new Date(d)); })
-    .ticks(Math.min(10, lineData.length/2)),
+    .ticks(Math.min(5, lineData.length/2)),
 
   yAxis = d3.svg.axis()
     .scale(yRange)
@@ -81,7 +81,7 @@ var displayHistogram = function(lineData){
   vis.append("svg:g")
     .attr("class", "y axis")
     .attr("transform", "translate(" + (MARGINS.left) + ",0)")
-    .attr("fill","#727272")
+    .attr("fill","transparent")
     .style("font-size","0.8em")
     .style("font-family", "'Montserrat', sans-serif")
     .call(yAxis);
