@@ -32,7 +32,7 @@
           <span class="col-xs-12 col-sm-6">Welcome <%=  current_user.username %>! <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "button" %></span>
           <span class="col-xs-12 col-sm-6"><%= link_to "Dashboard", '/dashboard', class: "button" %> <%= link_to "My DEVOLIO", "/#{current_user.username}", class: "button" %></span>
       <% else %>
-          <%= link_to "Sign in", new_user_session_path, class: "button" %> or <%= link_to "Sign up", new_user_registration_path, class: "button"  %>
+          <span><%= link_to "Sign in", new_user_session_path, class: "button" %> or <%= link_to "Sign up", new_user_registration_path, class: "button"  %></span>
       <% end %>
     </section>
     <section class='col-xs-12 footer-content'>
