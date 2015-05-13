@@ -2,7 +2,7 @@
   <section class="dark-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
-      <div class="avatar col-xs-3">
+      <div class="avatar col-xs-3 col-sm-offset-4 col-sm-4 col-md-offset-0 col-md-4">
         <% if (user_github) { %>
         <img src='<%= user_github.aviurl %>' alt="avatar">
         <% } else { %>
@@ -12,7 +12,7 @@
       <div class="name col-xs-8 col-sm-12 col-md-3">
         <h2><%= user_settings.name %></h2>
       </div>
-      <p class="col-xs-12"><%= user_settings.description %></p>
+      <p class="description col-xs-12"><%= user_settings.description %></p>
       <ul class="contact-info col-xs-12">
         <li class="col-xs-12 col-sm-4">Username</li>
         <li class="col-xs-12 col-sm-8"><%= user_settings.username %></li>
