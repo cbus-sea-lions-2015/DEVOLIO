@@ -180,7 +180,8 @@ hr {
   .portfolio, .dashboard {
     display: table;
   }
-  .light-container {
+  .portfolio .light-container,
+  .dashboard .light-container {
     display: table-cell;
     float: none;
   }
