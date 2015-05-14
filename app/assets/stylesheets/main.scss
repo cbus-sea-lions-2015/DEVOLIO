@@ -186,7 +186,8 @@ hr {
   .portfolio, .dashboard {
     display: table;
   }
-  .light-container {
+  .portfolio .light-container,
+  .dashboard .light-container {
     display: table-cell;
     float: none;
   }
@@ -273,7 +274,6 @@ header .subtitle span {
 .avatar, .name {
   display: inline-block;
   vertical-align: middle;
-  margin-bottom: 2em;
 }
 .avatar {
   padding: 0;
@@ -286,6 +286,9 @@ header .subtitle span {
   font-size: 2em;
   vertical-align: middle;
   text-align: left;
+}
+.description {
+  margin-top: 2em;
 }
 
 // Contact info

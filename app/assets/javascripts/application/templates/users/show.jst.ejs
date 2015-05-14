@@ -2,14 +2,14 @@
   <section class="light-container col-xs-12 col-sm-4">
     <h1 class="logo small">Devolio</h1>
     <section id="user_profile">
-      <div class="avatar col-xs-4">
+      <div class="avatar col-xs-3 col-sm-offset-4 col-sm-4 col-md-offset-0 col-md-4">
         <% if (user_github) { %>
         <img src='<%= user_github.aviurl %>' alt="avatar">
         <% } else { %>
         <img src='http://i.imgur.com/i31E9hh.jpg' alt="default-avatar">
         <% } %>
       </div>
-      <div class="name col-xs-8">
+      <div class="name col-xs-8 col-sm-12 col-md-3">
         <h2><%= user_settings.name %></h2>
       </div>
       <p class="col-xs-12"><%= user_settings.description %></p>
@@ -81,22 +81,22 @@
     </div>
     <div class="pie-charts print-hide col-xs-12">
       <div class="pieID pie">
-        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+        <div class="col-xs-12 col-md-4 col-lg-3 graph-container">
           <div id="js-recentLanguages">
           </div>
           <h5>Recent Languages</h5>
         </div>
-        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+        <div class="col-xs-12 col-md-4 col-lg-3 graph-container">
           <div id="js-allLanguages">
           </div>
           <h5>Total Languages Overall</h5>
         </div>
-        <div class="col-xs-6 col-md-4 col-lg-3 graph-container">
+        <div class="col-xs-12 col-md-4 col-lg-3 graph-container">
           <div id="js-gitHubActivity">
           </div>
           <h5>Recent Github Events</h5>
         </div>
-        <div class="col-xs-6 col-md-12 col-lg-3 graph-container">
+        <div class="col-xs-12 col-lg-3 graph-container">
           <ul class="github-stats graph-container">
             <li class="print-show core-activity">
               <p><%= parseInt(user_github.pushEvents) + parseInt(user_github.pullEvents) + parseInt(user_github.commits) %></p>

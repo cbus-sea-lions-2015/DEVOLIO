@@ -18,22 +18,35 @@ footer {
   color: white;
   width: 100%;
   background-color: $black;
+  padding-top: 3em;
+  border-top: 1px solid #000;
+  overflow: auto;
   p {
     margin: 0;
+  }
+  .nav {
+    white-space: nowrap;
+    text-align: center;
+    padding: 0;
+    span {
+      margin-bottom: 1em;
+    }
   }
   .footer-content {
     margin-top: 2em;
     text-align: center;
     width: 100%;
     color: $gray;
+
     .footer-title {
       font-weight: $font-weight--bold;
     }
     ul {
       list-style-type: none;
+      padding: 0;
       li {
         display: inline;
-        padding: 0 15px;
+        padding: 0 5px;
         a {
           color: $green;
           &:hover {
